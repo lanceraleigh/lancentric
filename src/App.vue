@@ -1,19 +1,37 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <div class="nav-links">
+      <button @click="showDropdown = !showDropdown" class="dropdown-menu-title">
+        Language <i class="arrow down"></i>
+      </button>
+      <div class="language-options" v-if="showDropdown">
+        <router-link to="/">Spanish</router-link>
+        <router-link to="/about">Portuguese</router-link>
+      </div>
+    </div>
+    <div>Lancentric</div>
+    <div>Your Profile</div>
   </nav>
-  <div class="logo">Lancentric</div>
   <router-view />
 </template>
+<script>
+export default {
+  data() {
+    return {
+      showDropdown: false,
+    };
+  },
+};
+</script>
 
 <style lang="scss">
+@import "./assets/globalStyles.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background: #361d70;
+  text-align: left;
+  background: #fff;
   color: #2c3e50;
   margin: 0;
   padding: 0;
@@ -22,11 +40,13 @@
 }
 
 nav {
-  height: 4rem;
-  background: rgba($color: #e6ccff, $alpha: 9);
+  height: 1.5rem;
+  background: #fff;
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
   a {
-    font-weight: bold;
     color: #2c3e50;
 
     &.router-link-exact-active {
@@ -34,8 +54,14 @@ nav {
     }
   }
 }
-.logo {
-  border-left: 100px solid #e6ccff;
-  border-right: 100px solid #e6ccff;
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 </style>

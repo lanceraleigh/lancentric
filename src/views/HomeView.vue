@@ -1,31 +1,32 @@
 <template>
-  <div class="home">
-    <HomeBackground />
-    <HomeTitle />
-    <div class="card-container">
-      <QuestionCardTemplate />
-    </div>
-  </div>
+  <HomeTitle />
+  <SpanishHomeView />
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
+<script>
 import HomeTitle from "../components/HomeTitle.vue";
-import HomeBackground from "../components/HomeBackground.vue";
-import QuestionCardTemplate from "../components/QuizCards/QuestionCardTemplate.vue";
+import SpanishHomeView from "./languageViews/SpanishHomeView.vue";
+import { mapGetters } from "vuex";
 
-@Options({
+export default {
   components: {
     HomeTitle,
-    HomeBackground,
-    QuestionCardTemplate,
+    SpanishHomeView,
   },
-})
-export default class HomeView extends Vue {}
+  computed: {
+    ...mapGetters(["spanishLessons"]),
+  },
+  methods: {
+    openModal(payload) {
+      this.lessonModalOpen = payload;
+    },
+  },
+};
 </script>
 
 <style>
 .home {
-  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 5fr;
 }
 </style>

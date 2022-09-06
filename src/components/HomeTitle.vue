@@ -27,7 +27,7 @@ export default {
           "SET_LETS_LEARN_PHRASE",
           this.letsLearnPhraseIndex
         );
-        if (this.letsLearnPhraseIndex === 2) {
+        if (this.letsLearnPhraseIndex === 8) {
           this.$store.dispatch("SET_LETS_LEARN_PHRASE_INDEX", 0);
         } else {
           this.$store.dispatch(
@@ -40,39 +40,36 @@ export default {
     },
   },
   mounted() {
-    setInterval(this.shuffleLetsLearnOptions, 3000);
+    setInterval(this.shuffleLetsLearnOptions, 5000);
   },
 };
 </script>
 <style>
 .home-title {
-  width: 100%;
-  height: 5rem;
+  width: 99vw;
+  height: 3rem;
   box-sizing: content-box;
   position: relative;
-  background: #361d70;
   color: #444;
-  font-family: cursive, serif;
-  letter-spacing: 0.2em;
+  font-family: serif;
+  font-style: italic;
+  letter-spacing: 0.3em;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 0 0 150px 150px;
+  border-bottom: 1px solid #444;
 }
 .lets-learn-phrase {
-  font-size: 3em;
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: 100;
 }
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 1s ease-out;
 }
-
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
 }
-
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(20px);
   opacity: 0;
 }
 </style>

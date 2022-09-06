@@ -1,20 +1,21 @@
 import { createStore } from "vuex";
 import letsLearnPhraseOptions from "../helpers/dictionaries";
+import SpanishLessons from "../helpers/SpanishLessons";
 
 export default createStore({
   state: {
-    letsLearnPhrase: `Let's learn!`,
+    letsLearnPhrase: `Hello`,
     letsLearnPhraseIndex: 1,
-    cardQuestionObject: {
-      question: "Fill in the blank.",
-      questionContext: "Mi nombre ____ Lance",
-      questionAnswer: "es",
-    },
+    spanishLessons: SpanishLessons,
+    cardQuestionObject: {} as object,
+    lessonModalOpen: false,
   },
   getters: {
     letsLearnPhrase: (state) => state.letsLearnPhrase,
     letsLearnPhraseIndex: (state) => state.letsLearnPhraseIndex,
     cardQuestionObject: (state) => state.cardQuestionObject,
+    spanishLessons: (state) => state.spanishLessons,
+    lessonModalOpen: (state) => state.lessonModalOpen,
   },
   mutations: {
     setLetsLearnPhrase(state, payload) {
@@ -22,6 +23,12 @@ export default createStore({
     },
     setLetsLearnPhraseIndex(state, payload) {
       state.letsLearnPhraseIndex = payload;
+    },
+    setCardQuestionObject(state, { group, index }) {
+      state.cardQuestionObject = SpanishLessons[group][index];
+    },
+    toggleLessonModal(state) {
+      state.lessonModalOpen = !state.lessonModalOpen;
     },
   },
   actions: {

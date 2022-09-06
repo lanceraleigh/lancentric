@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div id="question-card-container">
     <div class="card-image-box">fake image</div>
     <div class="card-question">{{ card.question }}</div>
@@ -39,8 +39,15 @@ export default {
 <style>
 #question-card-container {
   color: #333;
-  background: #ddd;
+  background: #eee;
+  border: 2px solid #aaa;
   padding: 4rem 2rem;
   max-width: 33vw;
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  margin-left: -50%;
+  border-radius: 15px;
+  box-shadow: 0 5px #333;
 }
 </style>
