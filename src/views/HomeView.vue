@@ -1,16 +1,13 @@
 <template>
-  <HomeTitle />
   <SpanishHomeView />
 </template>
 
 <script>
-import HomeTitle from "../components/HomeTitle.vue";
 import SpanishHomeView from "./languageViews/SpanishHomeView.vue";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
-    HomeTitle,
     SpanishHomeView,
   },
   computed: {

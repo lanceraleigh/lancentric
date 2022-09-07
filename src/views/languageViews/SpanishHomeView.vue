@@ -1,7 +1,7 @@
 <template>
   <div class="lesson-groups-container">
     <LessonLinkRow
-      v-for="lessonGroup in spanishLessons"
+      v-for="lessonGroup in currentLanguageLessons"
       :key="lessonGroup[0].groupName"
       :languageLessonsArray="lessonGroup"
       @lessonModal="toggleModal"
@@ -23,7 +23,7 @@ export default {
     LessonModal,
   },
   computed: {
-    ...mapGetters(["spanishLessons", "lessonModalOpen"]),
+    ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
   },
   methods: {
     toggleModal() {

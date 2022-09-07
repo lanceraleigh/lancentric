@@ -46,7 +46,6 @@ export default {
 </script>
 <style>
 .home-title {
-  width: 99vw;
   height: 3rem;
   box-sizing: content-box;
   position: relative;
@@ -56,7 +55,6 @@ export default {
   letter-spacing: 0.3em;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 1px solid #444;
 }
 .lets-learn-phrase {
   font-size: 1.5em;
