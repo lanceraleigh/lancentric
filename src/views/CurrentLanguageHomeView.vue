@@ -1,10 +1,13 @@
 <template>
-  <div class="lesson-groups-container">
+  <div
+    class="lesson-groups-container"
+    :class="{ 'modal-open': lessonModalOpen }"
+  >
     <LessonLinkRow
       v-for="lessonGroup in currentLanguageLessons"
       :key="lessonGroup[0].groupName"
       :languageLessonsArray="lessonGroup"
-      @lessonModal="toggleModal"
+      @lessonModal="openModal"
     >
       <div class="lesson-link-row-title">{{ lessonGroup[0].groupName }}</div>
     </LessonLinkRow>
@@ -13,8 +16,8 @@
 </template>
 
 <script>
-import LessonLinkRow from "../../components/LessonLinkRow.vue";
-import LessonModal from "../../components/LessonModal.vue";
+import LessonLinkRow from "../components/Lessons/LessonLinkRow.vue";
+import LessonModal from "../components/Lessons/LessonModal.vue";
 import { mapGetters } from "vuex";
 
 export default {
@@ -25,18 +28,10 @@ export default {
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
   },
-  methods: {
-    toggleModal() {
-      this.$store.commit("toggleLessonModal");
-    },
-  },
 };
 </script>
 
 <style>
-.language-title {
-  font-weight: bold;
-}
 .lesson-groups-container {
   display: flex;
   flex-direction: column;
@@ -44,6 +39,9 @@ export default {
   align-items: center;
   margin: 1rem;
   width: 100vw;
+}
+.lesson-groups-container.modal-open {
+  overflow-y: hidden;
 }
 .lesson-link-row-title {
   font-weight: bold;

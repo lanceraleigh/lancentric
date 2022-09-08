@@ -18,7 +18,7 @@
   </nav>
 </template>
 <script>
-import HomeTitle from "../HomeTitle.vue";
+import HomeTitle from "../Home/HomeTitle.vue";
 export default {
   name: "NavBar",
   components: {

@@ -8,23 +8,23 @@
         class="row-item"
         @click="openLessonModal(lesson)"
       >
-        <div class="progress-circle top-left"></div>
+        <div class="lesson-name">{{ lesson.lessonName }}</div>
+        <!-- <div class="progress-circle top-left"></div>
         <div class="progress-circle top-right"></div>
         <div class="progress-circle bottom-right"></div>
-        <div class="progress-circle bottom-left"></div>
-        <div class="lesson-name">{{ lesson.lessonName }}</div>
-        <div class="lesson-progress-bar">
-          <div
-            class="lesson-progress"
-            :style="{ width: lesson.progress }"
-          ></div>
-        </div>
+        <div class="progress-circle bottom-left"></div> -->
+        <ProgressBar :progress="lesson.progress" class="progress-bar" />
       </div>
     </div>
   </div>
 </template>
 <script lang="js">
+  import { mapMutations } from "vuex";
+  import ProgressBar from "./ProgressBar.vue";
 export default {
+  components: {
+    ProgressBar,
+  },
   props: {
     languageLessonsArray: {
       type: Array,
@@ -39,9 +39,10 @@ export default {
     },
   },
   methods: {
+    ...mapMutations(["setCardQuestionObject", "toggleLessonModal"]),
     openLessonModal(lessonObject) {
-      this.$emit("lessonModal", true);
-      this.$store.commit("setCardQuestionObject", {group: lessonObject.groupIndex, index: lessonObject.lessonIndex});
+      this.toggleLessonModal(true);
+      this.setCardQuestionObject({group: lessonObject.groupIndex, index: lessonObject.lessonIndex});
     },
   },
 };
@@ -66,9 +67,19 @@ export default {
   box-shadow: 1px 4px #aaa;
   border-radius: 10px;
   border: 2px solid #ccc;
-  padding-top: 4rem;
   margin: 0 3rem;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lesson-name {
+  font-weight: bold;
+  margin: 5%;
+}
+.progress-bar {
+  position: absolute;
+  bottom: -2rem;
 }
 .row-item:hover {
   cursor: pointer;
@@ -97,22 +108,5 @@ export default {
 .bottom-left {
   left: 0;
   bottom: 0;
-}
-
-.lesson-name {
-  font-weight: bold;
-  margin: 5%;
-}
-.lesson-progress-bar {
-  height: 0.5rem;
-  background: #fff;
-  width: 90%;
-  margin: 5%;
-  border-radius: 5px;
-}
-.lesson-progress {
-  height: 0.5rem;
-  background: #62dcf5;
-  border-radius: 5px;
 }
 </style>

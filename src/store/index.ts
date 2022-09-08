@@ -29,8 +29,8 @@ export default createStore({
     setCardQuestionObject(state, { group, index }) {
       state.cardQuestionObject = state.currentLanguageLessons[group][index];
     },
-    toggleLessonModal(state) {
-      state.lessonModalOpen = !state.lessonModalOpen;
+    toggleLessonModal(state, payload) {
+      state.lessonModalOpen = payload;
     },
     setCurrentLanguageLessons(state, payload) {
       if (payload === "spanish") {

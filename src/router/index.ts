@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "currentLanguage",
+    component: CurrentLanguageHomeView,
   },
   {
     path: "/about",

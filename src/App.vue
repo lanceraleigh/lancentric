@@ -3,7 +3,8 @@
   <router-view />
 </template>
 <script>
-import NavBar from "./components/NavBar/NavBar.vue";
+import NavBar from "./components/Home/NavBar.vue";
+
 export default {
   components: {
     NavBar,
@@ -25,5 +26,8 @@ export default {
   box-sizing: border-box;
   width: 100vw;
   min-height: 100vh;
+}
+.modal-open {
+  overflow: hidden;
 }
 </style>

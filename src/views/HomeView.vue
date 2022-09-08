@@ -1,23 +1,12 @@
 <template>
-  <SpanishHomeView />
+  <div>Sign Up</div>
 </template>
 
 <script>
-import SpanishHomeView from "./languageViews/SpanishHomeView.vue";
-import { mapGetters } from "vuex";
-
 export default {
-  components: {
-    SpanishHomeView,
-  },
-  computed: {
-    ...mapGetters(["spanishLessons"]),
-  },
-  methods: {
-    openModal(payload) {
-      this.lessonModalOpen = payload;
-    },
-  },
+  components: {},
+  computed: {},
+  methods: {},
 };
 </script>
 
