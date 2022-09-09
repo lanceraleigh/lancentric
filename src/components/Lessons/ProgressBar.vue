@@ -22,7 +22,7 @@ export default {
 }
 .lesson-progress {
   height: 0.5rem;
-  background: #62dcf5;
+  background: var(--blue-button);
   border-radius: 5px;
 }
 </style>

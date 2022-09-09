@@ -7,7 +7,6 @@
       v-for="lessonGroup in currentLanguageLessons"
       :key="lessonGroup[0].groupName"
       :languageLessonsArray="lessonGroup"
-      @lessonModal="openModal"
     >
       <div class="lesson-link-row-title">{{ lessonGroup[0].groupName }}</div>
     </LessonLinkRow>

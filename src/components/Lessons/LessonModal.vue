@@ -19,13 +19,19 @@
           question.questionNumber
         "
       >
-        <div v-show="question.questionNumber === currentQuestionNumber">
-          <div>Question number {{ question.questionNumber }}:</div>
-          <div>{{ question.questionType }}</div>
-          <div>{{ question.questionContext }}</div>
-          <div v-if="question.questionOptions">
+        <div
+          v-if="question.questionNumber === currentQuestionNumber"
+          :id="question"
+        >
+          <div class="question-number">
+            Question number {{ question.questionNumber }}:
+          </div>
+          <div class="question-type">{{ question.questionType }}</div>
+          <div class="question-context">{{ question.questionContext }}</div>
+          <div v-if="question.questionOptions" class="card-item">
             <div v-for="option in question.questionOptions" :key="option">
               <input
+                class="card-item"
                 type="radio"
                 v-model="answerInput"
                 :name="option"
@@ -34,9 +40,25 @@
               <label :for="option">{{ option }}</label>
             </div>
           </div>
-          <input v-else v-model="answerInput" />
+          <textarea
+            v-else
+            class="card-item"
+            maxlength="50"
+            rows="10"
+            cols="20"
+            v-model="answerInput"
+          ></textarea>
+          <div
+            class="check-answer-button"
+            @click="submitAnswer(question.questionAnswer)"
+          >
+            Check Answer
+          </div>
           <div class="button-container">
-            <div @click="lastQuestion(question.questionNumber)" class="button">
+            <div
+              @click="lastQuestion(question.questionNumber)"
+              class="button back-button"
+            >
               Back
             </div>
             <div @click="nextQuestion(question.questionNumber)" class="button">
@@ -52,10 +74,22 @@
 <script>
 import { mapGetters } from "vuex";
 import ConfirmationDialog from "../reusables/ConfirmationDialog.vue";
+
 export default {
   name: "LessonModal",
   components: {
     ConfirmationDialog,
+  },
+  mounted() {
+    document.querySelector("textarea").addEventListener("keydown", (e) => {
+      if (e.key == "Enter") {
+        e.preventDefault();
+        this.submitAnswer(
+          this.cardQuestionObject.lessonQuestions[this.currentQuestionIndex]
+            .questionAnswer
+        );
+      }
+    });
   },
   computed: {
     ...mapGetters(["cardQuestionObject"]),
@@ -63,19 +97,33 @@ export default {
   data() {
     return {
       currentQuestionNumber: 1,
+      currentQuestionIndex: 0,
       answerInput: "",
       confirmationOpen: false,
+      currentAnswer: this.cardQuestionObject,
     };
   },
   methods: {
+    submitAnswer(correctAnswer) {
+      console.log(this.answerInput, correctAnswer);
+      let submitted = this.answerInput.toLowerCase();
+      if (submitted === "") {
+        alert("Please make sure to input an answer before submitting");
+      } else if (submitted !== "" && submitted !== correctAnswer) {
+        alert("oops");
+      } else if (submitted === correctAnswer) {
+        alert("Hell yeah!");
+      }
+    },
     nextQuestion(questionNumber) {
       this.currentQuestionNumber = questionNumber + 1;
+      this.currentQuestionIndex++;
     },
     lastQuestion(questionNumber) {
       this.currentQuestionNumber = questionNumber - 1;
+      this.currentQuestionIndex--;
     },
     closeModal() {
-      confirm("Are you sure you want to leave your lesson?");
       this.$store.commit("toggleLessonModal", false);
     },
   },
@@ -114,6 +162,26 @@ export default {
   position: absolute;
   top: 1rem;
 }
+.question-number {
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  top: 3rem;
+}
+.question-type {
+  font-size: 1rem;
+}
+.question-context {
+  font-size: 1.5rem;
+}
+textarea {
+  resize: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.card-item {
+  margin: 0.5rem;
+}
 .lesson-name {
   font-size: 1rem;
   white-space: nowrap;
@@ -127,24 +195,39 @@ export default {
   transform: scale(0.95);
   cursor: pointer;
 }
+.check-answer-button {
+  margin: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  background: var(--blue-button);
+  font-size: 1rem;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 1px 2px #444;
+}
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 1rem;
-  left: 50%;
+  width: 20rem;
+  bottom: 2rem;
 }
 .button {
   margin: 1rem;
   height: 1.5rem;
   width: 3rem;
   text-align: center;
-  background: rgb(0, 81, 255);
+  background: var(--blue-button);
   font-size: 1rem;
+  font-weight: bold;
   color: white;
   border-radius: 10px;
-  box-shadow: 2px 3px #444;
+  box-shadow: 1px 2px #444;
+}
+.button.back-button {
+  background: #aaa;
+  color: #fff;
 }
 .button:hover {
   cursor: pointer;
