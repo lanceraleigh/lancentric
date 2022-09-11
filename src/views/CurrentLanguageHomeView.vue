@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div
     class="lesson-groups-container"
     :class="{ 'modal-open': lessonModalOpen }"
@@ -17,12 +18,14 @@
 <script>
 import LessonLinkRow from "../components/Lessons/LessonLinkRow.vue";
 import LessonModal from "../components/Lessons/LessonModal.vue";
+import NavBar from "../components/Home/NavBar.vue";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     LessonLinkRow,
     LessonModal,
+    NavBar,
   },
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),

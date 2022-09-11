@@ -1,38 +1,51 @@
 <template lang="">
-  <nav>
+  <nav :class="{ 'landing-page': landing }">
     <div class="language-select nav-item">
       <select
+        v-if="!landing"
         class="form-control"
         v-model="selected"
         @change="selectLanguageToLearn"
       >
-        <option>Choose Language</option>
         <option v-for="option in options" :value="option" :key="option">
           {{ capitalize(option) }}
         </option>
       </select>
-      <img :src="flagSelection" class="flag" />
+      <img v-if="!!selected" :src="flagSelection" class="flag" />
     </div>
-    <HomeTitle class="nav-item" />
+    <HomeTitle class="nav-item" :landing="landing" />
     <div class="profile nav-item">Profile</div>
   </nav>
 </template>
 <script>
 import HomeTitle from "../Home/HomeTitle.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "NavBar",
   components: {
     HomeTitle,
   },
+  props: {
+    landing: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
-      selected: "spanish",
+      selected: this.currentLanguageName,
       options: ["spanish", "french", "portuguese"],
     };
   },
   computed: {
+    ...mapGetters(["currentLanguageLessons", "currentLanguageName"]),
     flagSelection() {
+      console.log(this.selected);
       return require(`../../assets/country-flags/png-48/${this.selected}.png`);
+    },
+  },
+  watch: {
+    currentLanguageName(newVal) {
+      this.selected = newVal;
     },
   },
   methods: {
@@ -48,7 +61,7 @@ export default {
 <style lang="scss">
 nav {
   width: 100vw;
-  padding: 1rem;
+  padding-top: 1rem;
   background: #fff;
   margin: 0;
   display: flex;
@@ -57,6 +70,8 @@ nav {
   border-bottom: 1px solid #444;
   .nav-item {
     width: 10rem;
+    justify-content: center;
+    align-items: center;
   }
   .language-select {
     display: flex;
@@ -70,5 +85,10 @@ nav {
       border-radius: 10px;
     }
   }
+}
+nav.landing-page {
+  background: #16212d;
+  color: #fff;
+  padding-bottom: 0;
 }
 </style>

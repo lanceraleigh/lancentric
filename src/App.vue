@@ -1,13 +1,21 @@
 <template>
-  <NavBar />
+  <NavBar :landing="landing" class="navbar-z" />
   <router-view />
 </template>
 <script>
 import NavBar from "./components/Home/NavBar.vue";
-
 export default {
+  name: "LancentricLearning",
   components: {
     NavBar,
+  },
+  async mounted() {
+    await this.$store.commit("initState");
+  },
+  computed: {
+    landing() {
+      return this.$route.name === "LandingPage";
+    },
   },
 };
 </script>
@@ -22,10 +30,13 @@ export default {
   background: #fff;
   color: #2c3e50;
   margin: 0;
-  padding: 1rem;
   box-sizing: border-box;
   width: 100vw;
   min-height: 100vh;
+}
+.navbar-z {
+  position: absolute;
+  z-index: 2;
 }
 .modal-open {
   overflow: hidden;

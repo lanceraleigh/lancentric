@@ -1,5 +1,5 @@
 <template>
-  <div class="home-title">
+  <div class="home-title" :class="{ 'landing-page': landing }">
     <transition name="slide-fade">
       <div class="lets-learn-phrase" v-if="showPhrase">
         {{ letsLearnPhrase }}
@@ -11,6 +11,11 @@
 import { mapGetters } from "vuex";
 export default {
   name: "HomeTitle",
+  props: {
+    landing: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
       showPhrase: true,
@@ -22,25 +27,23 @@ export default {
   methods: {
     shuffleLetsLearnOptions() {
       this.showPhrase = false;
-      setTimeout(() => {
+      this.$store.dispatch("SET_LETS_LEARN_PHRASE", this.letsLearnPhraseIndex);
+      if (this.letsLearnPhraseIndex === 8) {
+        this.$store.dispatch("SET_LETS_LEARN_PHRASE_INDEX", 0);
+      } else {
         this.$store.dispatch(
-          "SET_LETS_LEARN_PHRASE",
-          this.letsLearnPhraseIndex
+          "SET_LETS_LEARN_PHRASE_INDEX",
+          this.letsLearnPhraseIndex + 1
         );
-        if (this.letsLearnPhraseIndex === 8) {
-          this.$store.dispatch("SET_LETS_LEARN_PHRASE_INDEX", 0);
-        } else {
-          this.$store.dispatch(
-            "SET_LETS_LEARN_PHRASE_INDEX",
-            this.letsLearnPhraseIndex + 1
-          );
-        }
+      }
+      setTimeout(() => {
         this.showPhrase = true;
       }, 1000);
+      setTimeout(this.shuffleLetsLearnOptions, 3000);
     },
   },
   mounted() {
-    setInterval(this.shuffleLetsLearnOptions, 5000);
+    setTimeout(this.shuffleLetsLearnOptions, 3000);
   },
 };
 </script>
@@ -55,6 +58,9 @@ export default {
   letter-spacing: 0.3em;
   text-align: center;
   text-transform: uppercase;
+}
+.home-title.landing-page {
+  color: aliceblue;
 }
 .lets-learn-phrase {
   font-size: 1.5em;
