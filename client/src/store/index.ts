@@ -83,7 +83,7 @@ export default createStore({
         "currentLanguageName"
       );
       if (typeof localLanguageName === "string") {
-        state.currentLanguageLessons = JSON.parse(localLanguageName);
+        state.currentLanguageName = JSON.parse(localLanguageName);
       }
     },
   },
