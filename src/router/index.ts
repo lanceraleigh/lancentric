@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
+import AboutView from "../views/AboutView.vue";
+import ContactView from "../views/ContactView.vue";
+import ProjectsView from "../views/ProjectsView.vue";
 import LandingPage from "../views/LandingPage.vue";
+import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,21 +12,24 @@ const routes: Array<RouteRecordRaw> = [
     name: "Home",
     component: HomeView,
   },
-  // {
-  //   path: "/about",
-  //   name: "AboutMe",
-  //   component: AboutView,
-  // },
-  // {
-  //   path: "/projects",
-  //   name: "Projects",
-  //   component: ProjectsView,
-  // },
-  // {
-  //   path: "/contact",
-  //   name: "Contact",
-  //   component: ContactView,
-  // },
+  {
+    path: "/about",
+    name: "AboutMe",
+    component: AboutView,
+    meta: { transition: "slide-in-from-left" },
+  },
+  {
+    path: "/projects",
+    name: "Projects",
+    component: ProjectsView,
+    meta: { transition: "slide-in-from-bottom" },
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: ContactView,
+    meta: { transition: "slide-in-from-right" },
+  },
   {
     path: "/lancentric",
     name: "LancentricLandingPage",
