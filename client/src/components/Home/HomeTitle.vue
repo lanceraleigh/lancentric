@@ -1,5 +1,5 @@
 <template>
-  <div class="home-title" :class="{ 'landing-page': landing }">
+  <div class="home-title landing-page" :class="{ 'landing-page': landing }">
     <transition name="slide-fade">
       <div class="lets-learn-phrase" v-if="showPhrase">
         {{ letsLearnPhrase }}

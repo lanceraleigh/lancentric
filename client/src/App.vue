@@ -1,6 +1,8 @@
 <template>
-  <NavBar :landing="landing" class="navbar-z" />
-  <router-view />
+  <div id="lance-raleigh-website">
+    <NavBar :landing="landing" class="navbar-z" />
+    <router-view />
+  </div>
 </template>
 <script>
 import NavBar from "./components/Home/NavBar.vue";
@@ -22,7 +24,7 @@ export default {
 
 <style lang="scss">
 @import "./assets/globalStyles.css";
-#app {
+#lance-raleigh-website {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,7 +38,7 @@ export default {
 }
 .navbar-z {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
 }
 .modal-open {
   overflow: hidden;

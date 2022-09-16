@@ -1,5 +1,5 @@
 <template lang="">
-  <nav :class="{ 'landing-page': landing }">
+  <nav class="landing-page">
     <div class="language-select nav-item">
       <select
         v-if="!landing"
@@ -14,7 +14,10 @@
       <img v-if="!!selected" :src="flagSelection" class="flag" />
     </div>
     <HomeTitle class="nav-item" :landing="landing" />
-    <div class="profile nav-item">Profile</div>
+    <div v-if="optionsAndProfile" class="profile nav-item">Profile</div>
+    <div v-if="portfolio">
+      Lancentric Learning <span style="font-size: 0.75rem">*Experimental</span>
+    </div>
   </nav>
 </template>
 <script>
@@ -28,6 +31,7 @@ export default {
   props: {
     landing: {
       type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -41,6 +45,12 @@ export default {
     flagSelection() {
       console.log(this.selected);
       return require(`../../assets/country-flags/png-48/${this.selected}.png`);
+    },
+    optionsAndProfile() {
+      return this.$route.name === "Lancentric";
+    },
+    portfolio() {
+      return this.$route.name === "Home";
     },
   },
   watch: {
