@@ -23,11 +23,15 @@
       />
       <textarea
         class="contact-form-item"
-        placeholder="Your message"
+        placeholder="What would you like me to know?"
         name="message"
+        cols="30"
+        rows="15"
         required
       />
-      <button class="contact-form-item" type="submit">Send a message</button>
+      <button class="contact-form-item button-submit" type="submit">
+        Send me a message
+      </button>
     </form>
 
     <div v-if="submitted">
@@ -62,17 +66,33 @@ export default {
 <style lang="scss" scoped>
 .contact-form {
   margin-top: 2rem;
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   form {
+    background: #ddd;
+    padding: 1rem;
+    width: 25rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    border-radius: 10px;
+    border: 1px solid #222;
+  }
+  .contact-form-item {
+    resize: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    margin: 0.25rem;
+    border: 1px solid #222;
+  }
+  .button-submit {
+    color: #ddd;
   }
 }
 </style>

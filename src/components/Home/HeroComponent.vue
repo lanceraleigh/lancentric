@@ -11,7 +11,7 @@
     </div>
     <div class="img-container">
       <!-- <div class="circle"></div> -->
-      <svg
+      <!-- <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
         class="svg-class"
@@ -21,8 +21,8 @@
           d="M39.8,-71.6C49.1,-63.5,52.6,-47.9,51.3,-34.8C49.9,-21.6,43.8,-10.8,42.3,-0.9C40.8,9,43.9,18.1,43.3,28C42.7,37.8,38.5,48.6,30.7,53.9C22.8,59.2,11.4,59.1,0.3,58.5C-10.8,58,-21.6,57,-32.5,53.6C-43.5,50.1,-54.6,44,-61.7,34.6C-68.8,25.3,-71.9,12.6,-70.8,0.7C-69.7,-11.3,-64.2,-22.6,-58.7,-34.6C-53.1,-46.6,-47.3,-59.3,-37.5,-67.2C-27.7,-75,-13.9,-78.1,0.7,-79.3C15.2,-80.4,30.4,-79.7,39.8,-71.6Z"
           transform="translate(100 100)"
         />
-      </svg>
-      <img src="../../assets/lancescropped.png" class="lance" />
+      </svg> -->
+      <img src="../../assets/lance.png" class="lance" />
     </div>
   </div>
 </template>
@@ -67,7 +67,7 @@ export default {};
 }
 .lance {
   height: 50vh;
-  filter: grayscale(60%);
+  filter: grayscale(50%);
 }
 .svg-class {
   height: 75vh;
@@ -96,13 +96,13 @@ export default {};
     filter: grayscale(60%);
     margin-top: 6rem;
   }
-  .svg-class {
-    height: 45vh;
-    width: 45vh;
-    position: absolute;
-    left: -8rem;
-    bottom: -5rem;
-  }
+  // .svg-class {
+  //   height: 45vh;
+  //   width: 45vh;
+  //   position: absolute;
+  //   left: -8rem;
+  //   bottom: -5rem;
+  // }
   .text-container {
     margin-top: 6rem;
     text-align: center;

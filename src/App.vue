@@ -47,15 +47,15 @@ export default {
 }
 // Route Transitions
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: background-color 2s ease;
+// }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
+// .fade-enter-from,
+// .fade-leave-to {
+//   background-color: #000;
+// }
 
 // .slide-in-from-right-enter-active,
 // .slide-in-from-right-leave-active {
