@@ -2,10 +2,23 @@
   <nav class="landing-page">
     <div class="language-select nav-item">
       <select
-        v-if="!landing"
+        v-if="!landing && !personalSite"
         class="form-control"
         v-model="selected"
         @change="selectLanguageToLearn"
+      >
+        <option v-for="option in options" :value="option" :key="option">
+          {{ capitalize(option) }}
+        </option>
+      </select>
+      <select
+        v-if="personalSite"
+        class="personal-site"
+        v-model="selected"
+        @change="
+          selectSiteLanguage();
+          selectLanguageToLearn();
+        "
       >
         <option v-for="option in options" :value="option" :key="option">
           {{ capitalize(option) }}
@@ -15,8 +28,9 @@
     </div>
     <HomeTitle class="nav-item" :landing="landing" />
     <div v-if="optionsAndProfile" class="profile nav-item">Profile</div>
-    <div v-if="portfolio" @click="letsGetLearning">
-      Lancentric Learning <span style="font-size: 0.75rem">*Experimental</span>
+    <div v-if="!optionsAndProfile" @click="letsGetLearning">
+      <span class="lancentric-link">Lancentric Learning</span
+      ><span style="font-size: 0.75rem; padding-bottom: 0.25rem"> *Beta</span>
     </div>
   </nav>
 </template>
@@ -37,7 +51,7 @@ export default {
   data() {
     return {
       selected: this.currentLanguageName,
-      options: ["spanish", "french", "portuguese"],
+      options: ["english", "spanish", "french", "portuguese"],
     };
   },
   computed: {
@@ -51,6 +65,14 @@ export default {
     portfolio() {
       return this.$route.name === "Home";
     },
+    personalSite() {
+      return (
+        this.$route.name === "Home" ||
+        this.$route.name === "About" ||
+        this.$route.name === "Projects" ||
+        this.$route.name === "Contact"
+      );
+    },
   },
   watch: {
     currentLanguageName(newVal) {
@@ -63,6 +85,9 @@ export default {
     },
     selectLanguageToLearn() {
       this.$store.commit("setCurrentLanguageLessons", this.selected);
+    },
+    selectSiteLanguage() {
+      this.$store.commit("setPersonalSiteCurrentLanguage", this.selected);
     },
     letsGetLearning() {
       this.$router.push("LandingPage");
@@ -85,6 +110,38 @@ nav {
     justify-content: center;
     align-items: center;
   }
+  .lancentric-link {
+    // -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: black;
+    font-size: 1.25rem;
+    height: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px #000;
+    background: linear-gradient(
+      124deg,
+      #ff240059,
+      #e81d1d59,
+      #e8b71d59,
+      #e3e81d59,
+      #1de84059,
+      #1ddde859,
+      #2b1de859,
+      #dd00f359,
+      #dd00f359
+    );
+    background-size: 500% 500%;
+
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+  }
+  .lancentric-link:hover {
+    cursor: pointer;
+  }
+
   .language-select {
     display: flex;
     align-items: center;
@@ -96,6 +153,51 @@ nav {
       height: 2rem;
       border-radius: 10px;
     }
+  }
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
   }
 }
 nav.landing-page {

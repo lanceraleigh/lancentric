@@ -27,10 +27,14 @@
 </template>
 <script>
 import Hero from "../components/Home/HeroComponent.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "HomeView",
   components: {
     Hero,
+  },
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
   },
   methods: {
     capitalize(string) {

@@ -1,5 +1,9 @@
 import { createStore } from "vuex";
-import letsLearnPhraseOptions from "../helpers/dictionaries";
+import letsLearnPhraseOptions from "../helpers/LetsLearnPhrases";
+import enDict from "../helpers/i18n/enDict";
+import esDict from "../helpers/i18n/esDict";
+import frDict from "../helpers/i18n/frDict";
+import ptDict from "../helpers/i18n/ptDict";
 import SpanishLessons from "../helpers/SpanishLessons";
 import PortugueseLessons from "../helpers/PortugueseLessons";
 import FrenchLessons from "../helpers/FrenchLessons";
@@ -7,6 +11,8 @@ import FrenchLessons from "../helpers/FrenchLessons";
 export default createStore({
   state: {
     letsLearnPhrase: `Hello`,
+    personalSiteCurrentLanguage: enDict,
+    personalSiteCurrentLanguageName: "english",
     letsLearnPhraseIndex: 1,
     currentLanguageLessons: [] as object[][],
     currentLanguageName: "",
@@ -15,6 +21,9 @@ export default createStore({
   },
   getters: {
     letsLearnPhrase: (state) => state.letsLearnPhrase,
+    personalSiteCurrentLanguage: (state) => state.personalSiteCurrentLanguage,
+    personalSiteCurrentLanguageName: (state) =>
+      state.personalSiteCurrentLanguageName,
     letsLearnPhraseIndex: (state) => state.letsLearnPhraseIndex,
     cardQuestionObject: (state) => state.cardQuestionObject,
     currentLanguageLessons: (state) => state.currentLanguageLessons,
@@ -28,6 +37,57 @@ export default createStore({
     setLetsLearnPhraseIndex(state, payload) {
       state.letsLearnPhraseIndex = payload;
     },
+    setPersonalSiteCurrentLanguage(state, payload) {
+      if (payload === "english") {
+        // Set Lessons in localStorage
+        state.personalSiteCurrentLanguage = enDict;
+        window.localStorage.setItem(
+          "personalSiteLanguage",
+          JSON.stringify(enDict)
+        );
+        state.currentLanguageName = payload;
+        window.localStorage.setItem(
+          "personalSiteLanguageName",
+          JSON.stringify(payload)
+        );
+      } else if (payload === "spanish") {
+        // Set Lessons in localStorage
+        state.personalSiteCurrentLanguage = esDict;
+        window.localStorage.setItem(
+          "personalSiteLanguage",
+          JSON.stringify(esDict)
+        );
+        state.currentLanguageName = payload;
+        window.localStorage.setItem(
+          "personalSiteLanguageName",
+          JSON.stringify(payload)
+        );
+      } else if (payload === "portuguese") {
+        // Set Lessons in localStorage
+        state.personalSiteCurrentLanguage = ptDict;
+        window.localStorage.setItem(
+          "personalSiteLanguage",
+          JSON.stringify(ptDict)
+        );
+        state.currentLanguageName = payload;
+        window.localStorage.setItem(
+          "personalSiteLanguageName",
+          JSON.stringify(payload)
+        );
+      } else if (payload === "french") {
+        // Set Lessons in localStorage
+        state.personalSiteCurrentLanguage = frDict;
+        window.localStorage.setItem(
+          "personalSiteLanguage",
+          JSON.stringify(frDict)
+        );
+        state.currentLanguageName = payload;
+        window.localStorage.setItem(
+          "personalSiteLanguageName",
+          JSON.stringify(payload)
+        );
+      }
+    },
     setCardQuestionObject(state, { group, index }) {
       state.cardQuestionObject = state.currentLanguageLessons[group][index];
     },
@@ -35,7 +95,19 @@ export default createStore({
       state.lessonModalOpen = payload;
     },
     setCurrentLanguageLessons(state, payload) {
-      if (payload === "spanish") {
+      if (payload === "english") {
+        // Set Lessons in localStorage
+        state.currentLanguageLessons = SpanishLessons;
+        window.localStorage.setItem(
+          "currentLanguageLessons",
+          JSON.stringify(SpanishLessons)
+        );
+        state.currentLanguageName = payload;
+        window.localStorage.setItem(
+          "currentLanguageName",
+          JSON.stringify(payload)
+        );
+      } else if (payload === "spanish") {
         // Set Lessons in localStorage
         state.currentLanguageLessons = SpanishLessons;
         window.localStorage.setItem(
@@ -72,15 +144,22 @@ export default createStore({
       }
     },
     initState(state) {
+      // Get language settings from local storage
+      const personalSiteLanguage = window.localStorage.getItem(
+        "personalSiteLanguage"
+      );
       const localLanguage = window.localStorage.getItem(
         "currentLanguageLessons"
       );
-      if (typeof localLanguage === "string") {
-        state.currentLanguageLessons = JSON.parse(localLanguage);
-      }
       const localLanguageName = window.localStorage.getItem(
         "currentLanguageName"
       );
+      if (typeof personalSiteLanguage === "string") {
+        state.personalSiteCurrentLanguage = JSON.parse(personalSiteLanguage);
+      }
+      if (typeof localLanguage === "string") {
+        state.currentLanguageLessons = JSON.parse(localLanguage);
+      }
       if (typeof localLanguageName === "string") {
         state.currentLanguageName = JSON.parse(localLanguageName);
       }
