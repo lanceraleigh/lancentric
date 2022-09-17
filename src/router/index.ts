@@ -36,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "Contact",
     component: ContactView,
     meta: {
-      title: "ontact",
+      title: "Contact",
     },
   },
   {
