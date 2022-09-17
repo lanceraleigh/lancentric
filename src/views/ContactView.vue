@@ -140,15 +140,15 @@
   </div>
 </template>
 <script>
-import ContactForm from "../components/contact/ContactForm";
+import ContactForm from "../components/contact/ContactForm.vue";
 export default {
   name: "HomeView",
   components: {
     ContactForm,
   },
   methods: {
-    capitalize(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
+    capitalize(stringValue) {
+      return stringValue.charAt(0).toUpperCase() + stringValue.slice(1);
     },
     async selectLanguage(language) {
       await this.$router.push("/home");
