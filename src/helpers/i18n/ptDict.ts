@@ -1,6 +1,6 @@
 const ptDict: object = {
   languageAbbreviation: "pt",
-  softwareDeveloper: "software developer",
+  softwareDeveloper: "desenvolvedor de software",
   heroPhrase:
     "Software for everyone through internationalization and accessibilty",
   about: "about",

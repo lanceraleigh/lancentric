@@ -1,6 +1,6 @@
 const frDict: object = {
   languageAbbreviation: "fr",
-  softwareDeveloper: "software developer",
+  softwareDeveloper: "developpeur de software",
   heroPhrase:
     "Software for everyone through internationalization and accessibilty",
   about: "about",

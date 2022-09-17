@@ -1,6 +1,6 @@
 const esDict: object = {
   languageAbbreviation: "es",
-  softwareDeveloper: "software developer",
+  softwareDeveloper: "desarrollador de software",
   heroPhrase:
     "Software for everyone through internationalization and accessibilty",
   about: "about",
