@@ -11,29 +11,41 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Home",
     component: HomeView,
+    meta: {
+      title: "Lance Raleigh: Dev and Polyglot",
+    },
   },
   {
     path: "/about",
     name: "AboutMe",
     component: AboutView,
-    meta: { transition: "slide-in-from-left" },
+    meta: {
+      title: "LR: About",
+    },
   },
   {
     path: "/projects",
     name: "Projects",
     component: ProjectsView,
-    meta: { transition: "slide-in-from-bottom" },
+    meta: {
+      title: "LR: Projects",
+    },
   },
   {
     path: "/contact",
     name: "Contact",
     component: ContactView,
-    meta: { transition: "slide-in-from-right" },
+    meta: {
+      title: "LR: Contact",
+    },
   },
   {
     path: "/lancentric",
     name: "LancentricLandingPage",
     component: LandingPage,
+    meta: {
+      title: "Lancentric: Master Languages Today",
+    },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -44,6 +56,9 @@ const routes: Array<RouteRecordRaw> = [
         path: "/letslearn",
         name: "Learning",
         component: CurrentLanguageHomeView,
+        meta: {
+          title: "Let's Get Learning",
+        },
       },
     ],
   },

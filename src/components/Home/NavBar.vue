@@ -15,7 +15,7 @@
     </div>
     <HomeTitle class="nav-item" :landing="landing" />
     <div v-if="optionsAndProfile" class="profile nav-item">Profile</div>
-    <div v-if="portfolio">
+    <div v-if="portfolio" @click="letsGetLearning">
       Lancentric Learning <span style="font-size: 0.75rem">*Experimental</span>
     </div>
   </nav>
@@ -64,6 +64,9 @@ export default {
     },
     selectLanguageToLearn() {
       this.$store.commit("setCurrentLanguageLessons", this.selected);
+    },
+    letsGetLearning() {
+      this.$router.push("LandingPage");
     },
   },
 };

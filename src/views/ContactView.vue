@@ -13,11 +13,10 @@
       }"
     ></div>
     <div class="footer-nav">
-      <div class="nav-item contact">
-        <router-link to="/">Home</router-link>
+      <div class="nav-item home">
         <svg
           version="1.1"
-          id="bottom-right-arrow"
+          id="bottom-left-arrow"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px"
@@ -53,11 +52,13 @@
             />
           </g>
         </svg>
+        <router-link to="/">Home</router-link>
       </div>
       <div class="nav-item about-me">
+        <router-link to="/about">About</router-link>
         <svg
           version="1.1"
-          id="bottom-left-arrow"
+          id="bottom-middle-arrow"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px"
@@ -93,13 +94,12 @@
             />
           </g>
         </svg>
-        <router-link to="/about">About</router-link>
       </div>
       <div class="nav-item projects">
         <router-link to="/projects">Projects</router-link>
         <svg
           version="1.1"
-          id="bottom-middle-arrow"
+          id="bottom-right-arrow"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px"
