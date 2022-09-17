@@ -1,5 +1,6 @@
 <template>
   <div class="contact-form">
+    <h1 class="contact-title">Contact Me</h1>
     <form
       v-if="!submitted"
       :action="FORM_ENDPOINT"
@@ -30,7 +31,7 @@
         required
       />
       <button class="contact-form-item button-submit" type="submit">
-        Send me a message
+        Submit
       </button>
     </form>
 
@@ -71,6 +72,9 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 2;
+  .contact-title {
+    color: #ddd;
+  }
   form {
     background: #ddd;
     padding: 1rem;
@@ -82,11 +86,12 @@ export default {
     align-items: left;
     border-radius: 10px;
     border: 1px solid #222;
+    box-shadow: 5px 5px 5px #000, 5px 5px 5px #000;
   }
   .contact-form-item {
     resize: none;
     border-radius: 5px;
-    font-family: sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.25rem;
     margin: 0.25rem;
     border: 1px solid #222;
