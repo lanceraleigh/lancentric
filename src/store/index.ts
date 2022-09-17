@@ -76,7 +76,6 @@ export default createStore({
         "currentLanguageLessons"
       );
       if (typeof localLanguage === "string") {
-        console.log(JSON.parse(localLanguage));
         state.currentLanguageLessons = JSON.parse(localLanguage);
       }
       const localLanguageName = window.localStorage.getItem(

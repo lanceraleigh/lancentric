@@ -49,7 +49,6 @@ export default {
     },
     async selectLanguage(language) {
       await this.$router.push("/home");
-      console.log(language);
       this.$store.commit("setCurrentLanguageLessons", language);
     },
   },

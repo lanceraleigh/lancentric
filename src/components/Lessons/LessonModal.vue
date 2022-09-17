@@ -105,7 +105,6 @@ export default {
   },
   methods: {
     submitAnswer(correctAnswer) {
-      console.log(this.answerInput, correctAnswer);
       let submitted = this.answerInput.toLowerCase();
       if (submitted === "") {
         alert("Please make sure to input an answer before submitting");

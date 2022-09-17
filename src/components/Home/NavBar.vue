@@ -43,7 +43,6 @@ export default {
   computed: {
     ...mapGetters(["currentLanguageLessons", "currentLanguageName"]),
     flagSelection() {
-      console.log(this.selected);
       return require(`../../assets/country-flags/png-48/${this.selected}.png`);
     },
     optionsAndProfile() {
