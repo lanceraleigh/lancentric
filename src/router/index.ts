@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "AboutMe",
     component: AboutView,
     meta: {
-      title: "LR: About",
+      title: "About",
     },
   },
   {
@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "Projects",
     component: ProjectsView,
     meta: {
-      title: "LR: Projects",
+      title: "Projects",
     },
   },
   {
@@ -36,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "Contact",
     component: ContactView,
     meta: {
-      title: "LR: Contact",
+      title: "ontact",
     },
   },
   {
