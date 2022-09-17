@@ -14,7 +14,7 @@
     ></div>
     <div class="footer-nav">
       <div class="nav-item about-me">
-        <svg
+        <!-- <svg
           version="1.1"
           id="bottom-left-arrow"
           xmlns="http://www.w3.org/2000/svg"
@@ -51,12 +51,12 @@
           C364.077,235.317,347.553,256.737,320.013,277.545z"
             />
           </g>
-        </svg>
+        </svg> -->
         <router-link to="/about">About</router-link>
       </div>
       <div class="nav-item projects">
         <router-link to="/projects">Projects</router-link>
-        <svg
+        <!-- <svg
           version="1.1"
           id="bottom-middle-arrow"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,11 +93,11 @@
           C364.077,235.317,347.553,256.737,320.013,277.545z"
             />
           </g>
-        </svg>
+        </svg> -->
       </div>
       <div class="nav-item contact">
         <router-link to="/contact">Contact</router-link>
-        <svg
+        <!-- <svg
           version="1.1"
           id="bottom-right-arrow"
           xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +134,7 @@
           C364.077,235.317,347.553,256.737,320.013,277.545z"
             />
           </g>
-        </svg>
+        </svg> -->
       </div>
     </div>
   </div>
