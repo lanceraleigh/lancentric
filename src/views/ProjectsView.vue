@@ -1,12 +1,18 @@
 <template>
   <div class="projects">
-    <div class="quote-phrase">
-      "Just build a todo app and you know enough to get hired"
+    <div class="quote">
+      <div class="phrase">
+        Just build a todo app and you'll know enough to get
+        <br /><span style="font-style: italic; font-weight: 600"
+          >&#10024; hired &#10024;</span
+        >
+      </div>
+      <div class="author">- Every Youtube Tutorial Ever</div>
     </div>
-    <div class="quote">- Every Youtube Tutorial Ever</div>
-    <h1>Projects</h1>
+    <h1 style="color: #ddd; margin-top: 2rem">Projects</h1>
     <div class="projects-container">
       <!-- Todo List -->
+      <div class="project-item">That One YT Tutorial Todo List</div>
       <iframe
         height="300"
         style="width: 100%"
@@ -27,6 +33,7 @@
         >) on <a href="https://codepen.io">CodePen</a>.
       </iframe>
       <!-- Motivation App -->
+      <div class="project-item">Motivation App</div>
       <iframe
         height="400"
         style="width: 100%"
@@ -47,6 +54,7 @@
         >) on <a href="https://codepen.io">CodePen</a>.
       </iframe>
       <!-- Netty -->
+      <div class="project-item">Netty (see full vue app on github)</div>
       <iframe
         height="500"
         style="width: 100%"
@@ -115,18 +123,35 @@ export default {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   margin: 0;
   padding: 0;
-  height: 100vh;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
+  top: 4rem;
   overflow-x: hidden;
 }
-.projects-container {
-  position: absolute;
-  top: 10rem;
-  z-index: 2;
+.quote {
+  padding: 2rem;
+  color: #ddd;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: center;
+  text-align: center;
+  .phrase {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
 }
-
+.projects-container {
+  width: 70vw;
+}
+.project-item {
+  color: #ddd;
+}
 .img-container {
   width: 260px;
   height: 230px;
@@ -179,7 +204,6 @@ img {
 }
 .footer-nav {
   position: absolute;
-  background: #222;
   z-index: 2;
   height: 100%;
   padding-top: 3.5rem;
