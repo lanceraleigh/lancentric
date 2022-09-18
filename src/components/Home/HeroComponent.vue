@@ -4,7 +4,7 @@
       <h1>Lance Raleigh</h1>
       <h3>{{ $lang.softwareDeveloper }}</h3>
       <p>
-        Software for everyone through internationalization and accessibilty.
+        {{ $lang.heroPhrase }}
       </p>
     </div>
     <div class="img-container">

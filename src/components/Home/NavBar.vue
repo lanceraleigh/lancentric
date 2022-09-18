@@ -111,9 +111,6 @@ nav {
     align-items: center;
   }
   .lancentric-link {
-    // -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    // -webkit-text-stroke-width: 1px;
-    // -webkit-text-stroke-color: black;
     font-size: 1.25rem;
     height: 1.5rem;
     padding: 0.25rem 0.5rem;
@@ -140,6 +137,7 @@ nav {
   }
   .lancentric-link:hover {
     cursor: pointer;
+    transform: scale(1.2);
   }
 
   .language-select {

@@ -1,6 +1,70 @@
 <template>
-  <div class="home">
-    <Hero></Hero>
+  <div class="projects">
+    <div class="quote-phrase">
+      "Just build a todo app and you know enough to get hired"
+    </div>
+    <div class="quote">- Every Youtube Tutorial Ever</div>
+    <h1>Projects</h1>
+    <div class="projects-container">
+      <!-- Todo List -->
+      <iframe
+        height="300"
+        style="width: 100%"
+        scrolling="no"
+        title="That One YT Tutorial Todo List"
+        src="https://codepen.io/lance-shunn-ii/embed/oNEXPrJ?default-tab=result&theme-id=dark"
+        frameborder="no"
+        loading="lazy"
+        allowtransparency="true"
+        allowfullscreen="true"
+      >
+        See the Pen
+        <a href="https://codepen.io/lance-shunn-ii/pen/oNEXPrJ">
+          That One YT Tutorial Todo List</a
+        >
+        by Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
+          >@lance-shunn-ii</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </iframe>
+      <!-- Motivation App -->
+      <iframe
+        height="400"
+        style="width: 100%"
+        scrolling="no"
+        title="Motivation Calendar"
+        src="https://codepen.io/lance-shunn-ii/embed/ExQjepo?default-tab=result&theme-id=dark"
+        frameborder="no"
+        loading="lazy"
+        allowtransparency="true"
+        allowfullscreen="true"
+      >
+        See the Pen
+        <a href="https://codepen.io/lance-shunn-ii/pen/ExQjepo">
+          Motivation Calendar</a
+        >
+        by Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
+          >@lance-shunn-ii</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </iframe>
+      <!-- Netty -->
+      <iframe
+        height="500"
+        style="width: 100%"
+        scrolling="no"
+        title="Netty"
+        src="https://codepen.io/lance-shunn-ii/embed/bGLdjQO?default-tab=result&theme-id=dark"
+        frameborder="no"
+        loading="lazy"
+        allowtransparency="true"
+        allowfullscreen="true"
+      >
+        See the Pen
+        <a href="https://codepen.io/lance-shunn-ii/pen/bGLdjQO"> Netty</a> by
+        Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
+          >@lance-shunn-ii</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </iframe>
+    </div>
     <div
       v-for="index in 1000"
       :key="index"
@@ -13,24 +77,27 @@
       }"
     ></div>
     <div class="footer-nav">
-      <div class="nav-item about-me">
-        <router-link to="/about">About</router-link>
+      <div class="nav-item home-link">
+        <router-link to="/" exact>{{ $lang.home }}</router-link>
       </div>
-      <div class="nav-item projects">
-        <router-link to="/projects">Projects</router-link>
+      <div class="nav-item projects-link">
+        <router-link to="/projects">{{ $lang.projects }}</router-link>
+      </div>
+      <div class="nav-item about-me">
+        <router-link to="/about">{{ $lang.about }}</router-link>
       </div>
       <div class="nav-item contact">
-        <router-link to="/contact">Contact</router-link>
+        <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
     </div>
   </div>
 </template>
 <script>
-import Hero from "../components/Home/HeroComponent.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "HomeView",
-  components: {
-    Hero,
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
   },
   methods: {
     capitalize(string) {
@@ -44,7 +111,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.home {
+.projects {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   margin: 0;
   padding: 0;
@@ -52,7 +119,12 @@ export default {
   display: flex;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+.projects-container {
+  position: absolute;
+  top: 10rem;
+  z-index: 2;
 }
 
 .img-container {
@@ -107,11 +179,16 @@ img {
 }
 .footer-nav {
   position: absolute;
-  width: 100vw;
-  bottom: 0;
+  background: #222;
+  z-index: 2;
+  height: 100%;
+  padding-top: 3.5rem;
+  left: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   a {
+    text-decoration: none;
     color: #ddd;
     font-weight: bold;
     margin: 0 0.5rem;
@@ -129,7 +206,12 @@ img {
   }
   .nav-item:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.05);
+  }
+  .router-link-active,
+  .router-link-exact-active {
+    text-decoration: underline;
+    text-decoration-color: rgb(150, 2, 255);
   }
 }
 

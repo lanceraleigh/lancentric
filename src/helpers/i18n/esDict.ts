@@ -1,18 +1,18 @@
 const esDict: object = {
   languageAbbreviation: "es",
-  softwareDeveloper: "desarrollador de software",
-  heroPhrase:
-    "Software for everyone through internationalization and accessibilty",
-  about: "about",
-  projects: "projects",
-  contact: "contact",
-  home: "home",
-  contactMe: "contact me",
-  name: "name",
-  email: "email",
-  contactTextBoxMessage: "message",
-  submit: "submit",
-  aboutMe:
-    "self-taught early career software engineer with experience in full stack development and a specialty in the front end. passionate about i18n and accessibility being used to bring modern software to people around the world of all walks of life.",
+  softwareDeveloper: "Desarrollador de Software",
+  heroPhrase: "Software para todos a través de la internacionalización",
+  about: "Sobre",
+  projects: "Proyectos",
+  contact: "Contactar",
+  home: "Inicial",
+  contactMe: "Contácteme",
+  name: "Nombre",
+  email: "Email",
+  contactTextBoxMessage: "Mensaje",
+  submit: "Enviar",
+  aboutMe: "¿Quién soy yo?",
+  aboutMeMessage:
+    "Soy un desarrollador de software autodidacta en el principio de mi carrera con experiencia en desarrollo fullstack y una especialidad en el front-end. Apasionado por internacionalización cuando utilizada para llevar software moderno a personas de todo el mundo de todos los ámbitos de vida.",
 };
 export default esDict;

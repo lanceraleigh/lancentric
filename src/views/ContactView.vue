@@ -14,20 +14,30 @@
     ></div>
     <div class="footer-nav">
       <div class="nav-item home-link">
-        <router-link to="/">Home</router-link>
+        <router-link to="/" exact>{{ $lang.home }}</router-link>
+      </div>
+      <div class="nav-item projects">
+        <router-link to="/projects">{{ $lang.projects }}</router-link>
       </div>
       <div class="nav-item about-me">
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">{{ $lang.about }}</router-link>
+      </div>
+      <div class="nav-item contact">
+        <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 import ContactForm from "../components/ContactForm.vue";
 export default {
   name: "HomeView",
   components: {
     ContactForm,
+  },
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
   },
   methods: {
     capitalize(stringValue) {
@@ -110,6 +120,7 @@ img {
   display: flex;
   justify-content: space-between;
   a {
+    text-decoration: none;
     color: #ddd;
     font-weight: bold;
     margin: 0 0.5rem;
@@ -127,7 +138,12 @@ img {
   }
   .nav-item:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.05);
+  }
+  .router-link-active,
+  .router-link-exact-active {
+    text-decoration: underline;
+    text-decoration-color: rgb(150, 2, 255);
   }
 }
 
@@ -154,7 +170,7 @@ img {
     }
     .nav-item:hover {
       cursor: pointer;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 }

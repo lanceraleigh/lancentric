@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/about",
-    name: "AboutMe",
+    name: "About",
     component: AboutView,
     meta: {
       title: "About",

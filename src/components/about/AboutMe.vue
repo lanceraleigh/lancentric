@@ -1,13 +1,9 @@
 <template lang="">
   <div class="hero-container">
     <div class="text-container">
-      <h1>About Me</h1>
-      <h3>Software Developer</h3>
+      <h1>{{ $lang.aboutMe }}</h1>
       <p>
-        Self-taught early career software engineer with experience in full stack
-        development and a specialty in the front end. Passionate about i18n and
-        accessibility being used to bring modern software to people around the
-        world of all walks of life.
+        {{ $lang.aboutMeMessage }}
       </p>
     </div>
     <div class="img-container">
@@ -16,7 +12,12 @@
   </div>
 </template>
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
+  },
+};
 </script>
 <style lang="scss">
 .hero-container {

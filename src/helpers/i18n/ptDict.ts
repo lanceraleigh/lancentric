@@ -1,19 +1,19 @@
 const ptDict: object = {
   languageAbbreviation: "pt",
-  softwareDeveloper: "desenvolvedor de software",
-  heroPhrase:
-    "Software for everyone through internationalization and accessibilty",
-  about: "about",
-  projects: "projects",
-  contact: "contact",
-  home: "home",
-  contactMe: "contact me",
-  name: "name",
-  email: "email",
-  contactTextBoxMessage: "message",
-  submit: "submit",
-  aboutMe:
-    "self-taught early career software engineer with experience in full stack development and a specialty in the front end. passionate about i18n and accessibility being used to bring modern software to people around the world of all walks of life.",
+  softwareDeveloper: "Desenvolvedor de Software",
+  heroPhrase: "Software para todos por meio de internacionalização",
+  about: "Sobre",
+  projects: "Projetos",
+  contact: "Contatar",
+  home: "Inicial",
+  contactMe: "Entre em contato",
+  name: "Nome",
+  email: "Email",
+  contactTextBoxMessage: "Mensagem",
+  submit: "Enviar",
+  aboutMe: "Quem Sou Eu?",
+  aboutMeMessage:
+    "Sou um desenvolvedor de software autodidata no início da carreira com experiência em desenvolvimento full stack e especializado no front-end. Apaixonado por internacionalização quando usada para trazer software moderno para as pessoas ao redor do mundo de todo tipo de vida.",
 };
 
 export default ptDict;

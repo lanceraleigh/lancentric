@@ -1,6 +1,6 @@
 <template>
   <div class="contact-form">
-    <h1 class="contact-title">Contact Me</h1>
+    <h1 class="contact-title">{{ $lang.contactMe }}</h1>
     <form
       v-if="!submitted"
       :action="FORM_ENDPOINT"
@@ -11,27 +11,27 @@
       <input
         class="contact-form-item"
         type="text"
-        placeholder="Your name"
+        :placeholder="$lang.name"
         name="name"
         required
       />
       <input
         class="contact-form-item"
         type="email"
-        placeholder="Email"
+        :placeholder="$lang.email"
         name="email"
         required
       />
       <textarea
         class="contact-form-item"
-        placeholder="What would you like me to know?"
+        :placeholder="$lang.contactTextBoxMessage"
         name="message"
         cols="30"
         rows="15"
         required
       />
       <button class="contact-form-item button-submit" type="submit">
-        Submit
+        {{ $lang.submit }}
       </button>
     </form>
 
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "ContactForm",
   data: () => ({
@@ -54,7 +55,9 @@ export default {
     FORM_ENDPOINT:
       "https://public.herotofu.com/v1/08b906d0-35c0-11ed-9de0-b73c4b901972",
   }),
-
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
+  },
   methods: {
     handleSubmit() {
       setTimeout(() => {
