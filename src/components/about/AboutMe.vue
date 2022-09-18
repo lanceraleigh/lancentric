@@ -1,13 +1,13 @@
 <template lang="">
-  <div class="hero-container">
+  <div class="about-container">
     <div class="text-container">
-      <h1>{{ $lang.aboutMe }}</h1>
+      <div class="title">
+        <img src="../../assets/lance.png" class="lance" />
+        <h1>{{ $lang.aboutMe }}</h1>
+      </div>
       <p>
         {{ $lang.aboutMeMessage }}
       </p>
-    </div>
-    <div class="img-container">
-      <img src="../../assets/lance.png" class="lance" />
     </div>
   </div>
 </template>
@@ -20,21 +20,23 @@ export default {
 };
 </script>
 <style lang="scss">
-.hero-container {
+.about-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-end;
   color: aliceblue;
   height: 75vh;
   width: 100vw;
   z-index: 2;
 }
+
 .text-container {
-  padding: 5vw;
-  text-align: right;
+  margin-top: 6rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 .text-container h1 {
   font-size: 5rem;
@@ -56,17 +58,10 @@ export default {
   width: 40%;
 }
 .lance {
-  height: 50vh;
+  height: 15vh;
   filter: grayscale(50%);
 }
-.svg-class {
-  height: 75vh;
-  width: 75vh;
-  position: absolute;
-  left: -10rem;
-  bottom: -7rem;
-}
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1100px) {
   .hero-container {
     display: flex;
     flex-direction: column;
@@ -82,26 +77,11 @@ export default {
     width: 30%;
   }
   .lance {
-    height: 30vh;
+    height: 10vh;
     filter: grayscale(60%);
-    margin-top: 6rem;
-  }
-  // .svg-class {
-  //   height: 45vh;
-  //   width: 45vh;
-  //   position: absolute;
-  //   left: -8rem;
-  //   bottom: -5rem;
-  // }
-  .text-container {
-    margin-top: 6rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 500px) {
   .hero-container {
     display: flex;
     flex-direction: column;

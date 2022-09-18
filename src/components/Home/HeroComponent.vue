@@ -20,7 +20,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .hero-container {
   display: flex;
   justify-content: space-between;
@@ -29,6 +29,7 @@ export default {
   height: 75vh;
   width: 100vw;
   z-index: 2;
+  overflow: hidden;
 }
 .text-container {
   padding: 5vw;
@@ -67,74 +68,24 @@ export default {
   left: -10rem;
   bottom: -7rem;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1100px) {
+  // looks good for now
   .hero-container {
-    display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .text-container {
     align-items: center;
     justify-content: center;
-    color: aliceblue;
-    height: 75vh;
-    width: 100vw;
-    z-index: 2;
-  }
-  .img-container {
-    position: relative;
-    width: 30%;
-  }
-  .lance {
-    height: 30vh;
-    filter: grayscale(60%);
-    margin-top: 6rem;
-  }
-  // .svg-class {
-  //   height: 45vh;
-  //   width: 45vh;
-  //   position: absolute;
-  //   left: -8rem;
-  //   bottom: -5rem;
-  // }
-  .text-container {
-    margin-top: 6rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+  .text-container h1,
+  .text-container h3,
+  .text-container p {
+    padding: 0;
   }
 }
-@media only screen and (max-width: 550px) {
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: aliceblue;
-    height: 75vh;
-    width: 100vw;
-    z-index: 2;
-  }
-  .img-container {
-    position: relative;
-    width: 30%;
-  }
-  .lance {
-    height: 30vh;
-    filter: grayscale(60%);
-    margin-top: 6rem;
-  }
-  .svg-class {
-    height: 45vh;
-    width: 45vh;
-    position: absolute;
-    left: -6.5rem;
-    bottom: -3.5rem;
-  }
-  .text-container {
-    margin-top: 6rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+@media only screen and (max-width: 450px) {
 }
 </style>

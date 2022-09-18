@@ -30,7 +30,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import ContactForm from "../components/ContactForm.vue";
+import ContactForm from "../components/contact/ContactForm.vue";
 export default {
   name: "HomeView",
   components: {
@@ -114,10 +114,12 @@ img {
 }
 .footer-nav {
   position: absolute;
-  width: 100vw;
-  height: 3rem;
-  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  padding-top: 3.5rem;
+  bottom: 0.5rem;
   display: flex;
+  // flex-direction: column;
   justify-content: space-between;
   a {
     text-decoration: none;

@@ -12,78 +12,73 @@
     <h1 style="color: #ddd; margin-top: 2rem">Projects</h1>
     <div class="projects-container">
       <!-- Todo List -->
-      <div class="project-item">That One YT Tutorial Todo List</div>
-      <iframe
-        height="300"
-        style="width: 100%"
-        scrolling="no"
-        title="That One YT Tutorial Todo List"
-        src="https://codepen.io/lance-shunn-ii/embed/oNEXPrJ?default-tab=result&theme-id=dark"
-        frameborder="no"
-        loading="lazy"
-        allowtransparency="true"
-        allowfullscreen="true"
-      >
-        See the Pen
-        <a href="https://codepen.io/lance-shunn-ii/pen/oNEXPrJ">
-          That One YT Tutorial Todo List</a
+      <div class="project-card">
+        <div class="project-item">That One YT Tutorial Todo List</div>
+        <iframe
+          height="350"
+          style="width: 100%"
+          scrolling="no"
+          title="That One YT Tutorial Todo List"
+          src="https://codepen.io/lance-shunn-ii/embed/oNEXPrJ?default-tab=result&theme-id=dark"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
         >
-        by Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
-          >@lance-shunn-ii</a
-        >) on <a href="https://codepen.io">CodePen</a>.
-      </iframe>
+          See the Pen
+          <a href="https://codepen.io/lance-shunn-ii/pen/oNEXPrJ">
+            That One YT Tutorial Todo List</a
+          >
+          by Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
+            >@lance-shunn-ii</a
+          >) on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+      </div>
       <!-- Motivation App -->
-      <div class="project-item">Motivation App</div>
-      <iframe
-        height="400"
-        style="width: 100%"
-        scrolling="no"
-        title="Motivation Calendar"
-        src="https://codepen.io/lance-shunn-ii/embed/ExQjepo?default-tab=result&theme-id=dark"
-        frameborder="no"
-        loading="lazy"
-        allowtransparency="true"
-        allowfullscreen="true"
-      >
-        See the Pen
-        <a href="https://codepen.io/lance-shunn-ii/pen/ExQjepo">
-          Motivation Calendar</a
+      <div class="project-card">
+        <div class="project-item">Motivation App</div>
+        <iframe
+          height="350"
+          style="width: 100%"
+          scrolling="no"
+          title="Motivation Calendar"
+          src="https://codepen.io/lance-shunn-ii/embed/ExQjepo?default-tab=result&theme-id=dark"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
         >
-        by Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
-          >@lance-shunn-ii</a
-        >) on <a href="https://codepen.io">CodePen</a>.
-      </iframe>
+          See the Pen
+          <a href="https://codepen.io/lance-shunn-ii/pen/ExQjepo">
+            Motivation Calendar</a
+          >
+          by Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
+            >@lance-shunn-ii</a
+          >) on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+      </div>
       <!-- Netty -->
-      <div class="project-item">Netty (see full vue app on github)</div>
-      <iframe
-        height="500"
-        style="width: 100%"
-        scrolling="no"
-        title="Netty"
-        src="https://codepen.io/lance-shunn-ii/embed/bGLdjQO?default-tab=result&theme-id=dark"
-        frameborder="no"
-        loading="lazy"
-        allowtransparency="true"
-        allowfullscreen="true"
-      >
-        See the Pen
-        <a href="https://codepen.io/lance-shunn-ii/pen/bGLdjQO"> Netty</a> by
-        Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
-          >@lance-shunn-ii</a
-        >) on <a href="https://codepen.io">CodePen</a>.
-      </iframe>
+      <div class="project-card">
+        <div class="project-item">Netty (see full vue app on github)</div>
+        <iframe
+          height="350"
+          style="width: 100%"
+          scrolling="no"
+          title="Netty"
+          src="https://codepen.io/lance-shunn-ii/embed/bGLdjQO?default-tab=result&theme-id=dark"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
+        >
+          See the Pen
+          <a href="https://codepen.io/lance-shunn-ii/pen/bGLdjQO"> Netty</a> by
+          Lance Shunn II (<a href="https://codepen.io/lance-shunn-ii"
+            >@lance-shunn-ii</a
+          >) on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+      </div>
     </div>
-    <div
-      v-for="index in 1000"
-      :key="index"
-      class="star"
-      :style="{
-        height: Math.random() * 3 + 'px',
-        width: Math.random() * 3 + 'px',
-        top: Math.random() * 75 + 'rem',
-        left: Math.random() * 300 + 'rem',
-      }"
-    ></div>
     <div class="footer-nav">
       <div class="nav-item home-link">
         <router-link to="/" exact>{{ $lang.home }}</router-link>
@@ -148,6 +143,10 @@ export default {
 }
 .projects-container {
   width: 70vw;
+  display: flex;
+}
+.project-card {
+  margin: 2rem;
 }
 .project-item {
   color: #ddd;

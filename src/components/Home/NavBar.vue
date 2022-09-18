@@ -2,34 +2,24 @@
   <nav class="landing-page">
     <div class="language-select nav-item">
       <select
-        v-if="!landing && !personalSite"
-        class="form-control"
-        v-model="selected"
-        @change="selectLanguageToLearn"
-      >
-        <option v-for="option in options" :value="option" :key="option">
-          {{ capitalize(option) }}
-        </option>
-      </select>
-      <select
-        v-if="personalSite"
         class="personal-site"
+        style="text-align: center"
         v-model="selected"
-        @change="
-          selectSiteLanguage();
-          selectLanguageToLearn();
-        "
+        placeholder="Display Language"
+        @change="selectSiteLanguage"
       >
+        <option value="DisplayLanguage" disabled>Display Language</option>
         <option v-for="option in options" :value="option" :key="option">
           {{ capitalize(option) }}
         </option>
       </select>
       <img v-if="!!selected" :src="flagSelection" class="flag" />
     </div>
-    <HomeTitle class="nav-item" :landing="landing" />
+    <HomeTitle class="nav-item home-title" :landing="landing" />
     <div v-if="optionsAndProfile" class="profile nav-item">Profile</div>
     <div v-if="!optionsAndProfile" @click="letsGetLearning">
-      <span class="lancentric-link">Lancentric Learning</span
+      <span class="lancentric-link"
+        >Lancentric<span class="mobile-shortening"> Learning</span></span
       ><span style="font-size: 0.75rem; padding-bottom: 0.25rem"> *Beta</span>
     </div>
   </nav>
@@ -50,7 +40,7 @@ export default {
   },
   data() {
     return {
-      selected: this.currentLanguageName,
+      selected: this.currentLanguageName || "english",
       options: ["english", "spanish", "french", "portuguese"],
     };
   },
@@ -90,7 +80,7 @@ export default {
       this.$store.commit("setPersonalSiteCurrentLanguage", this.selected);
     },
     letsGetLearning() {
-      this.$router.push("LandingPage");
+      this.$router.push("/lancentric");
     },
   },
 };
@@ -103,6 +93,7 @@ nav {
   margin: 0;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   font-weight: bold;
   border-bottom: 1px solid #444;
   .nav-item {
@@ -151,6 +142,25 @@ nav {
       height: 2rem;
       border-radius: 10px;
     }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  // Looking good for now
+}
+@media only screen and (max-width: 450px) {
+  nav {
+    height: 3rem;
+    padding: 0;
+  }
+  .language-select {
+    flex-direction: row-reverse;
+  }
+  .home-title {
+    display: none;
+  }
+  .mobile-shortening {
+    display: none;
   }
 }
 

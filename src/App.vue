@@ -1,17 +1,18 @@
 <template>
   <div id="lance-raleigh-website">
+    <StarBackground></StarBackground>
     <NavBar :landing="landing" class="navbar-z" />
-    <transition name="fade" mode="out-in">
-      <router-view />
-    </transition>
+    <router-view />
   </div>
 </template>
 <script>
+import StarBackground from "./components/reusables/StarBackground.vue";
 import NavBar from "./components/Home/NavBar.vue";
 export default {
   name: "LancentricLearning",
   components: {
     NavBar,
+    StarBackground,
   },
   async mounted() {
     await this.$store.commit("initState");
@@ -31,12 +32,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  background: #fff;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   color: #2c3e50;
   margin: 0;
   box-sizing: border-box;
   width: 100vw;
   min-height: 100vh;
+  overflow: hidden;
 }
 .navbar-z {
   position: absolute;
@@ -45,36 +47,4 @@ export default {
 .modal-open {
   overflow: hidden;
 }
-// Route Transitions
-
-// .fade-enter-active,
-// .fade-leave-active {
-//   transition: background-color 2s ease;
-// }
-
-// .fade-enter-from,
-// .fade-leave-to {
-//   background-color: #000;
-// }
-
-// .slide-in-from-right-enter-active,
-// .slide-in-from-right-leave-active {
-//   transition: all 0.75s ease-out;
-// }
-// .slide-in-from-right-enter-to {
-//   position: absolute;
-//   right: 0;
-// }
-// .slide-in-from-right-enter-from {
-//   position: absolute;
-//   right: -100%;
-// }
-// .slide-in-from-right-leave-to {
-//   position: absolute;
-//   left: -100%;
-// }
-// .slide-in-from-right-leave-from {
-//   position: absolute;
-//   left: 0;
-// }
 </style>

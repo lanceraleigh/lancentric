@@ -1,17 +1,6 @@
 <template>
   <div class="about">
     <AboutMe></AboutMe>
-    <div
-      v-for="index in 1000"
-      :key="index"
-      class="star"
-      :style="{
-        height: Math.random() * 3 + 'px',
-        width: Math.random() * 3 + 'px',
-        top: Math.random() * 75 + 'rem',
-        left: Math.random() * 300 + 'rem',
-      }"
-    ></div>
     <div class="footer-nav">
       <div class="nav-item home-link">
         <router-link to="/" exact>{{ $lang.home }}</router-link>
@@ -22,7 +11,7 @@
       <div class="nav-item about-me">
         <router-link to="/about">{{ $lang.about }}</router-link>
       </div>
-      <div class="nav-item contact">
+      <div class="nav-item contact-me">
         <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
     </div>
@@ -56,6 +45,7 @@ export default {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   position: relative;
@@ -114,22 +104,18 @@ img {
 }
 .footer-nav {
   position: absolute;
-  width: 100vw;
-  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  padding-top: 3.5rem;
+  bottom: 0.5rem;
   display: flex;
+  // flex-direction: column;
   justify-content: space-between;
   a {
     text-decoration: none;
     color: #ddd;
     font-weight: bold;
     margin: 0 0.5rem;
-  }
-  #bottom-left-arrow {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-  }
-  #bottom-middle-arrow {
-    transform: rotate(50deg);
   }
   .nav-item {
     padding: 0.5rem;

@@ -11,6 +11,9 @@
         left: Math.random() * 300 + 'rem',
       }"
     ></div>
+    <h2 class="language-choice-title">
+      What language are we gonna learn today?
+    </h2>
     <div
       v-for="img in flagArray"
       :key="img.source"
@@ -48,7 +51,7 @@ export default {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
     async selectLanguage(language) {
-      await this.$router.push("/home");
+      await this.$router.push("/lancentric/letslearn");
       this.$store.commit("setCurrentLanguageLessons", language);
     },
   },
@@ -56,7 +59,6 @@ export default {
 </script>
 <style scoped>
 .landing {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -93,22 +95,5 @@ img {
   cursor: pointer;
   transform: scale(1.01);
   box-shadow: 1px 3px 5px #243548;
-}
-.star {
-  background: #ddd;
-  border-radius: 50%;
-  position: absolute;
-  animation: travel 120s infinite;
-}
-@keyframes travel {
-  0% {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(-20rem, -10rem);
-  }
-  100% {
-    transform: translate(0);
-  }
 }
 </style>

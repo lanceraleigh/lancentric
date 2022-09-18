@@ -45,22 +45,20 @@ const routes: Array<RouteRecordRaw> = [
     component: LandingPage,
     meta: {
       title: "Lancentric: Master Languages Today",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      // component: () =>
+      //   import(/* webpackChunkName: "about" */ "../views/LandingPage.vue"),
     },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () =>
-    //   import(/* webpackChunkName: "about" */ "../views/LandingPage.vue"),
-    children: [
-      {
-        path: "/letslearn",
-        name: "Learning",
-        component: CurrentLanguageHomeView,
-        meta: {
-          title: "Let's Get Learning",
-        },
-      },
-    ],
+  },
+  {
+    path: "/lancentric/letslearn",
+    name: "Learning",
+    component: CurrentLanguageHomeView,
+    meta: {
+      title: "Let's Get Learning",
+    },
   },
 ];
 

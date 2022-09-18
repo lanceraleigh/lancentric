@@ -1,17 +1,6 @@
 <template>
   <div class="home">
     <Hero></Hero>
-    <div
-      v-for="index in 1000"
-      :key="index"
-      class="star"
-      :style="{
-        height: Math.random() * 3 + 'px',
-        width: Math.random() * 3 + 'px',
-        top: Math.random() * 75 + 'rem',
-        left: Math.random() * 300 + 'rem',
-      }"
-    ></div>
     <div class="footer-nav">
       <div class="nav-item home-link">
         <router-link to="/" exact>{{ $lang.home }}</router-link>
@@ -25,16 +14,37 @@
       <div class="nav-item contact">
         <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
+      <transition name="slide">
+        <ContactMePromptPopup
+          v-if="showPopup"
+          @close="closePopup"
+        ></ContactMePromptPopup>
+      </transition>
     </div>
   </div>
 </template>
 <script>
 import Hero from "../components/Home/HeroComponent.vue";
+import ContactMePromptPopup from "../components/reusables/ContactMePromptPopup.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "HomeView",
   components: {
     Hero,
+    ContactMePromptPopup,
+  },
+  mounted() {
+    let hasSeenPopup = JSON.parse(window.localStorage.getItem("hasSeenPopup"));
+    setTimeout(() => {
+      if (!hasSeenPopup) {
+        this.showPopup = true;
+      }
+    }, 3000);
+  },
+  data() {
+    return {
+      showPopup: false,
+    };
   },
   computed: {
     ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
@@ -46,6 +56,10 @@ export default {
     async selectLanguage(language) {
       await this.$router.push("/home");
       this.$store.commit("setCurrentLanguageLessons", language);
+    },
+    closePopup() {
+      window.localStorage.setItem("hasSeenPopup", true);
+      this.showPopup = false;
     },
   },
 };
@@ -144,6 +158,14 @@ img {
     text-decoration: underline;
     text-decoration-color: rgb(150, 2, 255);
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 1s;
+}
+.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateY(15rem);
 }
 
 @media only screen and (max-width: 550px) {
