@@ -35,6 +35,7 @@ export default {
 
 <style>
 .lesson-groups-container {
+  color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: center;

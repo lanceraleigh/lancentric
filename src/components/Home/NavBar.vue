@@ -16,11 +16,14 @@
       <img v-if="!!selected" :src="flagSelection" class="flag" />
     </div>
     <HomeTitle class="nav-item home-title" :landing="landing" />
-    <div v-if="optionsAndProfile" class="profile nav-item">Profile</div>
-    <div v-if="!optionsAndProfile" @click="letsGetLearning">
+    <div v-if="lancentric" class="profile nav-item">Profile</div>
+    <div v-if="portfolio" @click="letsGetLearning">
       <span class="lancentric-link"
         >Lancentric<span class="mobile-shortening"> Learning</span></span
       ><span style="font-size: 0.75rem; padding-bottom: 0.25rem"> *Beta</span>
+    </div>
+    <div v-if="!!lancentric" @click="$router.push('/')">
+      <span class="lancentric-link">Back to Portfolio</span>
     </div>
   </nav>
 </template>
@@ -49,8 +52,11 @@ export default {
     flagSelection() {
       return require(`../../assets/country-flags/png-48/${this.selected}.png`);
     },
-    optionsAndProfile() {
-      return this.$route.name === "Lancentric";
+    lancentric() {
+      return (
+        this.$route.name === "LancentricLandingPage" ||
+        this.$route.name === "Learning"
+      );
     },
     portfolio() {
       return this.$route.name === "Home";

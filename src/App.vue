@@ -15,6 +15,12 @@ export default {
     // StarBackground,
   },
   async mounted() {
+    console.log(
+      "Welcome to the best dev portfolio in the world... according to my mom at least"
+    );
+    console.log(
+      "If you've gotten this far, take some time to shoot me a message in the contact section! I look forward to hearing from you! 😀"
+    );
     await this.$store.commit("initState");
   },
   computed: {

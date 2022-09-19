@@ -1,33 +1,29 @@
 <template>
-  <div class="landing">
-    <div
-      v-for="index in 1000"
-      :key="index"
-      class="star"
-      :style="{
-        height: Math.random() * 3 + 'px',
-        width: Math.random() * 3 + 'px',
-        top: Math.random() * 75 + 'rem',
-        left: Math.random() * 300 + 'rem',
-      }"
-    ></div>
+  <div class="landing-page">
+    <StarBackground></StarBackground>
     <h2 class="language-choice-title">
       What language are we gonna learn today?
     </h2>
-    <div
-      v-for="img in flagArray"
-      :key="img.source"
-      class="img-container"
-      @click="selectLanguage(img.name)"
-    >
-      <img :src="img.source" class="language-image" />
-      <div class="title">{{ capitalize(img.name) }}</div>
+    <div class="landing">
+      <div
+        v-for="img in flagArray"
+        :key="img.source"
+        class="img-container"
+        @click="selectLanguage(img.name)"
+      >
+        <img :src="img.source" class="language-image" />
+        <div class="title">{{ capitalize(img.name) }}</div>
+      </div>
     </div>
   </div>
 </template>
 <script>
+import StarBackground from "../components/reusables/StarBackground.vue";
 export default {
   name: "LandingPage",
+  components: {
+    StarBackground,
+  },
   data() {
     return {
       flagArray: [
@@ -58,10 +54,18 @@ export default {
 };
 </script>
 <style scoped>
-.landing {
+.landing-page {
   margin: 0;
   padding: 0;
   height: 100vh;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.landing {
   display: flex;
   justify-content: center;
   align-items: center;
