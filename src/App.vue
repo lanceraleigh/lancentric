@@ -1,18 +1,18 @@
 <template>
   <div id="lance-raleigh-website">
-    <StarBackground></StarBackground>
+    <!-- <StarBackground></StarBackground> -->
     <NavBar :landing="landing" class="navbar-z" />
     <router-view />
   </div>
 </template>
 <script>
-import StarBackground from "./components/reusables/StarBackground.vue";
+// import StarBackground from "./components/reusables/StarBackground.vue";
 import NavBar from "./components/Home/NavBar.vue";
 export default {
   name: "LancentricLearning",
   components: {
     NavBar,
-    StarBackground,
+    // StarBackground,
   },
   async mounted() {
     await this.$store.commit("initState");
@@ -38,7 +38,6 @@ export default {
   box-sizing: border-box;
   width: 100vw;
   min-height: 100vh;
-  overflow: hidden;
 }
 .navbar-z {
   position: absolute;

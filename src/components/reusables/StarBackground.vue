@@ -1,15 +1,17 @@
 <template>
-  <div
-    v-for="index in 2000"
-    :key="index"
-    class="star"
-    :style="{
-      height: Math.random() * 3 + 'px',
-      width: Math.random() * 3 + 'px',
-      top: Math.random() * 150 + 'rem',
-      left: Math.random() * 500 + 'rem',
-    }"
-  ></div>
+  <div class="star-container">
+    <div
+      v-for="index in 2000"
+      :key="index"
+      class="star"
+      :style="{
+        height: Math.random() * 3 + 'px',
+        width: Math.random() * 3 + 'px',
+        top: Math.random() * 150 + 'rem',
+        left: Math.random() * 500 + 'rem',
+      }"
+    ></div>
+  </div>
 </template>
 <script>
 export default {
@@ -17,6 +19,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.star-container {
+  overflow: hidden;
+}
 .star {
   background: #ddd;
   border-radius: 50%;

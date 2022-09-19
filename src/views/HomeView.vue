@@ -1,37 +1,29 @@
 <template>
   <div class="home">
+    <StarBackground></StarBackground>
     <Hero></Hero>
-    <div class="footer-nav">
-      <div class="nav-item home-link">
-        <router-link to="/" exact>{{ $lang.home }}</router-link>
-      </div>
-      <div class="nav-item projects">
-        <router-link to="/projects">{{ $lang.projects }}</router-link>
-      </div>
-      <div class="nav-item about-me">
-        <router-link to="/about">{{ $lang.about }}</router-link>
-      </div>
-      <div class="nav-item contact">
-        <router-link to="/contact">{{ $lang.contact }}</router-link>
-      </div>
-      <transition name="slide">
-        <ContactMePromptPopup
-          v-if="showPopup"
-          @close="closePopup"
-        ></ContactMePromptPopup>
-      </transition>
-    </div>
+    <FootNav></FootNav>
+    <transition name="slide">
+      <ContactMePromptPopup
+        v-if="showPopup"
+        @close="closePopup"
+      ></ContactMePromptPopup>
+    </transition>
   </div>
 </template>
 <script>
 import Hero from "../components/Home/HeroComponent.vue";
 import ContactMePromptPopup from "../components/reusables/ContactMePromptPopup.vue";
+import StarBackground from "../components/reusables/StarBackground.vue";
+import FootNav from "../components/Home/FootNav.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "HomeView",
   components: {
     Hero,
     ContactMePromptPopup,
+    StarBackground,
+    FootNav,
   },
   mounted() {
     let hasSeenPopup = JSON.parse(window.localStorage.getItem("hasSeenPopup"));
