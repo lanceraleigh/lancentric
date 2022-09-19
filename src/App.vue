@@ -6,18 +6,18 @@
   </div>
 </template>
 <script>
-// import StarBackground from "./components/reusables/StarBackground.vue";
 import NavBar from "./components/Home/NavBar.vue";
 export default {
   name: "LancentricLearning",
   components: {
     NavBar,
-    // StarBackground,
   },
   async mounted() {
+    // eslint-disable-next-line
     console.log(
       "Welcome to the best dev portfolio in the world... according to my mom at least"
     );
+    // eslint-disable-next-line
     console.log(
       "If you've gotten this far, take some time to shoot me a message in the contact section! I look forward to hearing from you! 😀"
     );

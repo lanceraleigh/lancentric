@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="contact">
+    <StarBackground></StarBackground>
     <ContactForm></ContactForm>
     <FootNav></FootNav>
   </div>
@@ -7,12 +8,14 @@
 <script>
 import { mapGetters } from "vuex";
 import ContactForm from "../components/contact/ContactForm.vue";
+import StarBackground from "../components/reusables/StarBackground.vue";
 import FootNav from "../components/Home/FootNav.vue";
 export default {
   name: "HomeView",
   components: {
     ContactForm,
     FootNav,
+    StarBackground,
   },
   computed: {
     ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
@@ -28,14 +31,15 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
-.home {
+<style lang="scss" scoped>
+.contact {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   margin: 0;
   padding: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }

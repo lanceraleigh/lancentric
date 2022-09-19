@@ -25,7 +25,7 @@ export default {
 </script>
 <style lang="scss">
 .footer-nav {
-  position: sticky;
+  position: absolute;
   width: 100vw;
   bottom: 0;
   display: flex;

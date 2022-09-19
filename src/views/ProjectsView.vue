@@ -1,10 +1,12 @@
 <template>
   <div class="projects">
     <StarBackground></StarBackground>
-    <div class="quote">
-      <h1 class="title">Projects</h1>
+    <div class="quote" style="line-height: 2rem">
+      <h1 class="title" style="font-size: 5rem; margin-bottom: 3rem">
+        Projects
+      </h1>
       <div class="phrase">
-        Just build a todo app and you'll know enough all you need to get hired
+        Just build a todo app and you'll know all you need to get hired
         <!-- <br /><span style="font-style: italic; font-weight: 600"
           >&#10024; hired &#10024;</span
         > -->
@@ -12,14 +14,12 @@
       <div class="author">- Every Youtube Tutorial Ever</div>
     </div>
     <div class="projects-container">
-      <!-- Baby Steps -->
+      <!-- Netty -->
       <div class="project-card">
-        <a href="https://codepen.io/lance-shunn-ii/pen/wvBEazW">
-          <img src="../assets/projects/first.png" alt="My first baby steps" />
-        </a>
-        <div class="project-item">
-          My very first project. Isn't it precious?
-        </div>
+        <a href="https://codepen.io/lance-shunn-ii/pen/bGLdjQO">
+          <img src="../assets/projects/netty.png" alt="Netty"
+        /></a>
+        <div class="project-item">Netty (see full vue app on github)</div>
       </div>
       <!-- Todo List -->
       <div class="project-card">
@@ -27,6 +27,7 @@
           <img
             src="../assets/projects/cliche.png"
             alt="That one youtube todo list"
+            style="filter: brightness(80%)"
           />
         </a>
         <div class="project-item">YT's Favorite Todo List</div>
@@ -40,13 +41,25 @@
         /></a>
         <div class="project-item">Motivation App</div>
       </div>
-      <!-- Netty -->
+      <!-- See More -->
       <div class="project-card">
-        <a href="https://codepen.io/lance-shunn-ii/pen/bGLdjQO">
-          <img src="../assets/projects/netty.png" alt="Netty"
-        /></a>
-        <div class="project-item">Netty (see full vue app on github)</div>
+        <div class="link-card">
+          <div>CodePen:</div>
+          <a href="https://codepen.io/lance-shunn-ii">@lance-shunn-ii</a>
+          <div>GitHub:</div>
+          <a href="https://github.com/lanceshunnii">@lanceshunnii</a>
+        </div>
+        <div class="project-item">There's more where those came from</div>
       </div>
+      <!-- Baby Steps -->
+      <!-- <div class="project-card">
+        <a href="https://codepen.io/lance-shunn-ii/pen/wvBEazW">
+          <img src="../assets/projects/first.png" alt="My first baby steps" />
+        </a>
+        <div class="project-item">
+          My very first project. Isn't it precious?
+        </div>
+      </div> -->
     </div>
     <FootNav></FootNav>
   </div>
@@ -108,13 +121,39 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 .project-card {
   width: 20rem;
   background: #ddd;
   border-radius: 15px;
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  box-shadow: 0 0 0 5px rgba(56, 2, 100, 0.746);
+}
+.project-card:hover {
+  transform: scale(1.01);
+}
+.link-card {
+  width: 20rem;
+  height: 12.5rem;
+  border-radius: 15px 15px 0 0;
+  background: #222;
+  color: #ddd;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  text-align: left;
+  padding-left: 1rem;
+  a {
+    text-decoration: none;
+    color: greenyellow;
+  }
 }
 .project-item {
   color: #222;

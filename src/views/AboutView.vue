@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <StarBackground></StarBackground>
     <AboutMe></AboutMe>
     <FootNav></FootNav>
   </div>
@@ -7,12 +8,14 @@
 <script>
 import AboutMe from "../components/about/AboutMe.vue";
 import FootNav from "../components/Home/FootNav.vue";
+import StarBackground from "../components/reusables/StarBackground.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "HomeView",
   components: {
     AboutMe,
     FootNav,
+    StarBackground,
   },
   computed: {
     ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
