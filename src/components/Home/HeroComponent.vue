@@ -1,7 +1,11 @@
 <template lang="">
   <div class="hero-container">
     <div class="text-container">
-      <h1>Lance Raleigh</h1>
+      <HomeTitle></HomeTitle>
+      <h1 style="text-decoration: underline; text-decoration-color: purple">
+        Lance Raleigh
+      </h1>
+      <!-- <span v-if="currentTitleLanguage === 3">です</span> -->
       <h3>{{ $lang.softwareDeveloper }}</h3>
       <p>
         {{ $lang.heroPhrase }}
@@ -14,9 +18,16 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import HomeTitle from "./HomeTitle.vue";
 export default {
+  components: {
+    HomeTitle,
+  },
   computed: {
-    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
+    ...mapGetters({
+      $lang: "personalSiteCurrentLanguage",
+      currentTitleLanguage: "letsLearnPhraseIndex",
+    }),
   },
 };
 </script>

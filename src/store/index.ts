@@ -10,7 +10,7 @@ import FrenchLessons from "../helpers/FrenchLessons";
 
 export default createStore({
   state: {
-    letsLearnPhrase: `Hello`,
+    letsLearnPhrase: `Hi, I'm `,
     personalSiteCurrentLanguage: enDict,
     personalSiteCurrentLanguageName: "english",
     letsLearnPhraseIndex: 1,
@@ -39,51 +39,51 @@ export default createStore({
     },
     setPersonalSiteCurrentLanguage(state, payload) {
       if (payload === "english") {
-        // Set Lessons in localStorage
+        // Set Display Language in localStorage
         state.personalSiteCurrentLanguage = enDict;
         window.localStorage.setItem(
-          "personalSiteLanguage",
+          "personalSiteCurrentLanguage",
           JSON.stringify(enDict)
         );
-        state.currentLanguageName = payload;
+        state.personalSiteCurrentLanguageName = payload;
         window.localStorage.setItem(
-          "personalSiteLanguageName",
+          "personalSiteCurrentLanguageName",
           JSON.stringify(payload)
         );
       } else if (payload === "spanish") {
-        // Set Lessons in localStorage
+        // Set Display Language in localStorage
         state.personalSiteCurrentLanguage = esDict;
         window.localStorage.setItem(
-          "personalSiteLanguage",
+          "personalSiteCurrentLanguage",
           JSON.stringify(esDict)
         );
-        state.currentLanguageName = payload;
+        state.personalSiteCurrentLanguageName = payload;
         window.localStorage.setItem(
-          "personalSiteLanguageName",
+          "personalSiteCurrentLanguageName",
           JSON.stringify(payload)
         );
       } else if (payload === "portuguese") {
-        // Set Lessons in localStorage
+        // Set Display Language in localStorage
         state.personalSiteCurrentLanguage = ptDict;
         window.localStorage.setItem(
-          "personalSiteLanguage",
+          "personalSiteCurrentLanguage",
           JSON.stringify(ptDict)
         );
-        state.currentLanguageName = payload;
+        state.personalSiteCurrentLanguageName = payload;
         window.localStorage.setItem(
-          "personalSiteLanguageName",
+          "personalSiteCurrentLanguageName",
           JSON.stringify(payload)
         );
       } else if (payload === "french") {
-        // Set Lessons in localStorage
+        // Set Display Language in localStorage
         state.personalSiteCurrentLanguage = frDict;
         window.localStorage.setItem(
-          "personalSiteLanguage",
+          "personalSiteCurrentLanguage",
           JSON.stringify(frDict)
         );
-        state.currentLanguageName = payload;
+        state.personalSiteCurrentLanguageName = payload;
         window.localStorage.setItem(
-          "personalSiteLanguageName",
+          "personalSiteCurrentLanguageName",
           JSON.stringify(payload)
         );
       }
@@ -145,8 +145,11 @@ export default createStore({
     },
     initState(state) {
       // Get language settings from local storage
-      const personalSiteLanguage = window.localStorage.getItem(
-        "personalSiteLanguage"
+      const personalSiteCurrentLanguage = window.localStorage.getItem(
+        "personalSiteCurrentLanguage"
+      );
+      const personalSiteCurrentLanguageName = window.localStorage.getItem(
+        "personalSiteCurrentLanguageName"
       );
       const localLanguage = window.localStorage.getItem(
         "currentLanguageLessons"
@@ -154,8 +157,15 @@ export default createStore({
       const localLanguageName = window.localStorage.getItem(
         "currentLanguageName"
       );
-      if (typeof personalSiteLanguage === "string") {
-        state.personalSiteCurrentLanguage = JSON.parse(personalSiteLanguage);
+      if (typeof personalSiteCurrentLanguage === "string") {
+        state.personalSiteCurrentLanguage = JSON.parse(
+          personalSiteCurrentLanguage
+        );
+      }
+      if (typeof personalSiteCurrentLanguageName === "string") {
+        state.personalSiteCurrentLanguageName = JSON.parse(
+          personalSiteCurrentLanguageName
+        );
       }
       if (typeof localLanguage === "string") {
         state.currentLanguageLessons = JSON.parse(localLanguage);

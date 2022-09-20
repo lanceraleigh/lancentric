@@ -1,11 +1,10 @@
-<template lang="">
+<template>
   <nav class="landing-page">
-    <div class="language-select nav-item">
+    <div class="language-select">
       <select
         class="personal-site"
         style="text-align: center"
         v-model="selected"
-        placeholder="Display Language"
         @change="selectSiteLanguage"
       >
         <option value="DisplayLanguage" disabled>Display Language</option>
@@ -15,26 +14,21 @@
       </select>
       <img v-if="!!selected" :src="flagSelection" class="flag" />
     </div>
-    <HomeTitle class="nav-item home-title" :landing="landing" />
     <div v-if="lancentric" class="profile nav-item">Profile</div>
-    <div v-if="portfolio" @click="letsGetLearning">
-      <span class="lancentric-link"
+    <div v-if="personalSite" class="link-button" @click="letsGetLearning">
+      <span class="lancentric-link nav-item"
         >Lancentric<span class="mobile-shortening"> Learning</span></span
       ><span style="font-size: 0.75rem; padding-bottom: 0.25rem"> *Beta</span>
     </div>
     <div v-if="!!lancentric" @click="$router.push('/')">
-      <span class="lancentric-link">Back to Portfolio</span>
+      <span class="lancentric-link link-button">Back to Portfolio</span>
     </div>
   </nav>
 </template>
 <script>
-import HomeTitle from "../Home/HomeTitle.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "NavBar",
-  components: {
-    HomeTitle,
-  },
   props: {
     landing: {
       type: Boolean,
@@ -43,12 +37,16 @@ export default {
   },
   data() {
     return {
-      selected: this.currentLanguageName || "english",
+      selected: this.personalSiteCurrentLanguageName || "english",
       options: ["english", "spanish", "french", "portuguese"],
     };
   },
   computed: {
-    ...mapGetters(["currentLanguageLessons", "currentLanguageName"]),
+    ...mapGetters([
+      "currentLanguageLessons",
+      "currentLanguageName",
+      "personalSiteCurrentLanguageName",
+    ]),
     flagSelection() {
       return require(`../../assets/country-flags/png-48/${this.selected}.png`);
     },
@@ -57,9 +55,6 @@ export default {
         this.$route.name === "LancentricLandingPage" ||
         this.$route.name === "Learning"
       );
-    },
-    portfolio() {
-      return this.$route.name === "Home";
     },
     personalSite() {
       return (
@@ -71,7 +66,7 @@ export default {
     },
   },
   watch: {
-    currentLanguageName(newVal) {
+    personalSiteCurrentLanguageName(newVal) {
       this.selected = newVal;
     },
   },
@@ -94,19 +89,14 @@ export default {
 <style lang="scss">
 nav {
   width: 100vw;
-  padding-top: 1rem;
+  height: 4rem;
   background: #fff;
   margin: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-weight: bold;
   border-bottom: 1px solid #444;
-  .nav-item {
-    width: 10rem;
-    justify-content: center;
-    align-items: center;
-  }
   .lancentric-link {
     font-size: 1.25rem;
     height: 1.5rem;
@@ -136,15 +126,18 @@ nav {
     cursor: pointer;
     transform: scale(1.2);
   }
-
+  .link-button {
+    margin-right: 1rem;
+  }
   .language-select {
     display: flex;
     align-items: center;
+    margin-left: 1rem;
     select {
       height: 1.5rem;
     }
     .flag {
-      margin: 0 1rem;
+      padding: 0 1rem;
       height: 2rem;
       border-radius: 10px;
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="star-container">
+  <div v-if="!mobileNavigator" class="star-container">
     <div
       v-for="index in 2000"
       :key="index"
@@ -16,6 +16,13 @@
 <script>
 export default {
   name: "StarBackground",
+  computed: {
+    mobileNavigator() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
