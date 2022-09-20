@@ -2,19 +2,19 @@
   <div class="about">
     <StarBackground></StarBackground>
     <AboutMe></AboutMe>
-    <FootNav></FootNav>
+    <!-- <NavLinks></NavLinks> -->
   </div>
 </template>
 <script>
 import AboutMe from "../components/about/AboutMe.vue";
-import FootNav from "../components/Home/FootNav.vue";
+// import NavLinks from "../components/Home/NavLinks.vue";
 import StarBackground from "../components/reusables/StarBackground.vue";
 import { mapGetters } from "vuex";
 export default {
-  name: "HomeView",
+  name: "AboutView",
   components: {
     AboutMe,
-    FootNav,
+    // NavLinks,
     StarBackground,
   },
   computed: {

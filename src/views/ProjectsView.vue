@@ -61,18 +61,18 @@
         </div>
       </div> -->
     </div>
-    <FootNav></FootNav>
+    <!-- <NavLinks></NavLinks> -->
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
 import StarBackground from "../components/reusables/StarBackground.vue";
-import FootNav from "../components/Home/FootNav.vue";
+// import NavLinks from "../components/Home/NavLinks.vue";
 export default {
-  name: "HomeView",
+  name: "ProjectsView",
   components: {
     StarBackground,
-    FootNav,
+    // NavLinks,
   },
   computed: {
     ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),

@@ -39,7 +39,7 @@ export default {
   align-items: center;
 }
 .text-container h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   padding: 0.25rem;
   text-shadow: 0 0 10px #000;
 }
@@ -51,7 +51,7 @@ export default {
 .text-container p {
   width: 60%;
   padding-left: 3rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 .img-container {
   position: relative;

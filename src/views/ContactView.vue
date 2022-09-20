@@ -2,19 +2,22 @@
   <div class="contact">
     <StarBackground></StarBackground>
     <ContactForm></ContactForm>
-    <FootNav></FootNav>
+    <MyContacts></MyContacts>
+    <!-- <NavLinks></NavLinks> -->
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
 import ContactForm from "../components/contact/ContactForm.vue";
 import StarBackground from "../components/reusables/StarBackground.vue";
-import FootNav from "../components/Home/FootNav.vue";
+import MyContacts from "../components/contact/MyContacts.vue";
+// import NavLinks from "../components/Home/NavLinks.vue";
 export default {
-  name: "HomeView",
+  name: "ContactView",
   components: {
     ContactForm,
-    FootNav,
+    MyContacts,
+    // NavLinks,
     StarBackground,
   },
   computed: {
@@ -38,6 +41,7 @@ export default {
   padding: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;

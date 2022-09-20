@@ -2,7 +2,7 @@
   <div class="home">
     <StarBackground></StarBackground>
     <Hero></Hero>
-    <FootNav></FootNav>
+    <!-- <NavLinks></NavLinks> -->
     <transition name="slide">
       <ContactMePromptPopup
         v-if="showPopup"
@@ -15,7 +15,7 @@
 import Hero from "../components/Home/HeroComponent.vue";
 import ContactMePromptPopup from "../components/reusables/ContactMePromptPopup.vue";
 import StarBackground from "../components/reusables/StarBackground.vue";
-import FootNav from "../components/Home/FootNav.vue";
+// import NavLinks from "../components/Home/NavLinks.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "HomeView",
@@ -23,7 +23,7 @@ export default {
     Hero,
     ContactMePromptPopup,
     StarBackground,
-    FootNav,
+    // NavLinks,
   },
   mounted() {
     let hasSeenPopup = JSON.parse(window.localStorage.getItem("hasSeenPopup"));

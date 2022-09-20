@@ -2,7 +2,12 @@
   <div class="hero-container">
     <div class="text-container">
       <HomeTitle></HomeTitle>
-      <h1 style="text-decoration: underline; text-decoration-color: purple">
+      <h1
+        style="
+          text-decoration: underline;
+          text-decoration-color: rgb(150, 2, 255);
+        "
+      >
         Lance Raleigh
       </h1>
       <!-- <span v-if="currentTitleLanguage === 3">です</span> -->

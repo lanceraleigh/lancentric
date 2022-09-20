@@ -25,9 +25,6 @@ export default {
 </script>
 <style lang="scss">
 .footer-nav {
-  position: absolute;
-  width: 100vw;
-  bottom: 0;
   display: flex;
   justify-content: space-between;
   a {
@@ -45,7 +42,7 @@ export default {
   }
   .nav-item {
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .nav-item:hover {
     cursor: pointer;

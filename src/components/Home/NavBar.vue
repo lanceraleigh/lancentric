@@ -14,6 +14,7 @@
       </select>
       <img v-if="!!selected" :src="flagSelection" class="flag" />
     </div>
+    <NavLinks></NavLinks>
     <div v-if="lancentric" class="profile nav-item">Profile</div>
     <div v-if="personalSite" class="link-button" @click="letsGetLearning">
       <span class="lancentric-link nav-item"
@@ -27,8 +28,12 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import NavLinks from "../Home/NavLinks.vue";
 export default {
   name: "NavBar",
+  components: {
+    NavLinks,
+  },
   props: {
     landing: {
       type: Boolean,
