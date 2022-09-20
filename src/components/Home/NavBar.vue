@@ -12,7 +12,7 @@
           {{ capitalize(option) }}
         </option>
       </select>
-      <img v-if="!!selected" :src="flagSelection" class="flag" />
+      <img :src="flagSelection" class="flag" />
     </div>
     <NavLinks></NavLinks>
     <div v-if="lancentric" class="profile nav-item">Profile</div>
@@ -140,11 +140,12 @@ nav {
     margin-left: 1rem;
     select {
       height: 1.5rem;
+      border-radius: 10px;
     }
     .flag {
-      padding: 0 1rem;
+      margin: 0 0.5rem;
+      padding: 0 0.5rem;
       height: 2rem;
-      border-radius: 10px;
     }
   }
 }
