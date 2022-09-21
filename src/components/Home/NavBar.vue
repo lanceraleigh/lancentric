@@ -15,15 +15,6 @@
       <img :src="flagSelection" class="flag" />
     </div>
     <NavLinks></NavLinks>
-    <div v-if="lancentric" class="profile nav-item">Profile</div>
-    <div v-if="personalSite" class="link-button" @click="letsGetLearning">
-      <span class="lancentric-link nav-item"
-        >Lancentric<span class="mobile-shortening"> Learning</span></span
-      ><span style="font-size: 0.75rem; padding-bottom: 0.25rem"> *Beta</span>
-    </div>
-    <div v-if="!!lancentric" @click="$router.push('/')">
-      <span class="lancentric-link link-button">Back to Portfolio</span>
-    </div>
   </nav>
 </template>
 <script>
@@ -91,7 +82,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 nav {
   width: 100vw;
   height: 4rem;
@@ -134,6 +125,10 @@ nav {
   .link-button {
     margin-right: 1rem;
   }
+  .beta {
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
   .language-select {
     display: flex;
     align-items: center;
@@ -151,15 +146,21 @@ nav {
 }
 
 @media only screen and (max-width: 1100px) {
-  // Looking good for now
-}
-@media only screen and (max-width: 450px) {
   nav {
     height: 3rem;
-    padding: 0;
+    padding: 0 1rem;
+    flex-direction: row-reverse;
   }
   .language-select {
     flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .flag {
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-55%);
+    padding: 0;
+    margin: 0;
   }
   .home-title {
     display: none;
@@ -167,7 +168,11 @@ nav {
   .mobile-shortening {
     display: none;
   }
+  .beta {
+    display: none;
+  }
 }
+// Animations
 
 @-webkit-keyframes rainbow {
   0% {

@@ -1,11 +1,11 @@
-<template lang="">
+<template>
   <div class="about-container">
     <div class="text-container">
       <div class="title">
         <img src="../../assets/lance.png" class="lance" />
         <h1>{{ $lang.aboutMe }}</h1>
       </div>
-      <p>
+      <p class="message">
         {{ $lang.aboutMeMessage }}
       </p>
     </div>
@@ -19,101 +19,64 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .about-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  color: aliceblue;
-  height: 75vh;
+  align-items: center;
+  color: #fff;
+  height: calc(100vh - 3.5rem);
   width: 100vw;
   z-index: 2;
 }
-
 .text-container {
-  margin-top: 6rem;
-  text-align: center;
+  width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-.text-container h1 {
-  font-size: 4rem;
-  padding: 0.25rem;
-  text-shadow: 0 0 10px #000;
-}
-.text-container h3 {
-  font-size: 1.75rem;
-  padding-left: 2rem;
-  padding-bottom: 0.5rem;
-}
-.text-container p {
-  width: 60%;
-  padding-left: 3rem;
-  font-size: 1.5rem;
-}
-.img-container {
-  position: relative;
-  width: 40%;
+.title {
+  font-size: 2rem;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 .lance {
   height: 15vh;
   filter: grayscale(50%);
 }
-@media only screen and (max-width: 1100px) {
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: aliceblue;
-    height: 75vh;
-    width: 100vw;
-    z-index: 2;
-  }
-  .img-container {
-    position: relative;
-    width: 30%;
-  }
-  .lance {
-    height: 10vh;
-    filter: grayscale(60%);
-  }
+.message {
+  width: 80%;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
+// @media only screen and (max-width: 1100px) {
+//   .about-container {
+//   }
+//   .text-container {
+//     padding: 0.25rem;
+//     text-shadow: 0 0 10px #000;
+//   }
+//   .lance {
+//     height: 10vh;
+//     filter: grayscale(60%);
+//   }
+// }
 @media only screen and (max-width: 500px) {
-  .hero-container {
-    display: flex;
+  .title {
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color: aliceblue;
-    height: 75vh;
-    width: 100vw;
-    z-index: 2;
-  }
-  .img-container {
-    position: relative;
-    width: 30%;
+    align-items: center;
+    font-size: 1.25rem;
   }
   .lance {
-    height: 30vh;
-    filter: grayscale(60%);
-    margin-top: 6rem;
+    height: 7.5vh;
   }
-  .svg-class {
-    height: 45vh;
-    width: 45vh;
-    position: absolute;
-    left: -6.5rem;
-    bottom: -3.5rem;
-  }
-  .text-container {
-    margin-top: 6rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .message {
+    font-size: 1rem;
   }
 }
 </style>

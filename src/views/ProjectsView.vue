@@ -2,7 +2,7 @@
   <div class="projects">
     <StarBackground></StarBackground>
     <div class="quote" style="line-height: 2rem">
-      <h1 class="title" style="font-size: 5rem; margin-bottom: 3rem">
+      <h1 class="title" style="font-size: 4rem; margin-bottom: 3rem">
         Projects
       </h1>
       <div class="phrase">
@@ -42,14 +42,22 @@
         <div class="project-item">Motivation App</div>
       </div>
       <!-- See More -->
-      <div class="project-card">
+      <div class="project-card link-card-container">
         <div class="link-card">
-          <div>CodePen:</div>
-          <a href="https://codepen.io/lance-shunn-ii">@lance-shunn-ii</a>
-          <div>GitHub:</div>
-          <a href="https://github.com/lanceshunnii">@lanceshunnii</a>
+          <div class="link-message">Check out some of my other projects:</div>
+          <div class="link-container">
+            <div class="link">
+              <a target="_blank" href="https://github.com/lanceraleigh"
+                >My GitHub</a
+              >
+            </div>
+            <div class="link">
+              <a target="_blank" href="https://codepen.io/lance-shunn-ii"
+                >My CodePen</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="project-item">There's more where those came from</div>
       </div>
       <!-- Baby Steps -->
       <!-- <div class="project-card">
@@ -61,7 +69,6 @@
         </div>
       </div> -->
     </div>
-    <!-- <NavLinks></NavLinks> -->
   </div>
 </template>
 <script>
@@ -91,19 +98,21 @@ export default {
 <style scoped lang="scss">
 .projects {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  // margin-top: 3.5rem;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 300vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  position: relative;
+  position: absolute;
+  top: 4rem;
+  overflow: hidden;
 }
 .quote {
   padding: 2rem;
   color: #ddd;
+  height: 85vh;
   width: 27rem;
   display: flex;
   flex-direction: column;
@@ -118,13 +127,13 @@ export default {
 .projects-container {
   width: 90vw;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 2;
 }
 .project-card {
-  width: 20rem;
+  width: 40vw;
   background: #ddd;
   border-radius: 15px;
   margin: 2rem;
@@ -132,37 +141,83 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 0 0 5px rgba(56, 2, 100, 0.746);
+  box-shadow: 0 0 0 5px #000;
 }
 .project-card:hover {
   transform: scale(1.01);
 }
-.link-card {
-  width: 20rem;
-  height: 12.5rem;
-  border-radius: 15px 15px 0 0;
-  background: #222;
-  color: #ddd;
-  font-weight: 900;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: left;
-  text-align: left;
-  padding-left: 1rem;
-  a {
-    text-decoration: none;
-    color: greenyellow;
+.project-card.link-card-container {
+  box-shadow: none;
+  background: none;
+  .link-card {
+    width: 40vw;
+    height: 20vw;
+    font-size: 1rem;
+    border-radius: 15px 15px 0 0;
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding-left: 1rem;
+    .link-container {
+      width: 100%;
+      height: 100%;
+      margin-top: 7.5vw;
+      display: flex;
+      justify-content: space-around;
+      a {
+        // text-decoration: none;
+        color: greenyellow;
+      }
+    }
   }
+}
+.link-card-container:hover {
+  transform: scale(1);
 }
 .project-item {
   color: #222;
   font-weight: 900;
-  padding: 0.25rem;
+  padding: 0.5rem;
 }
 img {
-  width: 20rem;
-  height: 12.5rem;
+  width: 40vw;
+  height: 20vw;
+  border-bottom: 5px solid #000;
   border-radius: 15px 15px 0 0;
+}
+
+@media only screen and (max-width: 550) {
+  .project-card.link-card-container {
+    background: none;
+    .link-card {
+      width: 40vw;
+      height: 20vw;
+      font-size: 0.5rem;
+      border-radius: 15px 15px 0 0;
+      color: #fff;
+      font-weight: 900;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      padding-left: 1rem;
+      .link-container {
+        width: 100%;
+        height: 100%;
+        margin-top: 7.5vw;
+        display: flex;
+        justify-content: space-around;
+        a {
+          // text-decoration: none;
+          color: greenyellow;
+        }
+      }
+    }
+  }
 }
 </style>

@@ -10,7 +10,6 @@
       >
         Lance Raleigh
       </h1>
-      <!-- <span v-if="currentTitleLanguage === 3">です</span> -->
       <h3>{{ $lang.softwareDeveloper }}</h3>
       <p>
         {{ $lang.heroPhrase }}
@@ -38,6 +37,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .hero-container {
+  position: absolute;
+  top: 3.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -77,15 +78,7 @@ export default {
   height: 50vh;
   filter: grayscale(50%);
 }
-.svg-class {
-  height: 75vh;
-  width: 75vh;
-  position: absolute;
-  left: -10rem;
-  bottom: -7rem;
-}
 @media only screen and (max-width: 1100px) {
-  // looks good for now
   .hero-container {
     flex-direction: column;
     justify-content: space-around;
@@ -102,6 +95,16 @@ export default {
     padding: 0;
   }
 }
+
 @media only screen and (max-width: 450px) {
+  .hero-container {
+    flex-direction: column-reverse;
+  }
+  .lance {
+    height: 15vh;
+  }
+}
+
+@media only screen and (max-width: 320px) {
 }
 </style>

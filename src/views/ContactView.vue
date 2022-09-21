@@ -3,7 +3,6 @@
     <StarBackground></StarBackground>
     <ContactForm></ContactForm>
     <MyContacts></MyContacts>
-    <!-- <NavLinks></NavLinks> -->
   </div>
 </template>
 <script>
@@ -11,13 +10,11 @@ import { mapGetters } from "vuex";
 import ContactForm from "../components/contact/ContactForm.vue";
 import StarBackground from "../components/reusables/StarBackground.vue";
 import MyContacts from "../components/contact/MyContacts.vue";
-// import NavLinks from "../components/Home/NavLinks.vue";
 export default {
   name: "ContactView",
   components: {
     ContactForm,
     MyContacts,
-    // NavLinks,
     StarBackground,
   },
   computed: {

@@ -76,7 +76,7 @@ export default {
   align-items: center;
   z-index: 2;
   .contact-title {
-    color: #ddd;
+    color: #fff;
   }
   form {
     background: #ddd;
@@ -101,6 +101,23 @@ export default {
   }
   .button-submit {
     color: #ddd;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .contact-form {
+    margin-top: 1rem;
+    .contact-title {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    form {
+      padding: 0.5rem;
+      width: 15rem;
+      height: 15rem;
+    }
+    .contact-form-item {
+      font-size: 1rem;
+    }
   }
 }
 </style>

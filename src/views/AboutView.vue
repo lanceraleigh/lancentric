@@ -2,19 +2,16 @@
   <div class="about">
     <StarBackground></StarBackground>
     <AboutMe></AboutMe>
-    <!-- <NavLinks></NavLinks> -->
   </div>
 </template>
 <script>
 import AboutMe from "../components/about/AboutMe.vue";
-// import NavLinks from "../components/Home/NavLinks.vue";
 import StarBackground from "../components/reusables/StarBackground.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "AboutView",
   components: {
     AboutMe,
-    // NavLinks,
     StarBackground,
   },
   computed: {
@@ -33,6 +30,8 @@ export default {
 </script>
 <style scoped lang="scss">
 .about {
+  position: absolute;
+  top: 3.5rem;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   margin: 0;
   padding: 0;
@@ -40,7 +39,6 @@ export default {
   width: 100vw;
   display: flex;
   justify-content: center;
-  position: relative;
   overflow: hidden;
 }
 
