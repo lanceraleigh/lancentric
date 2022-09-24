@@ -1,10 +1,23 @@
 <template>
   <div class="lesson-modal-container">
-    <ConfirmationDialog
+    <DialogBox
       v-if="confirmationOpen"
+      :type="'confirmation'"
       :message="'Are you sure you want to leave your lesson?'"
       @yes="closeModal"
       @no="confirmationOpen = false"
+    />
+    <DialogBox
+      v-if="answerSubmitted"
+      :type="'answer'"
+      :message="submittedResponseDialog"
+      :answerRight="answerRight"
+      @no="answerSubmitted = false"
+      @yes="
+        nextQuestion();
+        answerInput = '';
+        answerSubmitted = false;
+      "
     />
     <div class="lesson-modal">
       <div class="top-bar">
@@ -54,7 +67,8 @@
           >
             Check Answer
           </div>
-          <div class="button-container">
+
+          <!-- <div class="button-container">
             <div
               @click="lastQuestion(question.questionNumber)"
               class="button back-button"
@@ -64,7 +78,7 @@
             <div @click="nextQuestion(question.questionNumber)" class="button">
               Next
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -73,12 +87,12 @@
 
 <script>
 import { mapGetters } from "vuex";
-import ConfirmationDialog from "../reusables/ConfirmationDialog.vue";
+import DialogBox from "../reusables/DialogBox.vue";
 
 export default {
   name: "LessonModal",
   components: {
-    ConfirmationDialog,
+    DialogBox,
   },
   mounted() {
     document.querySelector("textarea").addEventListener("keydown", (e) => {
@@ -101,25 +115,37 @@ export default {
       answerInput: "",
       confirmationOpen: false,
       currentAnswer: this.cardQuestionObject,
+      answerSubmitted: false,
+      submittedResponseDialog: "Oops, that doesn't look right",
+      answerRight: false,
     };
   },
   methods: {
     submitAnswer(correctAnswer) {
       let submitted = this.answerInput.toLowerCase();
       if (submitted === "") {
-        alert("Please make sure to input an answer before submitting");
+        this.submittedResponseDialog =
+          "Oops, please make sure to input an answer before submitting";
+        this.answerRight = false;
       } else if (submitted !== "" && submitted !== correctAnswer) {
-        alert("oops");
+        this.submittedResponseDialog = "Oops, that doesn't look right.";
+        this.answerRight = false;
       } else if (submitted === correctAnswer) {
-        alert("Hell yeah!");
+        this.submittedResponseDialog = "Awesome work!";
+        this.answerRight = true;
+      }
+      this.answerSubmitted = true;
+    },
+    nextQuestion() {
+      if (this.currentQuestionNumber < 10) {
+        this.currentQuestionNumber++;
+        this.currentQuestionIndex++;
+      } else {
+        this.$store.commit("toggleLessonModal", false);
       }
     },
-    nextQuestion(questionNumber) {
-      this.currentQuestionNumber = questionNumber + 1;
-      this.currentQuestionIndex++;
-    },
-    lastQuestion(questionNumber) {
-      this.currentQuestionNumber = questionNumber - 1;
+    lastQuestion() {
+      this.currentQuestionNumber_--;
       this.currentQuestionIndex--;
     },
     closeModal() {

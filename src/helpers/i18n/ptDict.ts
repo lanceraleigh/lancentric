@@ -18,7 +18,7 @@ const ptDict: object = {
   aboutMe: "Quem Sou Eu?",
   aboutMeMessage:
     "Sou um desenvolvedor de software autodidata no início da carreira com experiência em desenvolvimento full stack e especializado no front-end. Apaixonado por internacionalização quando usada para trazer software moderno para as pessoas ao redor do mundo de todo tipo de vida.",
-  landingPageQuestion: "Qual idioma vamos aprender hoje?",
+  landingPageQuestion: "Que idioma vamos aprender hoje?",
 };
 
 export default ptDict;

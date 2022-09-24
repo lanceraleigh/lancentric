@@ -57,7 +57,8 @@ export default {
         this.$route.name === "Home" ||
         this.$route.name === "About" ||
         this.$route.name === "Projects" ||
-        this.$route.name === "Contact"
+        this.$route.name === "Contact" ||
+        this.$route.name === "PageNotFound"
       );
     },
   },

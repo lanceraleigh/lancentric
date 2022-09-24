@@ -4,6 +4,7 @@ import AboutView from "../views/AboutView.vue";
 import ContactView from "../views/ContactView.vue";
 import ProjectsView from "../views/ProjectsView.vue";
 import LandingPage from "../views/LandingPage.vue";
+import Custom404Page from "../views/Custom404Page.vue";
 import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -58,6 +59,14 @@ const routes: Array<RouteRecordRaw> = [
     component: CurrentLanguageHomeView,
     meta: {
       title: "Let's Get Learning",
+    },
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "PageNotFound",
+    component: Custom404Page,
+    meta: {
+      title: "404: Page Not Found",
     },
   },
 ];

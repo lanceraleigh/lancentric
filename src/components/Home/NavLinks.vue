@@ -14,20 +14,22 @@
       </label>
     </div>
     <div v-show="viewPortWidth >= 1100 || showMenu" class="link-container">
-      <div class="nav-item home-link">
+      <div v-if="!lancentric" class="nav-item personal-site-link home-link">
         <router-link to="/" exact>{{ $lang.home }}</router-link>
       </div>
-      <div class="nav-item projects">
+      <div v-if="!lancentric" class="nav-item personal-site-link projects">
         <router-link to="/projects">{{ $lang.projects }}</router-link>
       </div>
-      <div class="nav-item about-me">
+      <div v-if="!lancentric" class="nav-item personal-site-link about-me">
         <router-link to="/about">{{ $lang.about }}</router-link>
       </div>
-      <div class="nav-item contact">
+      <div v-if="!lancentric" class="nav-item personal-site-link contact">
         <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
+      <div v-if="lancentric" class="profile nav-item" @click="beingBuilt">
+        Profile
+      </div>
       <!-- Colored Link -->
-      <div v-if="lancentric" class="profile nav-item">Profile</div>
       <div
         v-if="personalSite"
         class="colored-link-button nav-item"
@@ -76,7 +78,8 @@ export default {
         this.$route.name === "Home" ||
         this.$route.name === "About" ||
         this.$route.name === "Projects" ||
-        this.$route.name === "Contact"
+        this.$route.name === "Contact" ||
+        this.$route.name === "PageNotFound"
       );
     },
   },
@@ -86,6 +89,9 @@ export default {
     },
   },
   methods: {
+    beingBuilt() {
+      alert("This feature is currently being built, please check back later");
+    },
     capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
