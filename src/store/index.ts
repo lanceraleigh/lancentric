@@ -4,6 +4,7 @@ import enDict from "../helpers/i18n/enDict";
 import esDict from "../helpers/i18n/esDict";
 import frDict from "../helpers/i18n/frDict";
 import ptDict from "../helpers/i18n/ptDict";
+import EnglishLessons from "../helpers/EnglishLessons";
 import SpanishLessons from "../helpers/SpanishLessons";
 import PortugueseLessons from "../helpers/PortugueseLessons";
 import FrenchLessons from "../helpers/FrenchLessons";
@@ -97,10 +98,10 @@ export default createStore({
     setCurrentLanguageLessons(state, payload) {
       if (payload === "english") {
         // Set Lessons in localStorage
-        state.currentLanguageLessons = SpanishLessons;
+        state.currentLanguageLessons = EnglishLessons;
         window.localStorage.setItem(
           "currentLanguageLessons",
-          JSON.stringify(SpanishLessons)
+          JSON.stringify(EnglishLessons)
         );
         state.currentLanguageName = payload;
         window.localStorage.setItem(

@@ -38,9 +38,13 @@
         >
         <!-- <span class="beta"> *Beta</span> -->
       </div>
-      <div v-if="!!lancentric" class="nav-link" @click="$router.push('/')">
-        <span class="lancentric-link colored-link-button"
-          >Back to Portfolio</span
+      <div
+        v-if="!!lancentric"
+        class="nav-item colored-link-button"
+        @click="$router.push('/')"
+      >
+        <span class="lancentric-link"
+          ><span class="mobile-shortening">Back to </span>Portfolio</span
         >
       </div>
     </div>

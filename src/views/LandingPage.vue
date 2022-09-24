@@ -2,7 +2,7 @@
   <div class="landing-page">
     <StarBackground></StarBackground>
     <h2 class="language-choice-title">
-      What language are we gonna learn today?
+      {{ $lang.landingPageQuestion }}
     </h2>
     <div class="landing">
       <div
@@ -19,6 +19,7 @@
 </template>
 <script>
 import StarBackground from "../components/reusables/StarBackground.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "LandingPage",
   components: {
@@ -27,6 +28,10 @@ export default {
   data() {
     return {
       flagArray: [
+        {
+          source: require("../assets/country-flags/png-256/america.png"),
+          name: "english",
+        },
         {
           source: require("../assets/country-flags/png-256/spain.png"),
           name: "spanish",
@@ -41,6 +46,9 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
   },
   methods: {
     capitalize(string) {
@@ -67,6 +75,7 @@ export default {
 }
 .landing {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: relative;
