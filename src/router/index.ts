@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ContactView from "../views/ContactView.vue";
 import ProjectsView from "../views/ProjectsView.vue";
+import LoginPage from "../components/login/LoginPage.vue";
 import LandingPage from "../views/LandingPage.vue";
 import Custom404Page from "../views/Custom404Page.vue";
 import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
@@ -41,16 +42,24 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: "/lancentric",
-    name: "LancentricLandingPage",
-    component: LandingPage,
+    path: "/login",
+    name: "Login",
+    component: LoginPage,
     meta: {
-      title: "Lancentric: Master Languages Today",
+      title: "Log-In to Lancentric",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       // component: () =>
       //   import(/* webpackChunkName: "about" */ "../views/LandingPage.vue"),
+    },
+  },
+  {
+    path: "/lancentric",
+    name: "LancentricLandingPage",
+    component: LandingPage,
+    meta: {
+      title: "Lancentric: Master Languages Today",
     },
   },
   {

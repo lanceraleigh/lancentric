@@ -102,7 +102,7 @@ export default {
       this.$store.commit("setPersonalSiteCurrentLanguage", this.selected);
     },
     letsGetLearning() {
-      this.$router.push("/lancentric");
+      this.$router.push("/login");
     },
   },
 };
