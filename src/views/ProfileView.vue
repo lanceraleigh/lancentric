@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     logout() {
-      this.$auth0.logout({ returnTo: window.location.origin });
+      this.$auth0.logout({ returnTo: "https://lanceraleigh.com/login" });
     },
   },
 };
@@ -38,6 +38,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  box-shadow: inset 1px 1px 10px #444;
 }
 
 .profile-info {

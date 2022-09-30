@@ -69,27 +69,31 @@ export default {
 </script>
 <style lang="scss" scoped>
 .contact-form {
+  background: #ddd;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 2;
-  .contact-title {
-    color: #fff;
-  }
+  box-shadow: inset 1px 1px 10px #444;
+  padding: 1rem;
+  width: 25rem;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  border-radius: 10px;
+  border: 1px solid #222;
   form {
-    background: #ddd;
     padding: 1rem;
     width: 25rem;
-    height: 25rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    border-radius: 10px;
-    border: 1px solid #222;
-    box-shadow: 5px 5px 5px #000, 5px 5px 5px #000;
   }
   .contact-form-item {
     resize: none;
@@ -98,9 +102,80 @@ export default {
     font-size: 1.25rem;
     margin: 0.25rem;
     border: 1px solid #222;
+    padding: 0.1rem 0.25rem;
   }
   .button-submit {
-    color: #ddd;
+    background: linear-gradient(
+      124deg,
+      #6c0f00,
+      #640d0d,
+      #6e570d,
+      #60620d,
+      #0e741f,
+      #0d6064,
+      #140d6c,
+      #5b0063,
+      #630061
+    );
+    background-size: 350% 350%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+    color: #fff;
+    font-weight: bold;
+    border: 3px solid #444;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+  }
+}
+
+.button-submit:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
   }
 }
 @media only screen and (max-width: 400px) {
