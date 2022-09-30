@@ -9,9 +9,9 @@ const app = createApp(App);
 app
   .use(
     createAuth0({
-      domain: "domain",
-      client_id: "id",
-      redirect_uri: "redirect",
+      domain: "dev-csmlbd3j.us.auth0.com",
+      client_id: "ezlZKqkMrAXhUrtA96diwwYKHAPwqVgu",
+      redirect_uri: "https://lanceraleigh.com/lancentric",
     })
   )
   .use(store)

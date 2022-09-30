@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Auth0PopUp from "../login/Auth0PopUp.vue";
+import Auth0PopUp from "../components/login/Auth0PopUp.vue";
 export default {
   name: "LoginPage",
   components: {

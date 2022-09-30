@@ -3,7 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ContactView from "../views/ContactView.vue";
 import ProjectsView from "../views/ProjectsView.vue";
-import LoginPage from "../components/login/LoginPage.vue";
+import LoginPage from "../views/LoginPage.vue";
+import ProfileView from "../views/ProfileView.vue";
 import LandingPage from "../views/LandingPage.vue";
 import Custom404Page from "../views/Custom404Page.vue";
 import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
@@ -60,6 +61,14 @@ const routes: Array<RouteRecordRaw> = [
     component: LandingPage,
     meta: {
       title: "Lancentric: Master Languages Today",
+    },
+  },
+  {
+    path: "/profile",
+    name: "UserProfile",
+    component: ProfileView,
+    meta: {
+      title: "User Account Information",
     },
   },
   {
