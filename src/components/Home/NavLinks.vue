@@ -26,8 +26,8 @@
       <div v-if="!lancentric" class="nav-item personal-site-link contact">
         <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
-      <div v-if="lancentric" class="profile nav-item" @click="beingBuilt">
-        Profile
+      <div v-if="lancentric" class="profile nav-item">
+        <router-link to="/profile">{{ $lang.profile }}</router-link>
       </div>
       <!-- Colored Link -->
       <div

@@ -49,7 +49,9 @@ export default {
     lancentric() {
       return (
         this.$route.name === "LancentricLandingPage" ||
-        this.$route.name === "Learning"
+        this.$route.name === "Learning" ||
+        this.$route.name === "Login" ||
+        this.$route.name === "UserProfile"
       );
     },
     personalSite() {

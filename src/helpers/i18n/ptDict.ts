@@ -10,6 +10,7 @@ const ptDict: object = {
   projects: "Projetos",
   contact: "Contatar",
   home: "Inicial",
+  profile: "Perfil",
   contactMe: "Entre em contato",
   name: "Nome",
   email: "Email",

@@ -17,5 +17,13 @@ export default {
 <style lang="scss" scoped>
 .auth0 {
   z-index: 10;
+  width: 40vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ddd;
+  border-radius: 15px;
 }
 </style>

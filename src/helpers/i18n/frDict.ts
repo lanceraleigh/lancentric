@@ -10,6 +10,7 @@ const frDict: object = {
   projects: "Projets",
   contact: "Contacter",
   home: "d'Accueil",
+  profile: "Profil",
   contactMe: "Contactez Moi",
   name: "Prénom",
   email: "l'Email",

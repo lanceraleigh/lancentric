@@ -1,3 +1,15 @@
+<script>
+export default {
+  name: "StarBackground",
+  computed: {
+    mobileNavigator() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    },
+  },
+};
+</script>
 <template>
   <div v-if="!mobileNavigator" class="star-container">
     <div
@@ -13,18 +25,6 @@
     ></div>
   </div>
 </template>
-<script>
-export default {
-  name: "StarBackground",
-  computed: {
-    mobileNavigator() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-    },
-  },
-};
-</script>
 <style lang="scss" scoped>
 .star-container {
   overflow: hidden;

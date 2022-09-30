@@ -10,6 +10,7 @@ const enDict: object = {
   projects: "Projects",
   contact: "Contact",
   home: "Home",
+  profile: "Profile",
   contactMe: "Contact Me",
   name: "Name",
   email: "Email",

@@ -10,6 +10,7 @@ const esDict: object = {
   projects: "Proyectos",
   contact: "Contactar",
   home: "Inicial",
+  profile: "Perfil",
   contactMe: "Contácteme",
   name: "Nombre",
   email: "Email",
