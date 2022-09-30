@@ -11,6 +11,11 @@ const frDict: object = {
   contact: "Contacter",
   home: "d'Accueil",
   profile: "Profil",
+  loginTitleOne: "Créez votre compte gratuit ou connectez-vous",
+  loginTitleTwo:
+    "pour enregistrer vos progrès dans l'apprentissage des langues",
+  signup: "S'inscrire",
+  login: "ouvrir une session",
   contactMe: "Contactez Moi",
   name: "Prénom",
   email: "l'Email",

@@ -1,17 +1,21 @@
 <template>
   <div class="auth0">
     <div class="title">
-      Create your free account or login<br />
-      <span class="subtitle">to save your language learning progress</span>
+      {{ $lang.loginTitleOne }}<br />
+      <span class="subtitle">{{ $lang.loginTitleTwo }}</span>
     </div>
     <div class="login-options">
-      <div class="signup-button" @click="login">Signup</div>
-      <div class="login-button" @click="login">Login</div>
+      <div class="signup-button" @click="login">{{ $lang.signup }}</div>
+      <div class="login-button" @click="login">{{ $lang.login }}</div>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 export default {
+  computed: {
+    ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
+  },
   methods: {
     login() {
       this.$auth0.loginWithRedirect();

@@ -26,12 +26,15 @@
       <div v-if="!lancentric" class="nav-item personal-site-link contact">
         <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
-      <div v-if="!!lancentric" class="profile nav-item">
+      <div
+        v-if="!!lancentric && $route.path !== '/login'"
+        class="profile nav-item"
+      >
         <router-link to="/lancentric/profile">{{ $lang.profile }}</router-link>
       </div>
       <!-- Colored Link -->
       <div
-        v-if="personalSite"
+        v-if="!lancentric"
         class="colored-link-button nav-item"
         @click="letsGetLearning"
       >
@@ -68,7 +71,12 @@ export default {
   computed: {
     ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
     lancentric() {
-      return this.$route.path === "/lancentric";
+      return (
+        this.$route.path === "/login" ||
+        this.$route.path === "/lancentric" ||
+        this.$route.path === "/lancentric/letslearn" ||
+        this.$route.path === "/lancentric/profile"
+      );
     },
     personalSite() {
       return (
