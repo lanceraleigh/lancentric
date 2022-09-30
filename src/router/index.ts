@@ -64,7 +64,7 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: "/profile",
+    path: "/lancentric/profile",
     name: "UserProfile",
     component: ProfileView,
     meta: {
