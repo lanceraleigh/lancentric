@@ -50,6 +50,7 @@ export default {
 }
 .message {
   width: 80%;
+  max-width: 50rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
