@@ -10,9 +10,6 @@
       <div class="info-item-title">
         Email: <span class="info-item-value">{{ user.email }}</span>
       </div>
-      <pre>
-        <code>{{ user }}</code>
-      </pre>
       <button @click="logout">Sign Out</button>
     </div>
   </div>
