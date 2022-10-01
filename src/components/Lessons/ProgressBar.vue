@@ -15,14 +15,14 @@ export default {
 <style>
 .lesson-progress-bar {
   height: 0.5rem;
-  background: #fff;
+  background: #ddd;
   width: 90%;
   margin: 5%;
   border-radius: 5px;
 }
 .lesson-progress {
   height: 0.5rem;
-  background: var(--blue-button);
+  background: rgb(2, 193, 50);
   border-radius: 5px;
 }
 </style>

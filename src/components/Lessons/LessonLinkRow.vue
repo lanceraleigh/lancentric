@@ -61,7 +61,7 @@ export default {
   display: flex;
 }
 .row-item {
-  background: var(--pro-color);
+  background: var(--medium-color);
   width: 7rem;
   height: 7rem;
   box-shadow: 1px 4px #aaa;
@@ -83,7 +83,7 @@ export default {
 }
 .row-item:hover {
   cursor: pointer;
-  background: var(--pro-color-hover);
+  background: var(--medium-color-hover);
   box-shadow: 0 3px #aaa;
 }
 .progress-circle {
