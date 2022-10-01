@@ -2,7 +2,14 @@
   <div class="profile-view">
     <StarBackground></StarBackground>
     <div class="profile-info">
-      <h2>User Profile</h2>
+      <h2>Your Profile</h2>
+      <img :src="user.picture" />
+      <div class="info-item-title">
+        Name: <span class="info-item-value">{{ user.nickname }}</span>
+      </div>
+      <div class="info-item-title">
+        Email: <span class="info-item-value">{{ user.email }}</span>
+      </div>
       <pre>
         <code>{{ user }}</code>
       </pre>
@@ -52,5 +59,12 @@ export default {
   justify-content: space-around;
   align-items: center;
   z-index: 10;
+}
+.info-item-title {
+  color: #222;
+  font-weight: bold;
+}
+.info-item-value {
+  color: #444;
 }
 </style>
