@@ -1,5 +1,5 @@
 <template>
-  <nav class="landing-page">
+  <nav :class="{ 'learning-app': lancentric }">
     <div v-if="$route.name !== 'learning'" class="language-select">
       <select
         class="personal-site"
@@ -48,10 +48,10 @@ export default {
     },
     lancentric() {
       return (
-        this.$route.name === "LancentricLandingPage" ||
-        this.$route.name === "Learning" ||
-        this.$route.name === "Login" ||
-        this.$route.name === "UserProfile"
+        this.$route.path === "/login" ||
+        this.$route.path === "/lancentric" ||
+        this.$route.path === "/lancentric/letslearn" ||
+        this.$route.path === "/lancentric/profile"
       );
     },
     personalSite() {
@@ -97,35 +97,6 @@ nav {
   font-weight: bold;
   border-bottom: 1px solid #444;
   z-index: 20;
-  .lancentric-link {
-    font-size: 1.25rem;
-    height: 1.5rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 10px;
-    box-shadow: 2px 2px #000;
-    background: linear-gradient(
-      124deg,
-      #ff240059,
-      #e81d1d59,
-      #e8b71d59,
-      #e3e81d59,
-      #1de84059,
-      #1ddde859,
-      #2b1de859,
-      #dd00f359,
-      #dd00f359
-    );
-    background-size: 500% 500%;
-
-    -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 18s ease infinite;
-    -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
-  }
-  .lancentric-link:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-  }
   .link-button {
     margin-right: 1rem;
   }
