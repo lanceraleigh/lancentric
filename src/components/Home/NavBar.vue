@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ 'learning-app': lancentric }">
+  <nav class="landing-page" :class="{ 'learning-app': lancentric }">
     <div v-if="$route.name !== 'learning'" class="language-select">
       <select
         class="personal-site"

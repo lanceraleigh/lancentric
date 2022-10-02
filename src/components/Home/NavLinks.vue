@@ -143,69 +143,66 @@ export default {
 .nav-links {
   display: flex;
   justify-content: space-between;
-  .link-container {
-    display: flex;
-    justify-content: space-between;
-    a {
-      text-decoration: none;
-      color: #ddd;
-      font-weight: bold;
-      margin: 0 0.5rem;
-    }
-    label {
-      display: none;
-    }
-    .nav-item {
-      padding: 0.5rem;
-      font-size: 1.5rem;
-    }
-    .nav-item:hover {
-      cursor: pointer;
-      transform: scale(1.05);
-    }
-    .router-link-active,
-    .router-link-exact-active {
-      text-decoration: underline;
-      text-decoration-color: rgb(150, 2, 255);
-    }
-    .lancentric-link {
-      font-size: 1.25rem;
-      height: 1.5rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 10px;
-      box-shadow: 2px 2px #000;
-      background: linear-gradient(
-        124deg,
-        #ff240059,
-        #e81d1d59,
-        #e8b71d59,
-        #e3e81d59,
-        #1de84059,
-        #1ddde859,
-        #2b1de859,
-        #dd00f359,
-        #dd00f359
-      );
-      background-size: 500% 500%;
-
-      -webkit-animation: rainbow 18s ease infinite;
-      -z-animation: rainbow 18s ease infinite;
-      -o-animation: rainbow 18s ease infinite;
-      animation: rainbow 18s ease infinite;
-    }
-    .lancentric-link:hover {
-      cursor: pointer;
-      transform: scale(1.2);
-    }
-    .beta {
-      font-size: 0.75rem;
-      padding-bottom: 0.25rem;
-    }
-  }
-  .link-container.learning-app {
-    width: 100vw;
-  }
 }
+.link-container {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+label {
+  display: none;
+}
+.nav-item {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.nav-item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.router-link-active,
+.router-link-exact-active {
+  text-decoration: underline;
+  text-decoration-color: rgb(150, 2, 255);
+}
+.lancentric-link {
+  font-size: 1.25rem;
+  height: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px #000;
+  background: linear-gradient(
+    124deg,
+    #ff240059,
+    #e81d1d59,
+    #e8b71d59,
+    #e3e81d59,
+    #1de84059,
+    #1ddde859,
+    #2b1de859,
+    #dd00f359,
+    #dd00f359
+  );
+  background-size: 500% 500%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+.lancentric-link:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.beta {
+  font-size: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+// media query
 @media only screen and (max-width: 1100px) {
   .link-container {
     position: absolute;
@@ -217,9 +214,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .link-container.learning-app {
-    height: 15vh;
   }
   a {
     color: #ddd;
@@ -290,7 +284,13 @@ export default {
   .hide-burger-menu {
     display: none;
   }
+
+  .link-container.learning-app {
+    width: 100vw;
+    height: 15vh;
+  }
 }
+// Media query
 @media only screen and (max-width: 400px) {
   .link-container {
     height: 75vh;
