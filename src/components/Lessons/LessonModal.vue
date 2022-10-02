@@ -57,8 +57,6 @@
             v-else
             class="card-item"
             maxlength="50"
-            rows="10"
-            cols="20"
             v-model="answerInput"
           ></textarea>
           <div
@@ -256,5 +254,38 @@ textarea {
 }
 .button:hover {
   cursor: pointer;
+}
+@media only screen and (max-width: 1100px) {
+  .lesson-modal-container {
+    font-size: 1rem;
+  }
+  .lesson-modal {
+    width: 75vh;
+    height: 75vh;
+  }
+  .top-bar {
+    display: none;
+  }
+  .question-number {
+    font-size: 0.75rem;
+    top: 1.5rem;
+  }
+  textarea {
+    height: 35vh;
+    width: 60vw;
+  }
+  .question-type {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .question-context {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .check-answer-button {
+    margin: 0.25rem;
+  }
 }
 </style>

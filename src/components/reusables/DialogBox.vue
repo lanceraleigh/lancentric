@@ -94,4 +94,10 @@ export default {
 .no {
   background: gray;
 }
+@media only screen and (max-width: 1100px) {
+  .dialog {
+    height: 30%;
+    width: 50%;
+  }
+}
 </style>

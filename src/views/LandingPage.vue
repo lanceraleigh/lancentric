@@ -12,7 +12,16 @@
         @click="selectLanguage(img.name)"
       >
         <img :src="img.source" class="language-image" />
-        <div class="title">{{ capitalize(img.name) }}</div>
+        <div class="title">
+          <span v-if="img.name !== 'english'" class="additional-words"
+            >English to </span
+          ><span v-if="img.name === 'english'" class="additional-words"
+            >Misc. to </span
+          >{{ capitalize(img.name)
+          }}<span v-if="img.name === 'english'" class="additional-words">
+            (experimental)</span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -109,5 +118,40 @@ img {
   cursor: pointer;
   transform: scale(1.01);
   box-shadow: 1px 3px 5px #243548;
+}
+@media only screen and (max-width: 800px) {
+  .img-container {
+    width: 100px;
+    height: 120px;
+    border-radius: 10px;
+    margin: 2rem;
+  }
+  .language-choice-title {
+    margin: 1.5rem;
+    text-align: center;
+  }
+  img {
+    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+  }
+  .additional-words {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .img-container {
+    width: 70px;
+    height: 85px;
+    border-radius: 10px;
+    margin: 2rem;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+  }
+  .title {
+    font-size: 0.75rem;
+  }
 }
 </style>

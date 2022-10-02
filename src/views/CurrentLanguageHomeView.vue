@@ -1,9 +1,10 @@
 <template>
-  <NavBar />
+  <StarBackground></StarBackground>
   <div
     class="lesson-groups-container"
     :class="{ 'modal-open': lessonModalOpen }"
   >
+    {{ userEmail }}
     <LessonLinkRow
       v-for="lessonGroup in currentLanguageLessons"
       :key="lessonGroup[0].groupName"
@@ -18,14 +19,19 @@
 <script>
 import LessonLinkRow from "../components/Lessons/LessonLinkRow.vue";
 import LessonModal from "../components/Lessons/LessonModal.vue";
-import NavBar from "../components/Home/NavBar.vue";
+import StarBackground from "../components/reusables/StarBackground.vue";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     LessonLinkRow,
     LessonModal,
-    NavBar,
+    StarBackground,
+  },
+  data() {
+    return {
+      userEmail: this.$auth0.user.email,
+    };
   },
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
@@ -40,14 +46,25 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
   width: 100vw;
 }
-.lesson-groups-container.modal-open {
-  overflow-y: hidden;
+.lesson-groups-container:has(+ LessonsModal) {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 .lesson-link-row-title {
   font-weight: bold;
   margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1100px) {
+  .lesson-groups-container {
+    height: fit-content;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .lesson-link-row-title {
+    margin-bottom: 1rem;
+  }
 }
 </style>

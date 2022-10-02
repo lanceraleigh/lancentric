@@ -13,22 +13,43 @@
         <span></span>
       </label>
     </div>
-    <div v-show="viewPortWidth >= 1100 || showMenu" class="link-container">
-      <div v-if="!lancentric" class="nav-item personal-site-link home-link">
+    <div
+      v-show="viewPortWidth >= 1100 || showMenu"
+      class="link-container"
+      :class="{ 'learning-app': lancentric }"
+    >
+      <div
+        v-if="!lancentric"
+        class="nav-item personal-site-link home-link"
+        @click="showMenu = false"
+      >
         <router-link to="/" exact>{{ $lang.home }}</router-link>
       </div>
-      <div v-if="!lancentric" class="nav-item personal-site-link projects">
+      <div
+        v-if="!lancentric"
+        class="nav-item personal-site-link projects"
+        @click="showMenu = false"
+      >
         <router-link to="/projects">{{ $lang.projects }}</router-link>
       </div>
-      <div v-if="!lancentric" class="nav-item personal-site-link about-me">
+      <div
+        v-if="!lancentric"
+        class="nav-item personal-site-link about-me"
+        @click="showMenu = false"
+      >
         <router-link to="/about">{{ $lang.about }}</router-link>
       </div>
-      <div v-if="!lancentric" class="nav-item personal-site-link contact">
+      <div
+        v-if="!lancentric"
+        class="nav-item personal-site-link contact"
+        @click="showMenu = false"
+      >
         <router-link to="/contact">{{ $lang.contact }}</router-link>
       </div>
       <div
         v-if="!!lancentric && $route.path !== '/login'"
         class="profile nav-item"
+        @click="showMenu = false"
       >
         <router-link to="/lancentric/profile">{{ $lang.profile }}</router-link>
       </div>
@@ -36,7 +57,10 @@
       <div
         v-if="!lancentric"
         class="colored-link-button nav-item"
-        @click="letsGetLearning"
+        @click="
+          letsGetLearning();
+          showMenu = false;
+        "
       >
         <span class="lancentric-link"
           >Lancentric<span class="mobile-shortening"> Learning</span></span
@@ -46,7 +70,10 @@
       <div
         v-if="!!lancentric"
         class="nav-item colored-link-button"
-        @click="$router.push('/')"
+        @click="
+          $router.push('/');
+          showMenu = false;
+        "
       >
         <span class="lancentric-link"
           ><span class="mobile-shortening">Back to </span>Portfolio</span
@@ -175,6 +202,9 @@ export default {
       padding-bottom: 0.25rem;
     }
   }
+  .link-container.learning-app {
+    width: 100vw;
+  }
 }
 @media only screen and (max-width: 1100px) {
   .link-container {
@@ -187,6 +217,9 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .link-container.learning-app {
+    height: 15vh;
   }
   a {
     color: #ddd;
@@ -261,6 +294,9 @@ export default {
 @media only screen and (max-width: 400px) {
   .link-container {
     height: 75vh;
+  }
+  .link-container.learning-app {
+    height: 20vh;
   }
 }
 </style>

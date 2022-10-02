@@ -1,6 +1,6 @@
 <template>
   <nav class="landing-page">
-    <div class="language-select">
+    <div v-if="$route.name !== 'learning'" class="language-select">
       <select
         class="personal-site"
         style="text-align: center"
@@ -96,6 +96,7 @@ nav {
   align-items: center;
   font-weight: bold;
   border-bottom: 1px solid #444;
+  z-index: 20;
   .lancentric-link {
     font-size: 1.25rem;
     height: 1.5rem;
