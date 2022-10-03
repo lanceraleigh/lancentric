@@ -40,7 +40,7 @@ export default {
   position: absolute;
   top: 3.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
   color: aliceblue;
   height: 75vh;
@@ -72,7 +72,6 @@ export default {
 }
 .img-container {
   position: relative;
-  width: 40%;
 }
 .lance {
   height: 50vh;
@@ -81,7 +80,7 @@ export default {
 @media only screen and (max-width: 1100px) {
   .hero-container {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
   .text-container {
@@ -99,12 +98,20 @@ export default {
 @media only screen and (max-width: 450px) {
   .hero-container {
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container h1 {
+    font-size: 2rem;
+  }
+  .text-container h3 {
+    font-size: 1rem;
+  }
+  .text-container p {
+    font-size: 0.75rem;
   }
   .lance {
     height: 15vh;
   }
-}
-
-@media only screen and (max-width: 320px) {
 }
 </style>

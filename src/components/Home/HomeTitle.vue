@@ -76,4 +76,9 @@ export default {
 .slide-fade-leave-to {
   opacity: 0;
 }
+@media only screen and (max-width: 450px) {
+  .lets-learn-phrase {
+    font-size: 0.75em;
+  }
+}
 </style>

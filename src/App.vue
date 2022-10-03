@@ -1,16 +1,34 @@
 <template>
   <div id="lance-raleigh-website">
-    <!-- <StarBackground></StarBackground> -->
     <NavBar :landing="landing" class="navbar-z" />
+    <div
+      v-show="!contactModalIsOpen"
+      class="comment-icon-container"
+      @click="openContactModal"
+    >
+      <img src="./assets/comment/icons8-comments-96.png" class="comment-icon" />
+    </div>
+    <ContactModal
+      @close="contactModalIsOpen = false"
+      v-if="contactModalIsOpen"
+      class="contact-modal"
+    ></ContactModal>
     <router-view />
   </div>
 </template>
 <script>
 import NavBar from "./components/Home/NavBar.vue";
+import ContactModal from "./components/contact/ContactModal.vue";
 export default {
   name: "LancentricLearning",
   components: {
     NavBar,
+    ContactModal,
+  },
+  data() {
+    return {
+      contactModalIsOpen: false,
+    };
   },
   async mounted() {
     // eslint-disable-next-line
@@ -26,6 +44,11 @@ export default {
   computed: {
     landing() {
       return this.$route.name === "LandingPage";
+    },
+  },
+  methods: {
+    openContactModal() {
+      this.contactModalIsOpen = true;
     },
   },
 };
@@ -47,9 +70,35 @@ export default {
 }
 .navbar-z {
   position: absolute;
-  z-index: 4;
+  z-index: 20;
 }
 .modal-open {
   overflow: hidden;
+}
+.contact-modal {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.comment-icon-container {
+  background: rgba(252, 250, 220, 0.839);
+  border-radius: 50%;
+  padding: 0.1rem;
+  z-index: 15;
+  position: fixed;
+  bottom: 0.25rem;
+  right: 0.25rem;
+}
+.comment-icon {
+  height: 5vh;
+  width: 5vh;
+  margin-bottom: -0.25rem;
+  // -webkit-filter: grayscale(1) invert(1);
+  // filter: grayscale(1) invert(1);
+}
+.comment-icon-container:hover {
+  cursor: pointer;
+  transform: scale(0.95);
 }
 </style>

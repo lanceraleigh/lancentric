@@ -1,13 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
-import ContactView from "../views/ContactView.vue";
-import ProjectsView from "../views/ProjectsView.vue";
-import LoginPage from "../views/LoginPage.vue";
-import ProfileView from "../views/ProfileView.vue";
-import LandingPage from "../views/LandingPage.vue";
 import Custom404Page from "../views/Custom404Page.vue";
-import CurrentLanguageHomeView from "../views/CurrentLanguageHomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/about",
     name: "About",
-    component: AboutView,
+    component: () => import("../views/AboutView.vue"),
     meta: {
       title: "About",
     },
@@ -29,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/projects",
     name: "Projects",
-    component: ProjectsView,
+    component: () => import("../views/ProjectsView.vue"),
     meta: {
       title: "Projects",
     },
@@ -37,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/contact",
     name: "Contact",
-    component: ContactView,
+    component: () => import("../views/ContactView.vue"),
     meta: {
       title: "Contact",
     },
@@ -45,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
     name: "Login",
-    component: LoginPage,
+    component: () => import("../views/LoginPage.vue"),
     meta: {
       title: "Log-In to Lancentric",
       // route level code-splitting
@@ -58,7 +51,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/lancentric",
     name: "LancentricLandingPage",
-    component: LandingPage,
+    component: () => import("../views/LandingPage.vue"),
     meta: {
       title: "Lancentric: Master Languages Today",
     },
@@ -66,7 +59,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/lancentric/profile",
     name: "UserProfile",
-    component: ProfileView,
+    component: () => import("../views/ProfileView.vue"),
     meta: {
       title: "User Account Information",
     },
@@ -74,7 +67,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/lancentric/letslearn",
     name: "Learning",
-    component: CurrentLanguageHomeView,
+    component: () => import("../views/CurrentLanguageHomeView.vue"),
     meta: {
       title: "Let's Get Learning",
     },

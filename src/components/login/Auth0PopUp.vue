@@ -135,4 +135,51 @@ export default {
     background-position: 0% 82%;
   }
 }
+@media only screen and (max-width: 550px) {
+  .auth0 {
+    width: 70vw;
+    height: 50vh;
+  }
+  .title {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 1rem;
+    color: #444;
+  }
+  .login-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .auth0 {
+    width: 80vw;
+    height: 60vh;
+  }
+  .title {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 0.75rem;
+    color: #444;
+  }
+  .login-options {
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+}
 </style>
