@@ -1,10 +1,10 @@
 const portugueseLessonsGroup1: Array<object> = [
   {
+    lessonId: "pt1.1",
     groupName: "Portuguese 1",
     groupIndex: 0,
     lessonName: "Intro to Portuguese 1",
     lessonIndex: 0,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -71,11 +71,11 @@ const portugueseLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "pt1.2",
     groupName: "Portuguese 1",
     groupIndex: 0,
     lessonName: "Intro to Portuguese 2",
     lessonIndex: 1,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -140,11 +140,11 @@ const portugueseLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "pt1.3",
     groupName: "Portuguese 1",
     groupIndex: 0,
     lessonName: "Intro to Portuguese 3",
     lessonIndex: 2,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -209,11 +209,11 @@ const portugueseLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "pt1.4",
     groupName: "Portuguese 1",
     groupIndex: 0,
     lessonName: "Intro to Portuguese 4",
     lessonIndex: 3,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -278,11 +278,11 @@ const portugueseLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "pt1.5",
     groupName: "Portuguese 1",
     groupIndex: 0,
     lessonName: "Intro to Portuguese 5",
     lessonIndex: 4,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -349,11 +349,11 @@ const portugueseLessonsGroup1: Array<object> = [
 ];
 const portugueseLessonsGroup2: Array<object> = [
   {
+    lessonId: "pt2.1",
     groupName: "Portuguese 2",
     groupIndex: 1,
     lessonName: "Medium Portuguese 1",
     lessonIndex: 0,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -418,11 +418,11 @@ const portugueseLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "pt2.2",
     groupName: "Portuguese 2",
     groupIndex: 1,
     lessonName: "Medium Portuguese 2",
     lessonIndex: 1,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -487,11 +487,11 @@ const portugueseLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "pt2.3",
     groupName: "Portuguese 2",
     groupIndex: 1,
     lessonName: "Medium Portuguese 3",
     lessonIndex: 2,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -556,11 +556,11 @@ const portugueseLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "pt2.4",
     groupName: "Portuguese 2",
     groupIndex: 1,
     lessonName: "Medium Portuguese 4",
     lessonIndex: 3,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -625,11 +625,11 @@ const portugueseLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "pt2.5",
     groupName: "Portuguese 2",
     groupIndex: 1,
     lessonName: "Medium Portuguese 5",
     lessonIndex: 4,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -696,11 +696,11 @@ const portugueseLessonsGroup2: Array<object> = [
 ];
 const portugueseLessonsGroup3: Array<object> = [
   {
+    lessonId: "pt3.1",
     groupName: "Portuguese 3",
     groupIndex: 2,
     lessonName: "Pro Portuguese 1",
     lessonIndex: 0,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -765,11 +765,11 @@ const portugueseLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "pt3.2",
     groupName: "Portuguese 3",
     groupIndex: 2,
     lessonName: "Pro Portuguese 2",
     lessonIndex: 1,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -834,11 +834,11 @@ const portugueseLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "pt3.3",
     groupName: "Portuguese 3",
     groupIndex: 2,
     lessonName: "Pro Portuguese 3",
     lessonIndex: 2,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -903,11 +903,11 @@ const portugueseLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "pt3.4",
     groupName: "Portuguese 3",
     groupIndex: 2,
     lessonName: "Pro Portuguese 4",
     lessonIndex: 3,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -972,11 +972,11 @@ const portugueseLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "pt3.5",
     groupName: "Portuguese 3",
     groupIndex: 2,
     lessonName: "Pro Portuguese 5",
     lessonIndex: 4,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,

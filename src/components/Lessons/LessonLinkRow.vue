@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="lesson-row">
     <slot></slot>
     <div class="row-item-container">
@@ -9,7 +9,7 @@
         @click="openLessonModal(lesson)"
       >
         <div class="lesson-name">{{ lesson.lessonName }}</div>
-        <ProgressBar :progress="lesson.progress" class="progress-bar" />
+        <ProgressBar :lessonId="lesson.lessonId" class="progress-bar" />
       </div>
     </div>
   </div>
@@ -53,8 +53,9 @@ export default {
   justify-content: center;
   align-content: center;
   text-align: center;
-  padding: 5rem;
+  padding: 3rem;
   border-bottom: 1px solid #444;
+  z-index: 2;
 }
 .row-item-container {
   display: flex;

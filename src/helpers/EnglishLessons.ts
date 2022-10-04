@@ -1,10 +1,10 @@
 const enlgishLessonsGroup1: Array<object> = [
   {
+    lessonId: "en1.1",
     groupName: "English 1",
     groupIndex: 0,
     lessonName: "Intro to English 1",
     lessonIndex: 0,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -71,11 +71,11 @@ const enlgishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "en1.2",
     groupName: "English 1",
     groupIndex: 0,
     lessonName: "Intro to English 2",
     lessonIndex: 1,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -140,11 +140,11 @@ const enlgishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "en1.3",
     groupName: "English 1",
     groupIndex: 0,
     lessonName: "Intro to English 3",
     lessonIndex: 2,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -209,11 +209,11 @@ const enlgishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "en1.4",
     groupName: "English 1",
     groupIndex: 0,
     lessonName: "Intro to English 4",
     lessonIndex: 3,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -278,11 +278,11 @@ const enlgishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "en1.5",
     groupName: "English 1",
     groupIndex: 0,
     lessonName: "Intro to English 5",
     lessonIndex: 4,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -349,11 +349,11 @@ const enlgishLessonsGroup1: Array<object> = [
 ];
 const enlgishLessonsGroup2: Array<object> = [
   {
+    lessonId: "en2.1",
     groupName: "English 2",
     groupIndex: 1,
     lessonName: "Medium English 1",
     lessonIndex: 0,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -418,11 +418,11 @@ const enlgishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "en2.2",
     groupName: "English 2",
     groupIndex: 1,
     lessonName: "Medium English 2",
     lessonIndex: 1,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -487,11 +487,11 @@ const enlgishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "en2.3",
     groupName: "English 2",
     groupIndex: 1,
     lessonName: "Medium English 3",
     lessonIndex: 2,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -556,11 +556,11 @@ const enlgishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "en2.4",
     groupName: "English 2",
     groupIndex: 1,
     lessonName: "Medium English 4",
     lessonIndex: 3,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -625,11 +625,11 @@ const enlgishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "en2.5",
     groupName: "English 2",
     groupIndex: 1,
     lessonName: "Medium English 5",
     lessonIndex: 4,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -696,11 +696,11 @@ const enlgishLessonsGroup2: Array<object> = [
 ];
 const enlgishLessonsGroup3: Array<object> = [
   {
+    lessonId: "en3.1",
     groupName: "English 3",
     groupIndex: 2,
     lessonName: "Pro English 1",
     lessonIndex: 0,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -765,11 +765,11 @@ const enlgishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "en3.2",
     groupName: "English 3",
     groupIndex: 2,
     lessonName: "Pro English 2",
     lessonIndex: 1,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -834,11 +834,11 @@ const enlgishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "en3.3",
     groupName: "English 3",
     groupIndex: 2,
     lessonName: "Pro English 3",
     lessonIndex: 2,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -903,11 +903,11 @@ const enlgishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "en3.4",
     groupName: "English 3",
     groupIndex: 2,
     lessonName: "Pro English 4",
     lessonIndex: 3,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -972,11 +972,11 @@ const enlgishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "en3.5",
     groupName: "English 3",
     groupIndex: 2,
     lessonName: "Pro English 5",
     lessonIndex: 4,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,

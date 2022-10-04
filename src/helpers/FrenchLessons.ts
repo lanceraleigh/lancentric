@@ -1,10 +1,10 @@
 const frenchLessonsGroup1: Array<object> = [
   {
+    lessonId: "fr1.1",
     groupName: "French 1",
     groupIndex: 0,
     lessonName: "Intro to French 1",
     lessonIndex: 0,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -71,11 +71,11 @@ const frenchLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "fr1.2",
     groupName: "French 1",
     groupIndex: 0,
     lessonName: "Intro to French 2",
     lessonIndex: 1,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -140,11 +140,11 @@ const frenchLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "fr1.3",
     groupName: "French 1",
     groupIndex: 0,
     lessonName: "Intro to French 3",
     lessonIndex: 2,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -209,11 +209,11 @@ const frenchLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "fr1.4",
     groupName: "French 1",
     groupIndex: 0,
     lessonName: "Intro to French 4",
     lessonIndex: 3,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -278,11 +278,11 @@ const frenchLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "fr1.5",
     groupName: "French 1",
     groupIndex: 0,
     lessonName: "Intro to French 5",
     lessonIndex: 4,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -349,11 +349,11 @@ const frenchLessonsGroup1: Array<object> = [
 ];
 const frenchLessonsGroup2: Array<object> = [
   {
+    lessonId: "fr2.1",
     groupName: "French 2",
     groupIndex: 1,
     lessonName: "Medium French 1",
     lessonIndex: 0,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -418,11 +418,11 @@ const frenchLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "fr2.2",
     groupName: "French 2",
     groupIndex: 1,
     lessonName: "Medium French 2",
     lessonIndex: 1,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -487,11 +487,11 @@ const frenchLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "fr2.3",
     groupName: "French 2",
     groupIndex: 1,
     lessonName: "Medium French 3",
     lessonIndex: 2,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -556,11 +556,11 @@ const frenchLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "fr2.4",
     groupName: "French 2",
     groupIndex: 1,
     lessonName: "Medium French 4",
     lessonIndex: 3,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -625,11 +625,11 @@ const frenchLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "fr2.5",
     groupName: "French 2",
     groupIndex: 1,
     lessonName: "Medium French 5",
     lessonIndex: 4,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -696,11 +696,11 @@ const frenchLessonsGroup2: Array<object> = [
 ];
 const frenchLessonsGroup3: Array<object> = [
   {
+    lessonId: "fr3.1",
     groupName: "French 3",
     groupIndex: 2,
     lessonName: "Pro French 1",
     lessonIndex: 0,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -765,11 +765,11 @@ const frenchLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "fr3.2",
     groupName: "French 3",
     groupIndex: 2,
     lessonName: "Pro French 2",
     lessonIndex: 1,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -834,11 +834,11 @@ const frenchLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "fr3.3",
     groupName: "French 3",
     groupIndex: 2,
     lessonName: "Pro French 3",
     lessonIndex: 2,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -903,11 +903,11 @@ const frenchLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "fr3.4",
     groupName: "French 3",
     groupIndex: 2,
     lessonName: "Pro French 4",
     lessonIndex: 3,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -972,11 +972,11 @@ const frenchLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "fr3.5",
     groupName: "French 3",
     groupIndex: 2,
     lessonName: "Pro French 5",
     lessonIndex: 4,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,

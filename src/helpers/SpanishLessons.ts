@@ -1,10 +1,10 @@
 const spanishLessonsGroup1: Array<object> = [
   {
+    lessonId: "es1.1",
     groupName: "Spanish 1",
     groupIndex: 0,
     lessonName: "Intro to Spanish 1",
     lessonIndex: 0,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -71,11 +71,11 @@ const spanishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "es1.2",
     groupName: "Spanish 1",
     groupIndex: 0,
     lessonName: "Intro to Spanish 2",
     lessonIndex: 1,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -140,11 +140,11 @@ const spanishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "es1.3",
     groupName: "Spanish 1",
     groupIndex: 0,
     lessonName: "Intro to Spanish 3",
     lessonIndex: 2,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -209,11 +209,11 @@ const spanishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "es1.4",
     groupName: "Spanish 1",
     groupIndex: 0,
     lessonName: "Intro to Spanish 4",
     lessonIndex: 3,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -278,11 +278,11 @@ const spanishLessonsGroup1: Array<object> = [
     ],
   },
   {
+    lessonId: "es1.5",
     groupName: "Spanish 1",
     groupIndex: 0,
     lessonName: "Intro to Spanish 5",
     lessonIndex: 4,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -349,11 +349,11 @@ const spanishLessonsGroup1: Array<object> = [
 ];
 const spanishLessonsGroup2: Array<object> = [
   {
+    lessonId: "es2.1",
     groupName: "Spanish 2",
     groupIndex: 1,
     lessonName: "Medium Spanish 1",
     lessonIndex: 0,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -418,11 +418,11 @@ const spanishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "es2.2",
     groupName: "Spanish 2",
     groupIndex: 1,
     lessonName: "Medium Spanish 2",
     lessonIndex: 1,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -487,11 +487,11 @@ const spanishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "es2.3",
     groupName: "Spanish 2",
     groupIndex: 1,
     lessonName: "Medium Spanish 3",
     lessonIndex: 2,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -556,11 +556,11 @@ const spanishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "es2.4",
     groupName: "Spanish 2",
     groupIndex: 1,
     lessonName: "Medium Spanish 4",
     lessonIndex: 3,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -625,11 +625,11 @@ const spanishLessonsGroup2: Array<object> = [
     ],
   },
   {
+    lessonId: "es2.5",
     groupName: "Spanish 2",
     groupIndex: 1,
     lessonName: "Medium Spanish 5",
     lessonIndex: 4,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -696,11 +696,11 @@ const spanishLessonsGroup2: Array<object> = [
 ];
 const spanishLessonsGroup3: Array<object> = [
   {
+    lessonId: "es3.1",
     groupName: "Spanish 3",
     groupIndex: 2,
     lessonName: "Pro Spanish 1",
     lessonIndex: 0,
-    progress: "80%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -765,11 +765,11 @@ const spanishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "es3.2",
     groupName: "Spanish 3",
     groupIndex: 2,
     lessonName: "Pro Spanish 2",
     lessonIndex: 1,
-    progress: "100%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -834,11 +834,11 @@ const spanishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "es3.3",
     groupName: "Spanish 3",
     groupIndex: 2,
     lessonName: "Pro Spanish 3",
     lessonIndex: 2,
-    progress: "20%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -903,11 +903,11 @@ const spanishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "es3.4",
     groupName: "Spanish 3",
     groupIndex: 2,
     lessonName: "Pro Spanish 4",
     lessonIndex: 3,
-    progress: "40%",
     lessonQuestions: [
       {
         questionNumber: 1,
@@ -972,11 +972,11 @@ const spanishLessonsGroup3: Array<object> = [
     ],
   },
   {
+    lessonId: "es3.5",
     groupName: "Spanish 3",
     groupIndex: 2,
     lessonName: "Pro Spanish 5",
     lessonIndex: 4,
-    progress: "60%",
     lessonQuestions: [
       {
         questionNumber: 1,

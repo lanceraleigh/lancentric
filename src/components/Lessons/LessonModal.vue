@@ -65,18 +65,6 @@
           >
             Check Answer
           </div>
-
-          <!-- <div class="button-container">
-            <div
-              @click="lastQuestion(question.questionNumber)"
-              class="button back-button"
-            >
-              Back
-            </div>
-            <div @click="nextQuestion(question.questionNumber)" class="button">
-              Next
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -119,6 +107,24 @@ export default {
     };
   },
   methods: {
+    // Get the lesson's progress
+    updateLessonProgress(lessonId) {
+      let savedLessonProgress =
+        JSON.parse(
+          window.localStorage.getItem(
+            `${lessonId}Progress${this.$auth0.user.user_id}`
+          )
+        ) || 0;
+
+      // Mutate the objects that changed
+      savedLessonProgress += 20;
+
+      // Set the new progress objects
+      window.localStorage.setItem(
+        `${lessonId}Progress${this.$auth0.user.user_id}`,
+        JSON.stringify(savedLessonProgress)
+      );
+    },
     submitAnswer(correctAnswer) {
       let submitted = this.answerInput.toLowerCase();
       if (submitted === "") {
@@ -139,7 +145,8 @@ export default {
         this.currentQuestionNumber++;
         this.currentQuestionIndex++;
       } else {
-        this.$store.commit("toggleLessonModal", false);
+        this.updateLessonProgress(this.cardQuestionObject.lessonId);
+        this.closeModal();
       }
     },
     lastQuestion() {

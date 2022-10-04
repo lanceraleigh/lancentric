@@ -4,7 +4,6 @@
     class="lesson-groups-container"
     :class="{ 'modal-open': lessonModalOpen }"
   >
-    {{ userEmail }}
     <LessonLinkRow
       v-for="lessonGroup in currentLanguageLessons"
       :key="lessonGroup[0].groupName"
@@ -13,7 +12,7 @@
       <div class="lesson-link-row-title">{{ lessonGroup[0].groupName }}</div>
     </LessonLinkRow>
   </div>
-  <LessonModal v-if="lessonModalOpen"></LessonModal>
+  <LessonModal v-if="lessonModalOpen" id="lessons-modal"></LessonModal>
 </template>
 
 <script>
@@ -28,18 +27,13 @@ export default {
     LessonModal,
     StarBackground,
   },
-  data() {
-    return {
-      userEmail: this.$auth0.user.email,
-    };
-  },
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .lesson-groups-container {
   color: aliceblue;
   display: flex;
@@ -47,6 +41,8 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 .lesson-groups-container:has(+ LessonsModal) {
   height: 100vh;

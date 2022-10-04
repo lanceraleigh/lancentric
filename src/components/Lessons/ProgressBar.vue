@@ -1,14 +1,24 @@
 <template>
   <div class="lesson-progress-bar">
-    <div class="lesson-progress" :style="{ width: progress }"></div>
+    <div class="lesson-progress" :style="{ width: `${progress}%` }"></div>
   </div>
 </template>
 <script>
 export default {
   props: {
-    progress: {
+    lessonId: {
       type: String,
     },
+  },
+  data() {
+    return {
+      progress:
+        JSON.parse(
+          window.localStorage.getItem(
+            `${this.lessonId}Progress${this.$auth0.user.user_id}`
+          )
+        ) || 0,
+    };
   },
 };
 </script>
