@@ -60,7 +60,6 @@
       >
         <router-link to="/lancentric/profile">{{ $lang.profile }}</router-link>
       </div>
-
       <!-- Colored Link -->
       <div
         v-if="!lancentric"

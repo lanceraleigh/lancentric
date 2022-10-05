@@ -76,6 +76,7 @@ export default {
 .info-item-title {
   color: #222;
   font-weight: bold;
+  width: fit-content;
   text-align: left;
 }
 .info-item-value {
