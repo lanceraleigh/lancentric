@@ -10,10 +10,10 @@
       <div class="info-item-title">
         Email: <span class="info-item-value">{{ user.email }}</span>
       </div>
-      <div class="info-item-title">
+      <!-- <div class="info-item-title">
         Member since:
         <span class="info-item-value">{{ user.created_at.toDate() }}</span>
-      </div>
+      </div> -->
       <button @click="logout">Sign Out</button>
     </div>
     <div v-else>
