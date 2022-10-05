@@ -1,7 +1,7 @@
 <template>
   <div class="profile-view">
     <StarBackground></StarBackground>
-    <div class="profile-info">
+    <div v-if="isAuthenticated" class="profile-info">
       <h2>Your Profile</h2>
       <img :src="user.picture" />
       <div class="info-item-title">
@@ -12,9 +12,17 @@
       </div>
       <div class="info-item-title">
         Member since:
-        <span class="info-item-value">{{ user.created_at }}</span>
+        <span class="info-item-value">{{
+          user.created_at.toDateString()
+        }}</span>
       </div>
       <button @click="logout">Sign Out</button>
+    </div>
+    <div v-else>
+      <div class="profile-info">
+        <h2>Please log in to access your account details</h2>
+        <button @click="login">Log In</button>
+      </div>
     </div>
   </div>
 </template>
@@ -29,11 +37,15 @@ export default {
   data() {
     return {
       user: this.$auth0.user,
+      isAuthenticated: this.$auth0.isAuthenticated,
     };
   },
   methods: {
     logout() {
       this.$auth0.logout({ returnTo: "https://lanceraleigh.com/login" });
+    },
+    login() {
+      this.$auth0.login();
     },
   },
 };
@@ -64,8 +76,10 @@ export default {
 .info-item-title {
   color: #222;
   font-weight: bold;
+  text-align: left;
 }
 .info-item-value {
   color: #444;
+  font-weight: 100;
 }
 </style>

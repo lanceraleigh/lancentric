@@ -48,11 +48,19 @@
       </div>
       <div
         v-if="!!lancentric && $route.path !== '/login'"
+        class="learning-home nav-item"
+        @click="showMenu = false"
+      >
+        <router-link to="/lancentric/letslearn">{{ $lang.home }}</router-link>
+      </div>
+      <div
+        v-if="!!lancentric && $route.path !== '/login'"
         class="profile nav-item"
         @click="showMenu = false"
       >
         <router-link to="/lancentric/profile">{{ $lang.profile }}</router-link>
       </div>
+
       <!-- Colored Link -->
       <div
         v-if="!lancentric"
@@ -75,9 +83,7 @@
           showMenu = false;
         "
       >
-        <span class="lancentric-link"
-          ><span class="mobile-shortening">Back to </span>Portfolio</span
-        >
+        <span class="lancentric-link">Portfolio</span>
       </div>
     </div>
   </div>
@@ -188,11 +194,11 @@ label {
     #dd00f359,
     #dd00f359
   );
-  background-size: 500% 500%;
-  -webkit-animation: rainbow 18s ease infinite;
-  -z-animation: rainbow 18s ease infinite;
-  -o-animation: rainbow 18s ease infinite;
-  animation: rainbow 18s ease infinite;
+  background-size: 250% 250%;
+  -webkit-animation: rainbow 10s ease infinite;
+  -z-animation: rainbow 10s ease infinite;
+  -o-animation: rainbow 10s ease infinite;
+  animation: rainbow 10s ease infinite;
 }
 .lancentric-link:hover {
   cursor: pointer;
