@@ -45,7 +45,7 @@ export default {
       this.$auth0.logout({ returnTo: "https://lanceraleigh.com/login" });
     },
     login() {
-      this.$auth0.login();
+      this.$auth0.loginWithRedirect();
     },
   },
 };
