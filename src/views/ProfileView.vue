@@ -59,7 +59,11 @@ export default {
   overflow: hidden;
   box-shadow: inset 1px 1px 10px #444;
 }
-
+button {
+  background: none;
+  font-weight: bold;
+  color: #444;
+}
 .profile-info {
   width: 50vw;
   height: 50vh;
