@@ -12,9 +12,9 @@
       </div>
       <div class="info-item-title">
         Member since:
-        <span class="info-item-value">{{
+        <!-- <span class="info-item-value">{{
           user.created_at.toDateString() || "unknown"
-        }}</span>
+        }}</span> -->
       </div>
       <button @click="logout">Sign Out</button>
     </div>
