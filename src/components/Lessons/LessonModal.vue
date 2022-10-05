@@ -21,6 +21,9 @@
     />
     <div class="lesson-modal">
       <div class="top-bar">
+        <!-- <button @click="updateLessonProgress(cardQuestionObject.lessonId)">
+          Run it back
+        </button> -->
         <div class="lesson-name">{{ cardQuestionObject.lessonName }}</div>
       </div>
       <div class="close-button" @click="confirmationOpen = true">&#10006;</div>
@@ -74,13 +77,17 @@
 <script>
 import { mapGetters } from "vuex";
 import DialogBox from "../reusables/DialogBox.vue";
-
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient(
+  "https://zhvrljcjqgbfzroslhgy.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpodnJsamNqcWdiZnpyb3NsaGd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQ5MjczOTYsImV4cCI6MTk4MDUwMzM5Nn0.AoX49ksU8h7bYf3AJZftiT289Xyd4Y_uYhawuaueFHE"
+);
 export default {
   name: "LessonModal",
   components: {
     DialogBox,
   },
-  mounted() {
+  async mounted() {
     document.querySelector("textarea").addEventListener("keydown", (e) => {
       if (e.key == "Enter") {
         e.preventDefault();
@@ -107,8 +114,55 @@ export default {
     };
   },
   methods: {
-    // Get the lesson's progress
-    updateLessonProgress(lessonId) {
+    async updateLessonProgress(lessonId) {
+      // Supabase
+      let lessonProgressPercentage;
+      let { data: lessonprogress, error } = await supabase
+        .from("lessonprogress")
+        .select("*");
+      console.log(lessonprogress || error);
+      lessonprogress.filter((obj) => {
+        return (
+          obj.user_id === this.$auth0.user.user_id && obj.lesson_id === lessonId
+        );
+      });
+
+      if (lessonprogress) {
+        lessonProgressPercentage = lessonprogress.lesson_progress;
+        lessonProgressPercentage += 20;
+        const { data, error } = await supabase
+          .from("lessonprogress")
+          .update({ lesson_progress: JSON.stringify(lessonProgressPercentage) })
+          .match({ user_id: "someValue", lesson_id: JSON.stringify(lessonId) });
+        console.log(data || error);
+      } else {
+        const { data, error1 } = await supabase.from("lessonprogress").insert([
+          {
+            user_id: this.$auth0.user.user_id,
+            lesson_id: JSON.stringify(lessonId),
+            lesson_progress: JSON.stringify(20),
+          },
+        ]);
+        console.log(data || error1);
+      }
+
+      // let { data: lessonprogress, error } = await supabase
+      //   .from("lessonprogress")
+      //   .select("*");
+      // if (lessonprogress !== []) {
+      //   const { data, error } = await supabase.from("lessonprogress").insert([
+      //     {
+      //       user_id: this.$auth0.user.user_id,
+      //       lesson_id: JSON.stringify(lessonId),
+      //       lesson_progress: JSON.stringify(lessonId),
+      //     },
+      //   ]);
+      //   console.log(data || error, "check");
+      // } else {
+      //   console.log(error, "sum went wrong");
+      // }
+
+      // localstorage
       let savedLessonProgress =
         JSON.parse(
           window.localStorage.getItem(

@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/supabaseFunctions.js"  ],
   "exclude": [
     "node_modules"
   ]
