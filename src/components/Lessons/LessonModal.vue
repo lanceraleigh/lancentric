@@ -155,6 +155,7 @@ export default {
     },
     closeModal() {
       this.$store.commit("toggleLessonModal", false);
+      this.$emit("rerenderProgress");
     },
   },
 };

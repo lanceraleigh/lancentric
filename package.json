@@ -10,6 +10,7 @@
   "dependencies": {
     "@auth0/auth0-vue": "^1.0.2",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@supabase/supabase-js": "^1.35.7",
     "@vue/cli": "^5.0.8",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",

@@ -6,13 +6,18 @@
   >
     <LessonLinkRow
       v-for="lessonGroup in currentLanguageLessons"
+      :rerenderProgressKey="newKey"
       :key="lessonGroup[0].groupName"
       :languageLessonsArray="lessonGroup"
     >
       <div class="lesson-link-row-title">{{ lessonGroup[0].groupName }}</div>
     </LessonLinkRow>
   </div>
-  <LessonModal v-if="lessonModalOpen" id="lessons-modal"></LessonModal>
+  <LessonModal
+    v-if="lessonModalOpen"
+    id="lessons-modal"
+    @rerenderProgress="updateRenderKey"
+  ></LessonModal>
 </template>
 
 <script>
@@ -27,8 +32,18 @@ export default {
     LessonModal,
     StarBackground,
   },
+  data() {
+    return {
+      newKey: 0,
+    };
+  },
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
+  },
+  methods: {
+    updateRenderKey() {
+      this.newKey += 1;
+    },
   },
 };
 </script>

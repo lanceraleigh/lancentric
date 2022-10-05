@@ -9,7 +9,11 @@
         @click="openLessonModal(lesson)"
       >
         <div class="lesson-name">{{ lesson.lessonName }}</div>
-        <ProgressBar :lessonId="lesson.lessonId" class="progress-bar" />
+        <ProgressBar
+          :lessonId="lesson.lessonId"
+          :key="progressKey"
+          class="progress-bar"
+        />
       </div>
     </div>
   </div>
@@ -24,6 +28,10 @@ export default {
   props: {
     languageLessonsArray: {
       type: Array,
+      required: true,
+    },
+    rerenderProgressKey: {
+      type: Number,
       required: true,
     },
   },
