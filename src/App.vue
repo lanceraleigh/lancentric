@@ -28,9 +28,18 @@ export default {
   data() {
     return {
       contactModalIsOpen: false,
+      user: this.$auth0.user,
+      isAuthenticated: this.$auth0.isAuthenticated,
+      isLoading: this.$auth0.isLoading,
     };
   },
   async mounted() {
+    setInterval(() => {
+      console.log(this.user);
+      console.log(this.isAuthenticated);
+      console.log(this.isLoading);
+    }, 5000);
+
     // eslint-disable-next-line
     console.log(
       "Welcome to the best dev portfolio in the world... according to my mom at least"
@@ -40,6 +49,7 @@ export default {
       "If you've gotten this far, take some time to shoot me a message in the contact section! I look forward to hearing from you! 😀"
     );
     await this.$store.commit("initState");
+    setInterval();
   },
   computed: {
     landing() {
