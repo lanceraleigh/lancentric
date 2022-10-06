@@ -43,7 +43,6 @@ export default {
       "If you've gotten this far, take some time to shoot me a message in the contact section! I look forward to hearing from you! 😀"
     );
     await this.$store.commit("initState");
-    setInterval();
   },
   computed: {
     landing() {

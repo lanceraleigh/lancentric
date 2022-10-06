@@ -129,9 +129,11 @@ export default {
   transform: scale(0.95);
 }
 .dialog.right-answer {
+  color: #fff;
   background: green;
 }
 .dialog.wrong-answer {
+  color: #fff;
   background: red;
 }
 .options-container {
