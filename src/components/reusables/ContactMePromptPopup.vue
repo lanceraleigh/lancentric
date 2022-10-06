@@ -14,7 +14,7 @@ export default {
   name: "ContactMePrompt",
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .contact-me-prompt-popup {
   background: #bbb;
   height: 10rem;

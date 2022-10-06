@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./assets/globalStyles.css";
 #lance-raleigh-website {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -19,12 +19,31 @@
         answerSubmitted = false;
       "
     />
+    <DialogBox
+      v-if="lostLives"
+      :type="'confirmation'"
+      :message="'Oh no! Looks like your lives ran out! Try again?'"
+      @no="
+        lostLives = false;
+        closeModal();
+      "
+      @yes="
+        numberOfLives = 3;
+        lostLives = false;
+        currentQuestionNumber = 1;
+        currentQuestionIndex = 0;
+        answerInput = '';
+      "
+    />
     <div class="lesson-modal">
       <div class="top-bar">
-        <!-- <button @click="updateLessonProgress(cardQuestionObject.lessonId)">
-          Run it back
-        </button> -->
-        <div class="lesson-name">{{ cardQuestionObject.lessonName }}</div>
+        <div class="lives">Lives<span>: </span></div>
+        <!-- <div class="lesson-name">{{ cardQuestionObject.lessonName }}</div> -->
+        <div class="heart-container">
+          <div v-for="index in numberOfLives" :key="index" class="hearts">
+            &#10084;&#65039;
+          </div>
+        </div>
       </div>
       <div class="close-button" @click="confirmationOpen = true">&#10006;</div>
       <div
@@ -39,9 +58,9 @@
           v-if="question.questionNumber === currentQuestionNumber"
           :id="question"
         >
-          <div class="question-number">
+          <!-- <div class="question-number">
             Question number {{ question.questionNumber }}:
-          </div>
+          </div> -->
           <div class="question-type">{{ question.questionType }}</div>
           <div class="question-context">{{ question.questionContext }}</div>
           <div v-if="question.questionOptions" class="card-item">
@@ -103,6 +122,8 @@ export default {
   },
   data() {
     return {
+      numberOfLives: 3,
+      lostLives: false,
       currentQuestionNumber: 1,
       currentQuestionIndex: 0,
       answerInput: "",
@@ -179,8 +200,11 @@ export default {
         JSON.stringify(savedLessonProgress)
       );
     },
+    removeAccents(str) {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    },
     submitAnswer(correctAnswer) {
-      let submitted = this.answerInput.toLowerCase();
+      let submitted = this.removeAccents(this.answerInput.toLowerCase());
       if (submitted === "") {
         this.submittedResponseDialog =
           "Oops, please make sure to input an answer before submitting";
@@ -188,6 +212,13 @@ export default {
       } else if (submitted !== "" && submitted !== correctAnswer) {
         this.submittedResponseDialog = "Oops, that doesn't look right.";
         this.answerRight = false;
+        if (this.numberOfLives > 1) {
+          this.numberOfLives -= 1;
+        } else {
+          this.numberOfLives -= 1;
+          this.lostLives = true;
+          return;
+        }
       } else if (submitted === correctAnswer) {
         this.submittedResponseDialog = "Awesome work!";
         this.answerRight = true;
@@ -246,6 +277,15 @@ export default {
   align-items: center;
   position: absolute;
   top: 1rem;
+}
+.lives {
+  font-size: 1rem;
+}
+.heart-container {
+  display: flex;
+}
+.hearts {
+  font-size: 0.75rem;
 }
 .question-number {
   font-size: 1rem;

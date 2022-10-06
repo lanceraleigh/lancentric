@@ -14,7 +14,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .custom-404 {
   height: 100vh;
   width: 100vw;

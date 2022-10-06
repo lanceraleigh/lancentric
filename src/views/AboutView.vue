@@ -28,7 +28,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .about {
   position: absolute;
   top: 3.5rem;

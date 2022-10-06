@@ -19,7 +19,7 @@ export default {
   name: "MyContacts",
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .contact-items {
   display: flex;
   position: absolute;

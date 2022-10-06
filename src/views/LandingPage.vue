@@ -19,7 +19,7 @@
             >Misc. to </span
           >{{ capitalize(img.name)
           }}<span v-if="img.name === 'english'" class="additional-words">
-            (experimental)</span
+            (in progress)</span
           >
         </div>
       </div>
