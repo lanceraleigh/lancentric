@@ -141,6 +141,7 @@ export default {
       let { data: lessonprogress, error } = await supabase
         .from("lessonprogress")
         .select("*");
+      // eslint-disable-next-line
       console.log(lessonprogress || error);
       lessonprogress.filter((obj) => {
         return (
@@ -157,6 +158,7 @@ export default {
           .from("lessonprogress")
           .update({ lesson_progress: JSON.stringify(lessonProgressPercentage) })
           .match({ user_id: "someValue", lesson_id: JSON.stringify(lessonId) });
+        // eslint-disable-next-line
         console.log(data || error);
       } else {
         const { data, error1 } = await supabase.from("lessonprogress").insert([
@@ -168,6 +170,7 @@ export default {
             lesson_progress: JSON.stringify(20),
           },
         ]);
+        // eslint-disable-next-line
         console.log(data || error1);
       }
 

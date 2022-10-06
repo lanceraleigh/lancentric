@@ -19,9 +19,9 @@ export default {
   methods: {
     async login() {
       await this.$auth0.loginWithRedirect();
-      window.sessionStorage.setItem(
+      await window.sessionStorage.setItem(
         "currentlyLoggedIn",
-        JSON.stringify(this.$auth0.user.user_id)
+        this.$auth0.user.user_id
       );
     },
   },
