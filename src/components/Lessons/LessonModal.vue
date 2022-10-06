@@ -145,8 +145,9 @@ export default {
       console.log(lessonprogress || error);
       lessonprogress.filter((obj) => {
         return (
-          obj.user_id ===
-            JSON.parse(window.sessionStorage.getItem("currentlyLoggedIn")) &&
+          (obj.user_id ===
+            JSON.parse(window.sessionStorage.getItem("currentlyLoggedIn")) ||
+            this.$auth0.user.user_id) &&
           obj.lesson_id === lessonId
         );
       });
@@ -163,9 +164,9 @@ export default {
       } else {
         const { data, error1 } = await supabase.from("lessonprogress").insert([
           {
-            user_id: JSON.parse(
-              window.sessionStorage.getItem("currentlyLoggedIn")
-            ),
+            user_id:
+              JSON.parse(window.sessionStorage.getItem("currentlyLoggedIn")) ||
+              this.$auth0.user.user_id,
             lesson_id: JSON.stringify(lessonId),
             lesson_progress: JSON.stringify(20),
           },
