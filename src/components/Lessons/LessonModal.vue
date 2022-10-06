@@ -199,9 +199,7 @@ export default {
 
       // Set the new progress objects
       window.localStorage.setItem(
-        `${lessonId}Progress${JSON.parse(
-          window.sessionStorage.getItem("currentlyLoggedIn")
-        )}`,
+        `${lessonId}Progress${this.$auth0.user.user_id}`,
         JSON.stringify(savedLessonProgress)
       );
     },
