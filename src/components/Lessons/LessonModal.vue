@@ -144,7 +144,9 @@ export default {
       console.log(lessonprogress || error);
       lessonprogress.filter((obj) => {
         return (
-          obj.user_id === this.$auth0.user.user_id && obj.lesson_id === lessonId
+          obj.user_id ===
+            JSON.parse(window.sessionStorage.getItem("currentlyLoggedIn")) &&
+          obj.lesson_id === lessonId
         );
       });
 
@@ -159,7 +161,9 @@ export default {
       } else {
         const { data, error1 } = await supabase.from("lessonprogress").insert([
           {
-            user_id: this.$auth0.user.user_id,
+            user_id: JSON.parse(
+              window.sessionStorage.getItem("currentlyLoggedIn")
+            ),
             lesson_id: JSON.stringify(lessonId),
             lesson_progress: JSON.stringify(20),
           },
@@ -187,7 +191,9 @@ export default {
       let savedLessonProgress =
         JSON.parse(
           window.localStorage.getItem(
-            `${lessonId}Progress${this.$auth0.user.user_id}`
+            `${lessonId}Progress${JSON.parse(
+              window.sessionStorage.getItem("currentlyLoggedIn")
+            )}`
           )
         ) || 0;
 
@@ -196,7 +202,9 @@ export default {
 
       // Set the new progress objects
       window.localStorage.setItem(
-        `${lessonId}Progress${this.$auth0.user.user_id}`,
+        `${lessonId}Progress${JSON.parse(
+          window.sessionStorage.getItem("currentlyLoggedIn")
+        )}`,
         JSON.stringify(savedLessonProgress)
       );
     },

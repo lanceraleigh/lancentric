@@ -41,9 +41,17 @@ export default {
   methods: {
     logout() {
       this.$auth0.logout({ returnTo: "https://lanceraleigh.com/login" });
+      window.sessionStorage.removeItem(
+        "currentlyLoggedIn",
+        JSON.stringify(this.$auth0.user.user_id)
+      );
     },
-    login() {
-      this.$auth0.loginWithRedirect();
+    async login() {
+      await this.$auth0.loginWithRedirect();
+      window.sessionStorage.setItem(
+        "currentlyLoggedIn",
+        JSON.stringify(this.$auth0.user.user_id)
+      );
     },
   },
 };

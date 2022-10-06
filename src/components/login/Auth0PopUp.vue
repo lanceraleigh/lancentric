@@ -17,8 +17,12 @@ export default {
     ...mapGetters({ $lang: "personalSiteCurrentLanguage" }),
   },
   methods: {
-    login() {
-      this.$auth0.loginWithRedirect();
+    async login() {
+      await this.$auth0.loginWithRedirect();
+      window.sessionStorage.setItem(
+        "currentlyLoggedIn",
+        JSON.stringify(this.$auth0.user.user_id)
+      );
     },
   },
 };
