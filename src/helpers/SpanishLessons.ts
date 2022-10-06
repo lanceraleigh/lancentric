@@ -35,7 +35,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 5,
         questionType: "Translate this phrase.",
         questionContext: "Mi nombre es Lance",
-        questionAnswer: "my name is Lance",
+        questionAnswer: "my name is lance",
       },
       {
         questionNumber: 6,

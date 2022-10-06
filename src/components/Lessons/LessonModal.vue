@@ -190,9 +190,7 @@ export default {
       let savedLessonProgress =
         JSON.parse(
           window.localStorage.getItem(
-            `${lessonId}Progress${JSON.parse(
-              window.sessionStorage.getItem("currentlyLoggedIn")
-            )}`
+            `${lessonId}Progress${this.$auth0.user.user_id}`
           )
         ) || 0;
 
