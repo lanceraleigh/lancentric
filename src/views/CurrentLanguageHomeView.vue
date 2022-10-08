@@ -7,7 +7,7 @@
     <LessonLinkRow
       v-for="lessonGroup in currentLanguageLessons"
       :rerenderProgressKey="newKey"
-      :key="lessonGroup[0].groupName"
+      :key="lessonGroup[0].groupName + newKey"
       :languageLessonsArray="lessonGroup"
     >
       <div class="lesson-link-row-title">{{ lessonGroup[0].groupName }}</div>
