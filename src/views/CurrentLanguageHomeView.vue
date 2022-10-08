@@ -37,9 +37,6 @@ export default {
       newKey: 0,
     };
   },
-  created() {
-    this.login();
-  },
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
   },

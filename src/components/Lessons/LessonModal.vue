@@ -106,9 +106,6 @@ export default {
   components: {
     DialogBox,
   },
-  created() {
-    this.login();
-  },
   async mounted() {
     document.querySelector("textarea").addEventListener("keydown", (e) => {
       if (e.key == "Enter") {
