@@ -38,6 +38,9 @@ export default {
       isAuthenticated: this.$auth0.isAuthenticated,
     };
   },
+  created() {
+    this.login();
+  },
   methods: {
     logout() {
       this.$auth0.logout({ returnTo: "https://lanceraleigh.com/login" });

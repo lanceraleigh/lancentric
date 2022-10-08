@@ -37,10 +37,20 @@ export default {
       newKey: 0,
     };
   },
+  created() {
+    this.login();
+  },
   computed: {
     ...mapGetters(["currentLanguageLessons", "lessonModalOpen"]),
   },
   methods: {
+    async login() {
+      await this.$auth0.loginWithRedirect();
+      window.sessionStorage.setItem(
+        "currentlyLoggedIn",
+        JSON.stringify(this.$auth0.user.user_id)
+      );
+    },
     updateRenderKey() {
       this.newKey += 1;
     },

@@ -106,6 +106,9 @@ export default {
   components: {
     DialogBox,
   },
+  created() {
+    this.login();
+  },
   async mounted() {
     document.querySelector("textarea").addEventListener("keydown", (e) => {
       if (e.key == "Enter") {
@@ -135,6 +138,13 @@ export default {
     };
   },
   methods: {
+    async login() {
+      await this.$auth0.loginWithRedirect();
+      window.sessionStorage.setItem(
+        "currentlyLoggedIn",
+        JSON.stringify(this.$auth0.user.user_id)
+      );
+    },
     async updateLessonProgress(lessonId) {
       // Supabase
       let lessonProgressPercentage;
@@ -332,6 +342,9 @@ textarea {
   color: white;
   border-radius: 5px;
   box-shadow: 1px 2px #444;
+}
+.check-answer-button:hover {
+  cursor: pointer;
 }
 .button-container {
   display: flex;
