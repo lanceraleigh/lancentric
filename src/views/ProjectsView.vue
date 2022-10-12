@@ -7,9 +7,6 @@
       </h1>
       <div class="phrase">
         Just build a todo app and you'll know all you need to get hired
-        <!-- <br /><span style="font-style: italic; font-weight: 600"
-          >&#10024; hired &#10024;</span
-        > -->
       </div>
       <div class="author">- Every Youtube Tutorial Ever</div>
     </div>
