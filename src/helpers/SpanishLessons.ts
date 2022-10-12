@@ -22,7 +22,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -41,7 +41,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -80,40 +80,45 @@ const spanishLessonsGroup1: Array<object> = [
       {
         questionNumber: 1,
         questionType: "Fill in the blank.",
-        questionContext: "Mi nombre ____ Lance",
+        questionContext: "Tu nombre ____ Lance?",
         questionAnswer: "es",
       },
       {
         questionNumber: 2,
         questionType: "Translate this word.",
-        questionContext: "Hola",
-        questionAnswer: "hello",
+        questionContext: "Por qué",
+        questionAnswer: "why",
       },
       {
         questionNumber: 3,
         questionType: "Find the correct translation.",
-        questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
-        questionAnswer: "hola",
+        questionContext: "Why",
+        questionOptions: ["Sí", "Hola", "Por qué", "Gracias"],
+        questionAnswer: "por que",
       },
       {
         questionNumber: 4,
         questionType: "Fill in the blank.",
-        questionContext: "Hola, ____ por venir",
-        questionAnswer: "gracias",
+        questionContext: "Hola, gracias ____ venir",
+        questionAnswer: "por",
       },
       {
         questionNumber: 5,
-        questionType: "Translate this phrase.",
-        questionContext: "Mi nombre es Lance",
-        questionAnswer: "my name is lance",
+        questionType: "Translate this word.",
+        questionContext: "Porque",
+        questionAnswer: "because",
       },
       {
         questionNumber: 6,
-        questionType: "Find the missing word.",
-        questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
-        questionAnswer: "es",
+        questionType: "Translate these two words.",
+        questionContext: "Porque Por qué",
+        questionOptions: [
+          "Because Why",
+          "Why Why",
+          "Because Because",
+          "Why Because",
+        ],
+        questionAnswer: "because why",
       },
       {
         questionNumber: 7,
@@ -164,7 +169,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -183,7 +188,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -235,7 +240,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -254,7 +259,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -306,7 +311,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -325,7 +330,7 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -379,7 +384,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -398,7 +403,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -450,7 +455,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -469,7 +474,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -521,7 +526,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -540,7 +545,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -592,7 +597,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -611,7 +616,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -663,7 +668,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -682,7 +687,7 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -736,7 +741,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -755,7 +760,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -807,7 +812,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -826,7 +831,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -878,7 +883,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -897,7 +902,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -949,7 +954,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -968,7 +973,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
@@ -1020,7 +1025,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 3,
         questionType: "Find the correct translation.",
         questionContext: "Hello",
-        questionOptions: ["sí", "hola", "feliz", "gracias"],
+        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
         questionAnswer: "hola",
       },
       {
@@ -1039,7 +1044,7 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 6,
         questionType: "Find the missing word.",
         questionContext: "Mi nombre ____ Lance",
-        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["Sí", "Hola", "Es", "Gracias"],
         questionAnswer: "es",
       },
       {
