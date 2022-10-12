@@ -1,6 +1,13 @@
 <template>
   <nav class="landing-page" :class="{ 'learning-app': lancentric }">
-    <div v-if="$route.name !== 'learning'" class="language-select">
+    <div
+      v-if="
+        $route.path !== '/lancentric' &&
+        $route.path !== '/lancentric/letslearn' &&
+        $route.path !== '/lancentric/profile'
+      "
+      class="language-select"
+    >
       <select
         class="personal-site"
         style="text-align: center"
