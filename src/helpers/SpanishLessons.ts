@@ -60,7 +60,8 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -136,7 +137,8 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -207,7 +209,8 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -278,7 +281,8 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -349,7 +353,8 @@ const spanishLessonsGroup1: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -422,7 +427,8 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -493,7 +499,8 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -564,7 +571,8 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -635,7 +643,8 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -706,7 +715,8 @@ const spanishLessonsGroup2: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -779,7 +789,8 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -850,7 +861,8 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -921,7 +933,8 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -992,7 +1005,8 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
@@ -1063,7 +1077,8 @@ const spanishLessonsGroup3: Array<object> = [
         questionNumber: 9,
         questionType: "Find the correct translation.",
         questionContext: "Thank you",
-        questionAnswer: ["sí", "hola", "es", "gracias"],
+        questionOptions: ["sí", "hola", "es", "gracias"],
+        questionAnswer: "gracias",
       },
       {
         questionNumber: 10,
