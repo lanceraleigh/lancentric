@@ -158,14 +158,14 @@ const spanishLessonsGroup1: Array<object> = [
       {
         questionNumber: 1,
         questionType: "Fill in the blank.",
-        questionContext: "Mi nombre ____ Lance",
-        questionAnswer: "es",
+        questionContext: "Pedro es mi herman_",
+        questionAnswer: "o",
       },
       {
-        questionNumber: 2,
-        questionType: "Translate this word.",
-        questionContext: "Hola",
-        questionAnswer: "hello",
+        questionNumber: 1,
+        questionType: "Fill in the blank.",
+        questionContext: "Maria es mi herman_",
+        questionAnswer: "a",
       },
       {
         questionNumber: 3,
