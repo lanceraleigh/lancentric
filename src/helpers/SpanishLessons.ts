@@ -169,10 +169,10 @@ const spanishLessonsGroup1: Array<object> = [
       },
       {
         questionNumber: 3,
-        questionType: "Find the correct translation.",
-        questionContext: "Hello",
-        questionOptions: ["Sí", "Hola", "Feliz", "Gracias"],
-        questionAnswer: "hola",
+        questionType: "Fill in the blank.",
+        questionContext: "Él es mi ____",
+        questionOptions: ["Hermano", "Hermana", "Madre", "Prima"],
+        questionAnswer: "hermano",
       },
       {
         questionNumber: 4,

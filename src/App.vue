@@ -1,4 +1,5 @@
 <template>
+  <!-- Convert components to TS -->
   <div id="lance-raleigh-website">
     <NavBar :landing="landing" class="navbar-z" />
     <div
