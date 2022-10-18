@@ -177,8 +177,8 @@ const spanishLessonsGroup1: Array<object> = [
       {
         questionNumber: 4,
         questionType: "Fill in the blank.",
-        questionContext: "Hola, ____ por venir",
-        questionAnswer: "gracias",
+        questionContext: "Este es nuestro herman_",
+        questionAnswer: "o",
       },
       {
         questionNumber: 5,
