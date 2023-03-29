@@ -60,6 +60,15 @@
       >
         <router-link to="/lancentric/profile">{{ $lang.profile }}</router-link>
       </div>
+      <div
+        v-if="!!lancentric && $route.path !== '/login'"
+        class="study-tools nav-item"
+        @click="showMenu = false"
+      >
+        <router-link to="/lancentric/studytools">{{
+          $lang.studyTools
+        }}</router-link>
+      </div>
       <!-- Colored Link -->
       <div
         v-if="!lancentric"
@@ -107,7 +116,9 @@ export default {
         this.$route.path === "/login" ||
         this.$route.path === "/lancentric" ||
         this.$route.path === "/lancentric/letslearn" ||
-        this.$route.path === "/lancentric/profile"
+        this.$route.path === "/lancentric/letslearn/vocab" ||
+        this.$route.path === "/lancentric/profile" ||
+        this.$route.path === "/lancentric/studytools"
       );
     },
     personalSite() {

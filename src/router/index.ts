@@ -57,6 +57,14 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: "/lancentric/studytools",
+    name: "StudyTools",
+    component: () => import("../views/LanguageStudyTools.vue"),
+    meta: {
+      title: "StudyTools",
+    },
+  },
+  {
     path: "/lancentric/profile",
     name: "UserProfile",
     component: () => import("../views/ProfileView.vue"),

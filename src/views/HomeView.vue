@@ -15,6 +15,7 @@ import Hero from "../components/Home/HeroComponent.vue";
 import ContactMePromptPopup from "../components/reusables/ContactMePromptPopup.vue";
 import StarBackground from "../components/reusables/StarBackground.vue";
 import { mapGetters } from "vuex";
+import languageStudyList from "../helpers/language-study.json";
 export default {
   name: "HomeView",
   components: {
@@ -23,6 +24,7 @@ export default {
     StarBackground,
   },
   mounted() {
+    console.log(this.myStudyList);
     let hasSeenPopup = JSON.parse(window.localStorage.getItem("hasSeenPopup"));
     setTimeout(() => {
       if (!hasSeenPopup) {
@@ -33,6 +35,7 @@ export default {
   data() {
     return {
       showPopup: false,
+      myStudyList: languageStudyList,
     };
   },
   computed: {

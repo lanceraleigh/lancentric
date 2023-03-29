@@ -24,6 +24,7 @@ const ptDict: object = {
   aboutMeMessage:
     "Sou um desenvolvedor de software autodidata no início da carreira com experiência em desenvolvimento full stack e especializado no front-end. Apaixonado por internacionalização quando usada para trazer software moderno para as pessoas ao redor do mundo de todo tipo de vida.",
   landingPageQuestion: "Que idioma vamos aprender hoje?",
+  studyTools: "Ferramentas",
 };
 
 export default ptDict;

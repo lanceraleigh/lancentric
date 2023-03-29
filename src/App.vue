@@ -45,7 +45,7 @@ export default {
     );
     // eslint-disable-next-line
     console.log(
-      "Also I'm aware of a lot of the small bugs and am actively working on them. However, it's never to much to let me know if you're seeing a bug. Don't worry if it's on my list already, SNITCH ON THOSE BUGS!!"
+      "Also I'm aware of a lot of the small bugs and am actively working on them. However, it's never too much to let me know if you're seeing a bug. Don't worry if it's on my list already, SNITCH ON THOSE BUGS!!"
     );
     await this.$store.commit("initState");
   },
