@@ -12,8 +12,12 @@
     <div v-if="defineWords" class="definitions">
       <div class="heading-2">Portuguese definition:</div>
       <div>Word: {{ randomWord.portuguese }}</div>
-      <div>Part of speech: {{ portugueseDefinition.partOfSpeech }}</div>
-      <div>Etymology: {{ portugueseDefinition.etymology }}</div>
+      <div v-if="portugueseDefinition.partOfSpeech">
+        Part of speech: {{ portugueseDefinition.partOfSpeech }}
+      </div>
+      <div v-if="portugueseDefinition.etymology">
+        Etymology: {{ portugueseDefinition.etymology }}
+      </div>
       <div
         v-for="(meaning, index) in portugueseDefinition.meanings"
         :key="meaning + index"
@@ -22,15 +26,19 @@
       </div>
       <div class="heading-2">English definition:</div>
       <div>Word: {{ englishDefinition.word }}</div>
-      <div>Phonetic: {{ englishDefinition.phonetic }}</div>
-      <div>Phonetics: {{ englishDefinition.phonetics }}</div>
+      <div v-if="englishDefinition.phonetic">
+        Phonetic: {{ englishDefinition.phonetic }}
+      </div>
+      <div v-if="englishDefinition.phonetics">
+        Phonetics: {{ englishDefinition.phonetics }}
+      </div>
       <div>Meanings:</div>
       <div
         v-for="(meaning, index) in englishDefinition.meanings"
         :key="meaning + index"
       >
         <div>{{ index + 1 }}.</div>
-        <div>{{ meaning.partOfSpeech }}</div>
+        <div v-if="meaning.partOfSpeech">{{ meaning.partOfSpeech }}</div>
         <div
           v-for="(definition, index) in meaning.definitions"
           :key="definition + index"
@@ -75,7 +83,6 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.englishDefinition = data[0];
-          console.log(data[0].phonetics[0].audio);
         });
       this.defineWords = true;
     },
@@ -96,6 +103,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .language-study {
+  margin-top: 2rem;
   color: #fff;
   width: 100vw;
   height: 100vh;
