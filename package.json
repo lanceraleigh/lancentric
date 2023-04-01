@@ -14,6 +14,7 @@
     "@types/axios": "^0.14.0",
     "@vue/cli": "^5.0.8",
     "axios": "^0.27.2",
+    "conjugador": "^2.0.0",
     "core-js": "^3.8.3",
     "country-code-emoji": "^2.3.0",
     "jspdf": "^2.5.1",

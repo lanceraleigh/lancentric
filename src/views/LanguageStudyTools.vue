@@ -16,13 +16,57 @@
         Part of speech: {{ portugueseDefinition.partOfSpeech }}
       </div>
       <div v-if="portugueseDefinition.etymology">
-        Etymology: {{ portugueseDefinition.etymology }}
+        Etymology:
+        <div
+          v-for="word in portugueseDefinition.etymology.split(` `)"
+          :key="index + word"
+          @click="searchSpecificPortugueseWord(word)"
+          :aria-label="`click to see definition`"
+          class="single-words"
+        >
+          {{ `${word} ` }}
+        </div>
       </div>
       <div
         v-for="(meaning, index) in portugueseDefinition.meanings"
         :key="meaning + index"
       >
-        {{ index + 1 }}. {{ meaning }}
+        {{ index + 1 }}.
+        <div
+          v-for="word in meaning.split(` `)"
+          :key="index + word"
+          @click="
+            searchSpecificPortugueseWord(word, index);
+            showSpecificWord = !showSpecificWord;
+          "
+          :aria-label="`click to see definition`"
+          class="single-words"
+        >
+          {{ `${word} ` }}
+          <div
+            v-if="
+              specificWordDefinition &&
+              specificWord === word &&
+              specificWordIndex === index
+            "
+            class="extra-definition"
+          >
+            <span
+              @click.stop="
+                specificWordDefinition = null;
+                specificWord = null;
+              "
+              class="close-def"
+              >[close]</span
+            >
+            <div
+              v-for="(meaning, index) in specificWordDefinition.meanings"
+              :key="meaning + index"
+            >
+              {{ index + 1 }}. {{ meaning }}
+            </div>
+          </div>
+        </div>
       </div>
       <div class="heading-2">English definition:</div>
       <div>Word: {{ englishDefinition.word }}</div>
@@ -55,6 +99,10 @@ export default {
   name: "LanguageStudyTools",
   data() {
     return {
+      specificWord: "",
+      specificWordIndex: null,
+      showSpecificWord: false,
+      specificWordDefinition: {},
       languageStudyList: languageStudyList,
       randomWord: "",
       defineWords: false,
@@ -63,18 +111,85 @@ export default {
     };
   },
   methods: {
+    wordSearchChecks(word) {
+      let workingWord = word;
+      word.slice(-3) === "ais"
+        ? (workingWord = word.replace(/..$/, "l"))
+        : word.slice(-3) === "oes" || word.slice(-3) === "aes"
+        ? (workingWord = word.replace(/..$/, "ao"))
+        : word.slice(-2) === "as" || word.slice(-2) === "os"
+        ? (workingWord = word.replace(/..$/, "o"))
+        : word.slice(-1) === "s"
+        ? (workingWord = word.replace(/.$/, ""))
+        : (workingWord = word);
+      // : word.slice(-2) === "es"
+      // ? (workingWord = word.replace(/..$/, ""))
+      // : word.slice(-1) === "a"
+      // ? (workingWord = word.replace(/.$/, "o"))
+      return workingWord;
+    },
+    //
+    async addToPortugueseNoSearchList(word) {
+      if (window.localStorage.getItem("portugueseNoSearch")) {
+        let noSearchList = [
+          ...JSON.parse(window.localStorage.getItem("portugueseNoSearch")),
+        ];
+        noSearchList.includes(word) ? null : noSearchList.push(word);
+        window.setItem("portugueseNoSearch", JSON.stringify(noSearchList));
+      }
+    },
     setWord() {
       this.defineWords = false;
       this.randomWord = this.languageStudyList[Math.ceil(Math.random() * 2844)];
       this.englishDefinition = "";
       this.portugueseDefinition = "";
     },
+    normalizeForeignWords(word) {
+      return word
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
+        .replace(/\s{2,}/g, " ");
+    },
+    async searchSpecificPortugueseWord(word, index) {
+      this.specificWord = word;
+      this.specificWordIndex = index;
+      await fetch(
+        `https://dicio-api-ten.vercel.app/v2/${this.wordSearchChecks(
+          this.normalizeForeignWords(word)
+        )}`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            alert(word, " was not found, try another");
+            this.addToPortugueseNoSearchList(word);
+            this.defineWords = false;
+            return;
+          }
+          return response.json();
+        })
+        .then((data) => {
+          !data[0] ? alert(`${word} was not found, try another`) : null;
+          this.specificWordDefinition = data[0];
+        });
+    },
     async searchDefinitions() {
       await fetch(
-        `https://dicio-api-ten.vercel.app/v2/${this.randomWord.portuguese}`
+        `https://dicio-api-ten.vercel.app/v2/${this.normalizeForeignWords(
+          this.randomWord.portuguese
+        )}`
       )
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            alert(`${this.randomWord.portuguese} was not found, try another`);
+            return;
+          }
+          return response.json();
+        })
         .then((data) => {
+          !data[0]
+            ? alert(`${this.randomWord.portuguese} was not found, try another`)
+            : null;
           this.portugueseDefinition = data[0];
         });
       await fetch(
@@ -82,6 +197,9 @@ export default {
       )
         .then((response) => response.json())
         .then((data) => {
+          !data[0]
+            ? alert(`${this.randomWord.english} was not found, try another`)
+            : null;
           this.englishDefinition = data[0];
         });
       this.defineWords = true;
@@ -135,5 +253,17 @@ button:hover {
 .heading-2 {
   font-size: 1.5rem;
   font-weight: 600;
+}
+.single-words {
+  display: inline;
+}
+.single-words:hover {
+  background: #323f80;
+}
+.extra-definition {
+  background: #34469f;
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  z-index: 2;
 }
 </style>
