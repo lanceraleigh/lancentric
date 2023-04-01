@@ -12,7 +12,7 @@
     <div v-if="defineWords" class="definitions">
       <div class="heading-2">Portuguese definition:</div>
       <div>Word: {{ randomWord.portuguese }}</div>
-      <div v-if="portugueseDefinition.partOfSpeech">
+      <div v-if="portugueseDefinition?.partOfSpeech">
         Part of speech: {{ portugueseDefinition.partOfSpeech }}
       </div>
       <div v-if="portugueseDefinition.etymology">
@@ -103,10 +103,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .language-study {
-  margin-top: 2rem;
+  padding: 2rem;
+  padding-top: 75px;
   color: #fff;
-  width: 100vw;
-  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
